@@ -5,13 +5,17 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "test:ci": "vitest run",
     "build": "rollup -c --bundleConfigAsCjs",
     "lint": "eslint --fix",
     "check-types": "tsc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "MIT",
