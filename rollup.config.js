@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
+import copy from "rollup-plugin-copy";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 const packageJson = require("./package.json");
@@ -31,6 +32,9 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
       commonjs(),
+      copy({
+        targets: [{ src: "src/**/*", dest: "dist/src" }],
+      }),
     ],
     external: ["zod"],
   },
