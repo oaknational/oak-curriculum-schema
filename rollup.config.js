@@ -32,6 +32,7 @@ export default [
       terser(),
       commonjs(),
     ],
+    external: ["zod"],
   },
   {
     input: "src/index.ts",
