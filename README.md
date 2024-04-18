@@ -1,2 +1,3 @@
 # oak-curriculum-schema
-Contract tests to ensure data integrity between  Oak apps and their data
+
+Schemas and fixtures to ensure data integrity between Oak apps and their data.
