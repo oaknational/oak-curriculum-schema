@@ -1,5 +1,6 @@
-const types_1 = require("@commitlint/types");
-module.exports = {
+import * as types_1 from "@commitlint/types";
+
+export default {
   extends: ["@commitlint/config-conventional"],
   rules: {
     "type-enum": [
