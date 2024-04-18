@@ -1,9 +1,7 @@
-import { z } from "zod";
-
-import { lessonDataSchema, LessonData } from "@/schema/lessonData.schema";
+import { LessonData } from "@/schema/lessonData.schema";
 
 export const lessonDataFixture = (
-  overrides?: Partial<LessonData>
+  overrides?: Partial<LessonData>,
 ): LessonData => ({
   lesson_id: 1,
   lesson_uid: "lesson-uid",
