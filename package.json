@@ -1,5 +1,5 @@
 {
-  "name": "oak-curriculum-schema",
+  "name": "@oaknational/oak-curriculum-schema",
   "version": "1.0.0",
   "description": "Contract tests to ensure data integrity between  Oak apps and their data",
   "type": "module",
