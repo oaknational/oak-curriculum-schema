@@ -37,10 +37,10 @@ export const multipleChoiceQuestion = ({
 });
 
 export const shortAnswerQuestion = ({
-  overrides,
+  overrides = {},
 }: {
-  overrides: Partial<QuizQuestion>;
-}): QuizQuestion => ({
+  overrides?: Partial<QuizQuestion>;
+} = {}): QuizQuestion => ({
   question_id: 2,
   question_uid: "question-2",
   question_type: "short-answer",
@@ -61,10 +61,10 @@ export const shortAnswerQuestion = ({
 });
 
 export const orderQuestion = ({
-  overrides,
+  overrides = {},
 }: {
-  overrides: Partial<QuizQuestion>;
-}): QuizQuestion => ({
+  overrides?: Partial<QuizQuestion>;
+} = {}): QuizQuestion => ({
   question_id: 3,
   question_uid: "question-3",
   question_type: "order",
@@ -90,10 +90,10 @@ export const orderQuestion = ({
 });
 
 export const matchQuestion = ({
-  overrides,
+  overrides = {},
 }: {
-  overrides: Partial<QuizQuestion>;
-}): QuizQuestion => ({
+  overrides?: Partial<QuizQuestion>;
+} = {}): QuizQuestion => ({
   question_id: 4,
   question_uid: "question-4",
   question_type: "match",

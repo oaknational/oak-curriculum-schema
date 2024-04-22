@@ -4,6 +4,12 @@ import {
   TeacherTips,
 } from "@/schema/lessonContent.schema";
 import { LessonEquipmentAndResources } from "dist/types";
+import {
+  matchQuestion,
+  multipleChoiceQuestion,
+  orderQuestion,
+  shortAnswerQuestion,
+} from "./quizQuestion.fixture";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
@@ -55,8 +61,17 @@ export const lessonContentFixture = ({
     "video-with-sign-language-mux-playback-id",
   video_title: "video-title",
   transcript_sentences: "this is the transcript",
-  starter_quiz: null,
-  starter_quiz_id: null,
+  starter_quiz: [
+    multipleChoiceQuestion({
+      overrides: { order: 1, question_uid: "starter-quiz-1" },
+    }),
+    orderQuestion({ overrides: { order: 2, question_uid: "starter-quiz-2" } }),
+    matchQuestion({ overrides: { order: 3, question_uid: "starter-quiz-3" } }),
+    shortAnswerQuestion({
+      overrides: { order: 4, question_uid: "starter-quiz-4" },
+    }),
+  ],
+  starter_quiz_id: 1,
   exit_quiz: null,
   exit_quiz_id: null,
   supervision_level: null,
