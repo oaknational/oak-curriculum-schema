@@ -1,27 +1,65 @@
-import { LessonContent } from "@/schema/lessonContent.schema";
+import {
+  Keywords,
+  LessonContent,
+  TeacherTips,
+} from "@/schema/lessonContent.schema";
+import { LessonEquipmentAndResources } from "dist/types";
 
-export const lessonContentFixture = (): LessonContent => ({
+export const lessonEquipmentAndResourcesFixture =
+  (): LessonEquipmentAndResources => ({
+    equipment: "equipment",
+  });
+
+export const teacherTipsFixture = (): TeacherTips => ({
+  teacher_tip: "teacher-tip",
+});
+
+export const keywordsFixture = (): Keywords => ({
+  keyword: "keyword",
+  description: "description",
+});
+
+export const misconceptionsAndCommonMistakesFixture = () => ({
+  misconception: "misconception",
+  response: "response",
+});
+
+export const contentGuidanceFixture = () => ({
+  contentguidance_label: "contentguidance-label",
+  contentguidance_description: "contentguidance-description",
+  contentguidance_area: "contentguidance-area",
+});
+
+export const lessonContentFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonContent>;
+} = {}): LessonContent => ({
   lesson_id: 1,
   lesson_title: "lesson-title",
   lesson_slug: "lesson-slug",
   deprecated_fields: {},
   is_legacy: false,
-  misconceptions_and_common_mistakes: null,
-  equipment_and_resources: null,
-  teacher_tips: null,
+  misconceptions_and_common_mistakes: [
+    misconceptionsAndCommonMistakesFixture(),
+  ],
+  equipment_and_resources: [lessonEquipmentAndResourcesFixture()],
+  teacher_tips: [teacherTipsFixture()],
   key_learning_points: null,
   pupil_lesson_outcome: "pupil-lesson-outcome",
-  lesson_keywords: null,
-  content_guidance: null,
-  video_mux_playback_id: null,
+  lesson_keywords: [keywordsFixture()],
+  content_guidance: [contentGuidanceFixture()],
+  video_mux_playback_id: "video-mux-playback-id",
   video_id: null,
-  video_with_sign_language_mux_playback_id: null,
-  video_title: null,
-  transcript_sentences: null,
+  video_with_sign_language_mux_playback_id:
+    "video-with-sign-language-mux-playback-id",
+  video_title: "video-title",
+  transcript_sentences: "this is the transcript",
   starter_quiz: null,
   starter_quiz_id: null,
   exit_quiz: null,
   exit_quiz_id: null,
   supervision_level: null,
   state: "published",
+  ...overrides,
 });

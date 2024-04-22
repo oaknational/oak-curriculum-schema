@@ -5,9 +5,11 @@ import { unitDataFixture } from "./unitData.fixture";
 import { unitvariantFixture } from "./unitvariant.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 
-export const syntheticUnitvariantLessonsFixture = (
-  overrides: Partial<SyntheticUnitvariantLessons> = {},
-): SyntheticUnitvariantLessons => ({
+export const syntheticUnitvariantLessonsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantLessons>;
+} = {}): SyntheticUnitvariantLessons => ({
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",

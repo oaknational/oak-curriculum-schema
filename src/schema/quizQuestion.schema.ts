@@ -30,3 +30,5 @@ export const quizQuestionSchema = z.object({
   active: z.boolean().optional(),
   order: z.number(),
 });
+
+export type QuizQuestion = z.infer<typeof quizQuestionSchema>;
