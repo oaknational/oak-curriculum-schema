@@ -2,8 +2,8 @@ import {
   Keywords,
   LessonContent,
   TeacherTips,
+  LessonEquipmentAndResources,
 } from "@/schema/lessonContent.schema";
-import { LessonEquipmentAndResources } from "dist/types";
 import {
   matchQuestion,
   multipleChoiceQuestion,
