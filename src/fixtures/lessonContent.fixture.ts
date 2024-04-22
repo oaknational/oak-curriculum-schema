@@ -1,0 +1,27 @@
+import { LessonContent } from "@/schema/lessonContent.schema";
+
+export const lessonContentFixture = (): LessonContent => ({
+  lesson_id: 1,
+  lesson_title: "lesson-title",
+  lesson_slug: "lesson-slug",
+  deprecated_fields: {},
+  is_legacy: false,
+  misconceptions_and_common_mistakes: null,
+  equipment_and_resources: null,
+  teacher_tips: null,
+  key_learning_points: null,
+  pupil_lesson_outcome: "pupil-lesson-outcome",
+  lesson_keywords: null,
+  content_guidance: null,
+  video_mux_playback_id: null,
+  video_id: null,
+  video_with_sign_language_mux_playback_id: null,
+  video_title: null,
+  transcript_sentences: null,
+  starter_quiz: null,
+  starter_quiz_id: null,
+  exit_quiz: null,
+  exit_quiz_id: null,
+  supervision_level: null,
+  state: "published",
+});
