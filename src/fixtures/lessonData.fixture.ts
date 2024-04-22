@@ -1,8 +1,10 @@
 import { LessonData } from "@/schema/lessonData.schema";
 
-export const lessonDataFixture = (
-  overrides?: Partial<LessonData>,
-): LessonData => ({
+export const lessonDataFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonData>;
+} = {}): LessonData => ({
   lesson_id: 1,
   lesson_uid: "lesson-uid",
   title: "lesson-title",
@@ -27,4 +29,5 @@ export const lessonDataFixture = (
   _state: "published",
   _cohort: "2023-2024",
   deprecated_fields: null,
+  ...overrides,
 });

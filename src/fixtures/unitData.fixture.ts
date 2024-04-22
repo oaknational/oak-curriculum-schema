@@ -1,6 +1,10 @@
 import { UnitData } from "@/schema/unitData.schema";
 
-export const unitDataFixture = (): UnitData => ({
+export const unitDataFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<UnitData>;
+} = {}): UnitData => ({
   unit_id: 0,
   unit_uid: "unit-uid",
   description: null,
@@ -9,4 +13,5 @@ export const unitDataFixture = (): UnitData => ({
   title: "unit-title",
   _state: "published",
   _cohort: "2023-2024",
+  ...overrides,
 });

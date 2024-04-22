@@ -33,7 +33,7 @@ export default [
       terser(),
       commonjs(),
       copy({
-        targets: [{ src: "src/**/*", dest: "dist/src" }],
+        targets: [{ src: "src", dest: "dist/src" }],
       }),
     ],
     external: ["zod"],

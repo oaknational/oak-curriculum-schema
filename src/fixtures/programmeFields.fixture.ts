@@ -1,6 +1,10 @@
 import { ProgrammeFields } from "@/schema/programmeFields.schema";
 
-export const programmeFieldsFixture = (): ProgrammeFields => ({
+export const programmeFieldsFixture = ({
+  overrides,
+}: {
+  overrides?: Partial<ProgrammeFields>;
+} = {}): ProgrammeFields => ({
   tier: null,
   tier_id: null,
   tier_slug: null,
@@ -31,4 +35,5 @@ export const programmeFieldsFixture = (): ProgrammeFields => ({
   subject_slug: "subject-slug",
   subject_description: "subject-description",
   subject_display_order: 1,
+  ...overrides,
 });
