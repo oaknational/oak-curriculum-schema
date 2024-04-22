@@ -9,13 +9,17 @@
     "dist"
   ],
   "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "vitest",
     "test:ci": "vitest run",
-    "build": "rollup -c --bundleConfigAsCjs",
     "lint": "eslint --fix",
     "check-types": "tsc",
+    "format": "prettier '**/*.{j,t}{s,sx}' --write",
+    "format:precommit": "prettier '**/*.{j,t}{s,sx}' --write",
+    "format:check": "prettier '**/*.{j,t}{s,sx}' --check",
     "prepare": "husky",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish:local": "npm run build && yalc publish --no-scripts"
   },
   "author": "",
   "license": "MIT",
@@ -46,7 +50,8 @@
     "rollup-plugin-typescript-paths": "^1.5.0",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.0"
+    "vitest": "^1.5.0",
+    "yalc": "^1.0.0-pre.53"
   },
   "peerDependencies": {
     "zod": "^3.22.4"
