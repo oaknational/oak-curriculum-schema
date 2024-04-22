@@ -17,7 +17,6 @@ export const syntheticUnitvariantsWithLessonIdsFixture = ({
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {
     unit_order: 1,
-    order_in_unit: 1,
   },
   ...overrides,
 });

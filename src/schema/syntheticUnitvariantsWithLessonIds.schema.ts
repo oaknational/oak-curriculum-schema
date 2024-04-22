@@ -13,7 +13,6 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
-    order_in_unit: z.number(),
   }),
 });
 
