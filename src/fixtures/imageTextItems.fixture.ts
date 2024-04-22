@@ -23,7 +23,10 @@ export const imageItemFixture = (): ImageItem => ({
   type: "image",
 });
 
-export const textItemFixture = (): TextItem => ({
+export const textItemFixture = ({
+  overrides = {},
+}: { overrides?: Partial<TextItem> } = {}): TextItem => ({
   text: "Hello, World!",
   type: "text",
+  ...overrides,
 });

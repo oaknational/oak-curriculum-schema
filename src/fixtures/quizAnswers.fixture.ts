@@ -45,7 +45,7 @@ export const matchFixture = ({
   overrides?: Partial<Match>;
 } = {}): Match => ({
   answer_is_active: true,
-  correct_choice: [textItemFixture()],
-  match_option: [textItemFixture()],
+  correct_choice: [textItemFixture({ overrides: { text: "Paris" } })],
+  match_option: [textItemFixture({ overrides: { text: "Capital of France" } })],
   ...overrides,
 });
