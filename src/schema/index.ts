@@ -7,4 +7,5 @@ export * from "./imageTextItems.schema";
 export * from "./quizAnswers.schema";
 export * from "./quizQuestion.schema";
 export * from "./syntheticUnitvariantLessons.schema";
+export * from "./syntheticUnitvariantsWithLessonIds.schema";
 export * from "./lessonContent.schema";
