@@ -8,11 +8,11 @@ export const syntheticProgrammesByYearFixture = ({
   year_slug: "year-1",
   base_slug: "maths-primary-year-1",
   programme_slug: "maths-primary-year-1",
-  syntheticProgrammesSchema: {
+  synthetic_programme_slug: {
     full_slug: "maths-primary-year-1",
     is_legacy: false,
     tier_slug: null,
-    exam_board_slug: null,
+    examboard_slug: null,
   },
   base_programme_fields: {
     tier: null,

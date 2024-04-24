@@ -7,3 +7,4 @@ export * from "./syntheticUnitvariantLessons.fixture";
 export * from "./quizAnswers.fixture";
 export * from "./quizQuestion.fixture";
 export * from "./syntheticUnitvariantsWithLessonIds.fixture";
+export * from "./syntheticProgrammesByYear.fixture";
