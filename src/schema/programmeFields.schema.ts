@@ -1,23 +1,41 @@
 import { z } from "zod";
-import { keystages, keystageSlugs, keystageDescriptions } from "./base.schema";
+import {
+  keystages,
+  keystageSlugs,
+  keystageDescriptions,
+  examboards,
+  examboardSlugs,
+  examboardDescriptions,
+  tierSlugs,
+  tierDescriptions,
+  tiers,
+  yearSlugs,
+  yearDescriptions,
+  years,
+  phases,
+  phaseSlugs,
+  phaseDescriptions,
+  subjects,
+  subjectSlugs,
+} from "./base.schema";
 
 export const programmeFieldsSchema = z.object({
-  tier: z.string().nullable(),
+  tier: tiers.nullable(),
   tier_id: z.number().nullable(),
-  tier_slug: z.string().nullable(),
-  tier_description: z.string().nullable(),
+  tier_slug: tierSlugs.nullable(),
+  tier_description: tierDescriptions.nullable(),
   tier_display_order: z.number().nullable(),
 
-  examboard: z.string().nullable(),
+  examboard: examboards.nullable(),
   examboard_id: z.number().nullable(),
-  examboard_slug: z.string().nullable(),
-  examboard_description: z.string().nullable(),
+  examboard_slug: examboardSlugs.nullable(),
+  examboard_description: examboardDescriptions.nullable(),
   examboard_display_order: z.number().nullable(),
 
-  year: z.string(),
-  year_slug: z.string(),
+  year: years,
+  year_slug: yearSlugs,
   year_id: z.number(),
-  year_description: z.string(),
+  year_description: yearDescriptions,
   year_display_order: z.number(),
 
   keystage: keystages,
@@ -26,15 +44,15 @@ export const programmeFieldsSchema = z.object({
   keystage_description: keystageDescriptions,
   keystage_display_order: z.number(),
 
-  phase: z.string(),
+  phase: phases,
   phase_id: z.number(),
-  phase_slug: z.string(),
-  phase_description: z.string(),
+  phase_slug: phaseSlugs,
+  phase_description: phaseDescriptions,
   phase_display_order: z.number(),
 
-  subject: z.string(),
+  subject: subjects,
   subject_id: z.number(),
-  subject_slug: z.string(),
+  subject_slug: subjectSlugs,
   subject_description: z.string(),
   subject_display_order: z.number(),
 
