@@ -7,8 +7,8 @@ export const threadsByUnitFixture = ({
 } = {}): ThreadsByUnit => ({
   unit_id: 1,
   threads: [
-    { themeSlug: "theme-slug-1", themeTitle: "theme-title-2" },
-    { themeSlug: "theme-slug-2", themeTitle: "theme-title-2" },
+    { theme_slug: "theme-slug-1", theme_title: "theme-title-2" },
+    { theme_slug: "theme-slug-2", theme_title: "theme-title-2" },
   ],
   ...overrides,
 });

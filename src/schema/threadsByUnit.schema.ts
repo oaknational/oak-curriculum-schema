@@ -3,7 +3,7 @@ import { z } from "zod";
 export const threadsByUnitSchema = z.object({
   unit_id: z.number(),
   threads: z
-    .array(z.object({ themeSlug: z.string(), themeTitle: z.string() }))
+    .array(z.object({ theme_slug: z.string(), theme_title: z.string() }))
     .nullable(),
 });
 
