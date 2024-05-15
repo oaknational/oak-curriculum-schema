@@ -8,6 +8,7 @@ export const unitDataSchema = z.object({
   description: z.string().nullable(),
   slug: z.string(),
   tags: z.array(z.number()).nullable(),
+  deprecated_fields: z.record(z.unknown()).nullable().optional(),
   title: z.string(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
