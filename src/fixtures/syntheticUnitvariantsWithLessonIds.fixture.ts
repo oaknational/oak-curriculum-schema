@@ -18,5 +18,6 @@ export const syntheticUnitvariantsWithLessonIdsFixture = ({
   supplementary_data: {
     unit_order: 1,
   },
+  expired: false,
   ...overrides,
 });

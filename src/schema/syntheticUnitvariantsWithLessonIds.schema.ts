@@ -14,6 +14,7 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   supplementary_data: z.object({
     unit_order: z.number(),
   }),
+  expired: z.boolean(),
 });
 
 export type syntheticUnitvariantsWithLessonIds = z.infer<
