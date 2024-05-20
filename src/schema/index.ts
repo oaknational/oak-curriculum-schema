@@ -11,3 +11,4 @@ export * from "./syntheticUnitvariantsWithLessonIds.schema";
 export * from "./lessonContent.schema";
 export * from "./syntheticProgrammesByYear.schema";
 export * from "./threadsByUnit.schema";
+export * from "./programmeListing.schema";
