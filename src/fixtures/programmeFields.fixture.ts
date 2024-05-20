@@ -35,6 +35,5 @@ export const programmeFieldsFixture = ({
   subject_slug: "maths",
   subject_description: "subject-description",
   subject_display_order: 1,
-  optionality: "optionality title",
   ...overrides,
 });
