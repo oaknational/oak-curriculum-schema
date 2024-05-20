@@ -56,6 +56,7 @@ export const programmeFieldsSchema = z.object({
   subject_description: z.string(),
   subject_display_order: z.number(),
 
+  optionality: z.string().optional(),
   legacy: z.string().optional(),
   dataset: z.string().optional(),
 });
