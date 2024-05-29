@@ -75,14 +75,14 @@ export const lessonContentSchema = z.object({
   is_legacy: z.boolean().nullable(),
   deprecated_fields: z.record(z.unknown()).nullable(),
   has_worksheet_google_drive_downloadable_version: z.boolean().nullable(),
-  asset_id_slide_deck: z.number().nullable(),
-  has_asset_object_slide_deck: z.boolean().nullable(),
-  asset_id_worksheet: z.number().nullable(),
-  has_asset_object_worksheet: z.boolean().nullable(),
-  asset_id_worksheet_answers: z.number().nullable(),
-  has_asset_object_worksheet_answers: z.boolean().nullable(),
-  asset_id_supplementary_asset: z.number().nullable(),
-  has_asset_object_supplementary_asset: z.boolean().nullable(),
+  slide_deck_asset_id: z.number().nullable(),
+  has_slide_deck_asset_object: z.boolean().nullable(),
+  worksheet_asset_id: z.number().nullable(),
+  has_worksheet_asset_object: z.boolean().nullable(),
+  worksheet_answers_asset_id: z.number().nullable(),
+  has_worksheet_answers_asset_object: z.boolean().nullable(),
+  supplementary_asset_id: z.number().nullable(),
+  has_supplementary_asset_object: z.boolean().nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
