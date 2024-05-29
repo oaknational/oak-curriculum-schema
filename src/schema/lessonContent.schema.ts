@@ -74,6 +74,15 @@ export const lessonContentSchema = z.object({
   state: z.string(),
   is_legacy: z.boolean().nullable(),
   deprecated_fields: z.record(z.unknown()).nullable(),
+  has_worksheet_google_drive_downloadable_version: z.boolean().nullable(),
+  asset_id_slide_deck: z.number().nullable(),
+  has_asset_object_slide_deck: z.boolean().nullable(),
+  asset_id_worksheet: z.number().nullable(),
+  has_asset_object_worksheet: z.boolean().nullable(),
+  asset_id_worksheet_answers: z.number().nullable(),
+  has_asset_object_worksheet_answers: z.boolean().nullable(),
+  asset_id_supplementary_asset: z.number().nullable(),
+  has_asset_object_supplementary_asset: z.boolean().nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
