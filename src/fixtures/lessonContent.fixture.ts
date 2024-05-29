@@ -76,5 +76,13 @@ export const lessonContentFixture = ({
   exit_quiz_id: null,
   supervision_level: null,
   state: "published",
+  asset_id_slide_deck: 301,
+  has_asset_object_slide_deck: true,
+  asset_id_worksheet: 302,
+  has_asset_object_worksheet: true,
+  asset_id_worksheet_answers: 303,
+  has_asset_object_worksheet_answers: false,
+  asset_id_supplementary_asset: 304,
+  has_asset_object_supplementary_asset: true,
   ...overrides,
 });
