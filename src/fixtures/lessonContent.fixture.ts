@@ -84,5 +84,6 @@ export const lessonContentFixture = ({
   has_asset_object_worksheet_answers: false,
   asset_id_supplementary_asset: 304,
   has_asset_object_supplementary_asset: true,
+  has_worksheet_google_drive_downloadable_version: true,
   ...overrides,
 });
