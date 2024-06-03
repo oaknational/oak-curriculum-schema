@@ -83,6 +83,9 @@ export const lessonContentSchema = z.object({
   has_worksheet_answers_asset_object: z.boolean().nullable(),
   supplementary_asset_id: z.number().nullable(),
   has_supplementary_asset_object: z.boolean().nullable(),
+  supplementary_asset_object_url: z.string().nullable(),
+  worksheet_asset_object_url: z.string().nullable(),
+  slide_deck_asset_object_url: z.string().nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;

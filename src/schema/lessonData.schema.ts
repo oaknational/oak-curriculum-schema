@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { _stateSchema, _cohortSchema } from "./base.schema";
+import { lessonEquipmentAndResourcesSchema } from "./lessonContent.schema";
 
 export const lessonDataSchema = z.object({
   lesson_id: z.number(),
@@ -10,7 +11,9 @@ export const lessonDataSchema = z.object({
   description: z.string(),
   pupil_lesson_outcome: z.string(),
   key_learning_points: z.array(z.object({})),
-  equipment_and_resources: z.array(z.object({})).nullable(),
+  equipment_and_resources: z
+    .array(lessonEquipmentAndResourcesSchema)
+    .nullable(),
   content_guidance_details: z.array(z.object({})).nullable(),
   content_guidance: z.array(z.number()).nullable(),
   copyright_content: z.array(z.object({})).nullable(),
@@ -24,9 +27,11 @@ export const lessonDataSchema = z.object({
   quiz_id_exit: z.number().nullable(),
   asset_id_slidedeck: z.number().nullable(),
   asset_id_worksheet: z.number().nullable(),
+
   deprecated_fields: z.record(z.unknown()).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
+  updated_at: z.string(),
 });
 
 export type LessonData = z.infer<typeof lessonDataSchema>;
