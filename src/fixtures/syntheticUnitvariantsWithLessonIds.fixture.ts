@@ -8,6 +8,7 @@ export const syntheticUnitvariantsWithLessonIdsFixture = ({
 }: {
   overrides?: Partial<syntheticUnitvariantsWithLessonIds>;
 } = {}): syntheticUnitvariantsWithLessonIds => ({
+  base_slug: "base-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
   is_legacy: false,

@@ -4,6 +4,7 @@ import { unitvariantSchema } from "./unitvariant.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 
 export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
+  base_slug: z.string(),
   unit_slug: z.string(),
   programme_slug: z.string(),
   is_legacy: z.boolean(),
