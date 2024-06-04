@@ -29,5 +29,6 @@ export const lessonDataFixture = ({
   _state: "published",
   _cohort: "2023-2024",
   deprecated_fields: null,
+  updated_at: "2021-01-01T00:00:00Z",
   ...overrides,
 });
