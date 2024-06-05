@@ -57,6 +57,7 @@ export const lessonContentFixture = ({
   content_guidance: [contentGuidanceFixture()],
   video_mux_playback_id: "video-mux-playback-id",
   video_id: null,
+  video_duration: "5 minutes",
   video_with_sign_language_mux_playback_id:
     "video-with-sign-language-mux-playback-id",
   video_title: "video-title",

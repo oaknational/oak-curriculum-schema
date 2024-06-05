@@ -65,6 +65,7 @@ export const lessonContentSchema = z.object({
   video_mux_playback_id: z.string().nullable(),
   video_with_sign_language_mux_playback_id: z.string().nullable(),
   video_id: z.number().nullable(),
+  video_duration: z.string().nullable(),
   video_title: z.string().nullable(),
   transcript_sentences: z.string().nullable(),
   starter_quiz: z.array(quizQuestionSchema).optional().nullable(),
