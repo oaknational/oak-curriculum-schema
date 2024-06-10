@@ -17,7 +17,7 @@ export const lessonDataSchema = z.object({
   content_guidance_details: z.array(z.object({})).nullable(),
   content_guidance: z.array(z.number()).nullable(),
   copyright_content: z
-    .array(z.object({ copyright_info: z.string() }))
+    .union([z.object({ copyright_info: z.string() }), z.object({})])
     .nullable(),
   supervision_level: z.string().nullable(),
   thirdpartycontent_list: z.array(z.number()).nullable(),
