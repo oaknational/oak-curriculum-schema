@@ -16,7 +16,15 @@ export const lessonDataSchema = z.object({
     .nullable(),
   content_guidance_details: z.array(z.object({})).nullable(),
   content_guidance: z.array(z.number()).nullable(),
-  copyright_content: z.array(z.object({})).nullable(),
+  copyright_content: z
+    .array(
+      z
+        .object({
+          copyright_info: z.string().nullish(),
+        })
+        .or(z.object({})),
+    )
+    .nullable(),
   supervision_level: z.string().nullable(),
   thirdpartycontent_list: z.array(z.number()).nullable(),
   misconceptions_and_common_mistakes: z.array(z.object({})).nullable(),
