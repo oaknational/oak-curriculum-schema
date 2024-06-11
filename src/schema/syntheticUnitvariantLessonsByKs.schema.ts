@@ -3,7 +3,7 @@ import { syntheticUnitvariantLessonsSchema } from "./syntheticUnitvariantLessons
 
 export const syntheticUnitvariantLessonsByKsSchema = z.object({
   ...syntheticUnitvariantLessonsSchema.shape,
-  unitvariant_id: z.number(),
+  unitvariant_id: z.number().nullable(),
 });
 
 export type SyntheticUnitvariantLessonsByKs = z.infer<
