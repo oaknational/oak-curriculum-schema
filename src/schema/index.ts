@@ -12,3 +12,4 @@ export * from "./lessonContent.schema";
 export * from "./syntheticProgrammesByYear.schema";
 export * from "./threadsByUnit.schema";
 export * from "./programmeListing.schema";
+export * from "./syntheticUnitvariantLessonsByKs.schema";
