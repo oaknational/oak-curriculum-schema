@@ -19,7 +19,7 @@ export const lessonDataSchema = z.object({
   copyright_content: z
     .array(
       z.object({
-        copyright_info: z.string().nullish(),
+        copyright_info: z.string(),
       }),
     )
     .nullable(),
