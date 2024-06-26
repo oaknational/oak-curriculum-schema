@@ -9,6 +9,8 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   programme_slug: z.string(),
   is_legacy: z.boolean(),
   lesson_count: z.number(),
+  lesson_sensitive_count: z.number(),
+  lesson_expired_count: z.number(),
   unit_data: unitDataSchema,
   null_unitvariant: unitvariantSchema,
   programme_fields: programmeFieldsSchema,
