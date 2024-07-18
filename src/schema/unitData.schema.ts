@@ -12,6 +12,7 @@ export const unitDataSchema = z.object({
   title: z.string(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
+  expiration_date: z.string().nullable(),
 });
 
 export type UnitData = z.infer<typeof unitDataSchema>;

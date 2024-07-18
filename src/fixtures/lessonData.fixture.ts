@@ -30,5 +30,6 @@ export const lessonDataFixture = ({
   _cohort: "2023-2024",
   deprecated_fields: null,
   updated_at: "2024-02-28T08:09:20.247619+00:00",
+  expiration_date: null,
   ...overrides,
 });

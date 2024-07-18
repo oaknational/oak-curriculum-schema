@@ -27,6 +27,7 @@ export const lessonDataSchema = z.object({
   quiz_id_exit: z.number().nullable(),
   asset_id_slidedeck: z.number().nullable(),
   asset_id_worksheet: z.number().nullable(),
+  expiration_date: z.string().nullable(),
 
   deprecated_fields: z.record(z.unknown()).nullable(),
   _state: _stateSchema,
