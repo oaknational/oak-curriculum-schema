@@ -14,5 +14,6 @@ export const unitDataFixture = ({
   _state: "published",
   _cohort: "2023-2024",
   expiration_date: null,
+  subjectcategories: [1, 2, 3],
   ...overrides,
 });

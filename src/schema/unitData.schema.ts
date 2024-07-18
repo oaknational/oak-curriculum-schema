@@ -10,6 +10,7 @@ export const unitDataSchema = z.object({
   tags: z.array(z.number()).nullable(),
   deprecated_fields: z.record(z.unknown()).nullable().optional(),
   title: z.string(),
+  subjectcategories: z.array(z.union([z.number(), z.string()])).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
   expiration_date: z.string().nullable(),
