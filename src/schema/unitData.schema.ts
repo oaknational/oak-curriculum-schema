@@ -13,6 +13,7 @@ export const unitDataSchema = z.object({
   subjectcategories: z.array(z.union([z.number(), z.string()])).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
+  expiration_date: z.string().nullable(),
 });
 
 export type UnitData = z.infer<typeof unitDataSchema>;
