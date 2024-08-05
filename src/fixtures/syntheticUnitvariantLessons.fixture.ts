@@ -12,6 +12,7 @@ export const syntheticUnitvariantLessonsFixture = ({
 } = {}): SyntheticUnitvariantLessons => ({
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
+  base_slug: "base-slug",
   programme_slug: "programme-slug",
   is_legacy: false,
   lesson_data: lessonDataFixture(),

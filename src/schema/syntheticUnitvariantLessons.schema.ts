@@ -7,6 +7,7 @@ import { programmeFieldsSchema } from "./programmeFields.schema";
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),
   unit_slug: z.string(),
+  base_slug: z.string(),
   programme_slug: z.string(),
   is_legacy: z.boolean(),
   lesson_data: lessonDataSchema,
