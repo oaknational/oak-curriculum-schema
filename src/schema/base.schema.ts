@@ -11,13 +11,21 @@ export const phaseDescriptions = z.enum([
 ]);
 export const phases = z.enum(["foundation", "primary", "secondary"]);
 
-export const keystages = z.enum(["KS1", "KS2", "KS3", "KS4", "EYFS"]);
+export const keystages = z.enum([
+  "KS1",
+  "KS2",
+  "KS3",
+  "KS4",
+  "EYFS",
+  "All key stages",
+]);
 export const keystageSlugs = z.enum([
   "ks1",
   "ks2",
   "ks3",
   "ks4",
   "early-years-foundation-stage",
+  "all-ks",
 ]);
 export const keystageDescriptions = z.enum([
   "Key Stage 1",
@@ -25,6 +33,7 @@ export const keystageDescriptions = z.enum([
   "Key Stage 3",
   "Key Stage 4",
   "Early Years Foundation Stage",
+  "All Key Stages",
 ]);
 
 export const years = z.enum([
@@ -42,6 +51,7 @@ export const years = z.enum([
   "12",
   "13",
   "R",
+  "All",
 ]);
 export const yearSlugs = z.enum([
   "reception",
@@ -58,6 +68,7 @@ export const yearSlugs = z.enum([
   "year-11",
   "year-12",
   "year-13",
+  "all-years",
 ]);
 export const yearDescriptions = z.enum([
   "Year 1",
@@ -74,6 +85,7 @@ export const yearDescriptions = z.enum([
   "Year 12",
   "Year 13",
   "Reception",
+  "All years",
 ]);
 
 export const tiers = z.enum(["core", "foundation", "higher"]);

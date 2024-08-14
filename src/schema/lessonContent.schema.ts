@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { quizQuestionSchema } from "./quizQuestion.schema";
+import { _stateSchema } from "./base.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),
@@ -72,7 +73,7 @@ export const lessonContentSchema = z.object({
   exit_quiz: z.array(quizQuestionSchema).optional().nullable(),
   starter_quiz_id: z.number().nullable(),
   exit_quiz_id: z.number().nullable(),
-  state: z.string(),
+  _state: _stateSchema,
   is_legacy: z.boolean().nullable(),
   deprecated_fields: z.record(z.unknown()).nullable(),
   has_worksheet_google_drive_downloadable_version: z.boolean().nullable(),

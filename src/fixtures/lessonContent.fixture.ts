@@ -76,7 +76,7 @@ export const lessonContentFixture = ({
   exit_quiz: null,
   exit_quiz_id: null,
   supervision_level: null,
-  state: "published",
+  _state: "published",
   slide_deck_asset_id: 301,
   has_slide_deck_asset_object: true,
   worksheet_asset_id: 302,
