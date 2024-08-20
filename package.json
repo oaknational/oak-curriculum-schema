@@ -73,11 +73,11 @@
           "releaseRules": [
             {
               "type": "chore",
-              "release": "minor"
+              "release": "patch"
             },
             {
               "type": "feat",
-              "release": "patch"
+              "release": "minor"
             },
             {
               "type": "fix",
