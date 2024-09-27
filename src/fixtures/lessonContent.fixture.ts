@@ -89,5 +89,7 @@ export const lessonContentFixture = ({
   slide_deck_asset_object_url: "slide-deck-asset-object-url",
   worksheet_asset_object_url: "worksheet-asset-object-url",
   has_worksheet_asset_object: true,
+  geo_restricted: false,
+  login_required: false,
   ...overrides,
 });
