@@ -11,7 +11,7 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   is_legacy: z.boolean(),
   lesson_data: lessonDataSchema,
   unit_data: unitDataSchema,
-  null_unitvariant: unitvariantSchema,
+  null_unitvariant_id: z.number(),
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),

@@ -16,7 +16,7 @@ export const syntheticUnitvariantLessonsFixture = ({
   is_legacy: false,
   lesson_data: lessonDataFixture(),
   unit_data: unitDataFixture(),
-  null_unitvariant: unitvariantFixture(),
+  null_unitvariant_id: 0,
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {
     unit_order: 1,
