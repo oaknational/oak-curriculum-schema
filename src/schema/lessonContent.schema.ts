@@ -88,6 +88,8 @@ export const lessonContentSchema = z.object({
   supplementary_asset_object_url: z.string().nullable(),
   worksheet_asset_object_url: z.string().nullable(),
   slide_deck_asset_object_url: z.string().nullable(),
+  geo_restricted: z.boolean().nullable(),
+  login_required: z.boolean().nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
