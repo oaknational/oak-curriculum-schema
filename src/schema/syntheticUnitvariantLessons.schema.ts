@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { lessonDataSchema } from "./lessonData.schema";
 import { unitDataSchema } from "./unitData.schema";
-import { unitvariantSchema } from "./unitvariant.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 
 export const syntheticUnitvariantLessonsSchema = z.object({
