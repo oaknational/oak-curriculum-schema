@@ -98,14 +98,23 @@ export const examboardSlugs = z.enum([
   "eduqas",
   "ocr",
   "wjec",
+  "edexcelb",
 ]);
-export const examboards = z.enum(["AQA", "Edexcel", "Eduqas", "OCR", "WJEC"]);
+export const examboards = z.enum([
+  "AQA",
+  "Edexcel",
+  "Eduqas",
+  "OCR",
+  "WJEC",
+  "Edexcel B",
+]);
 export const examboardDescriptions = z.enum([
   "Assessment and Qualifications Alliance",
   "Edexcel",
   "Eduqas",
   "Oxford, Cambridge and RSA Examinations",
   "Welsh Joint Education Committee",
+  "Edexcel B",
 ]);
 
 export const subjects = z.enum([
