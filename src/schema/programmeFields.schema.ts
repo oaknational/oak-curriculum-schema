@@ -17,9 +17,18 @@ import {
   phaseDescriptions,
   subjects,
   subjectSlugs,
+  pathways,
+  pathwaySlugs,
+  pathwayDescriptions,
 } from "./base.schema";
 
 export const programmeFieldsSchema = z.object({
+  pathway: pathways.nullable(),
+  pathway_id: z.number().nullable(),
+  pathway_slug: pathwaySlugs.nullable(),
+  pathway_description: pathwayDescriptions.nullable(),
+  pathway_display_order: z.number().nullable(),
+
   tier: tiers.nullable(),
   tier_id: z.number().nullable(),
   tier_slug: tierSlugs.nullable(),
