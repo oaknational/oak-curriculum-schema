@@ -1,7 +1,12 @@
 import { z } from "zod";
 
 export const _stateSchema = z.enum(["published", "new", "migration"]);
-export const _cohortSchema = z.enum(["2020-2023", "2023-2024", "0"]);
+export const _cohortSchema = z.enum([
+  "2020-2023",
+  "2023-2024",
+  "2024-2025",
+  "0",
+]);
 
 export const phaseSlugs = z.enum(["foundation", "primary", "secondary"]);
 export const phaseDescriptions = z.enum([
