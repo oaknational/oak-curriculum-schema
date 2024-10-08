@@ -1,8 +1,8 @@
-import { syntheticUnitvariantLessonsSchema } from "./syntheticUnitvariantLessons.schema";
+import { syntheticUnitvariantLessonsByKsSchema } from "./syntheticUnitvariantLessonsByKs.schema";
 import { z } from "zod";
 
 export const programmeListingResponseSchema =
-  syntheticUnitvariantLessonsSchema.pick({
+  syntheticUnitvariantLessonsByKsSchema.pick({
     lesson_data: true,
     programme_fields: true,
     is_legacy: true,
