@@ -18,6 +18,8 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
     unit_order: z.number(),
   }),
   expired: z.boolean(),
+  actions: z.object({}).optional().nullable(),
+  features: z.object({}).optional().nullable(),
 });
 
 export type syntheticUnitvariantsWithLessonIds = z.infer<
