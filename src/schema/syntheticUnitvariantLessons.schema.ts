@@ -16,6 +16,8 @@ export const syntheticUnitvariantLessonsSchema = z.object({
     unit_order: z.number(),
     order_in_unit: z.number(),
   }),
+  actions: z.object({}).optional().nullable(),
+  features: z.object({}).optional().nullable(),
 });
 
 export type SyntheticUnitvariantLessons = z.infer<
