@@ -131,6 +131,7 @@ export const subjects = z.enum([
   "Art and design",
   "Citizenship",
   "Computing",
+  "Computer Science",
   "Design and technology",
   "Drama",
   "English",
