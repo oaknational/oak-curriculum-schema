@@ -18,8 +18,8 @@ export const journeysAndQueriesSchema = z.union([
 
 export const actionsSchema = z
   .object({
-    exclusions: journeysAndQueriesSchema,
-    opt_out: journeysAndQueriesSchema,
+    exclusions: z.array(journeysAndQueriesSchema),
+    opt_out: z.array(journeysAndQueriesSchema),
     programme_field_overrides: programmeFieldsSchema.partial(),
     display_expiring_banner: z.boolean(),
   })
