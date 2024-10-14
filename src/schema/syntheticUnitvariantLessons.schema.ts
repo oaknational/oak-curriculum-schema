@@ -2,6 +2,7 @@ import { z } from "zod";
 import { lessonDataSchema } from "./lessonData.schema";
 import { unitDataSchema } from "./unitData.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
+import { actionsSchema } from "./actions.schema";
 
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),
@@ -16,7 +17,7 @@ export const syntheticUnitvariantLessonsSchema = z.object({
     unit_order: z.number(),
     order_in_unit: z.number(),
   }),
-  actions: z.object({}).optional().nullable(),
+  actions: actionsSchema.nullable().optional(),
   features: z.object({}).optional().nullable(),
 });
 
