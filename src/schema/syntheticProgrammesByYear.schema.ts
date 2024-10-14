@@ -8,6 +8,8 @@ export const syntheticProgrammesByYearSchema = z.object({
   base_slug: z.string(),
   is_legacy: z.boolean(),
   programme_fields: programmeFieldsSchema,
+  actions: z.object({}).optional().nullable(),
+  features: z.object({}).optional().nullable(),
 });
 
 export type SyntheticProgrammesByYear = z.infer<
