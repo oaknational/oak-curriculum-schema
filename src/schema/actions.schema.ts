@@ -20,7 +20,7 @@ export const actionsSchema = z
   .object({
     exclusions: journeysAndQueriesSchema,
     opt_out: journeysAndQueriesSchema,
-    programme_fields_overrides: programmeFieldsSchema.partial(),
+    programme_field_overrides: programmeFieldsSchema.partial(),
     display_expiring_banner: z.boolean(),
   })
   .partial();
