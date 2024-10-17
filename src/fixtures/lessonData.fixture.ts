@@ -11,6 +11,7 @@ export const lessonDataFixture = ({
   description: "lesson-description",
   slug: "lesson-slug",
   pupil_lesson_outcome: "pupil-lesson-outcome",
+  phonics_outcome: null,
   key_learning_points: [{}],
   equipment_and_resources: null,
   content_guidance_details: null,

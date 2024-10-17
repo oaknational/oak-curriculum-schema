@@ -10,6 +10,7 @@ export const lessonDataSchema = z.object({
   title: z.string(),
   description: z.string(),
   pupil_lesson_outcome: z.string(),
+  phonics_outcome: z.string().nullable(),
   key_learning_points: z.array(z.object({})),
   equipment_and_resources: z
     .array(lessonEquipmentAndResourcesSchema)
