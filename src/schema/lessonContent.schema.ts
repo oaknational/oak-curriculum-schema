@@ -60,6 +60,7 @@ export const lessonContentSchema = z.object({
     .array(lessonEquipmentAndResourcesSchema)
     .nullable(),
   pupil_lesson_outcome: z.string().nullable(),
+  phonics_outcome: z.string().nullable(),
   lesson_keywords: z.array(keywordsSchema).nullable(),
   supervision_level: z.string().nullable(),
   key_learning_points: z.array(keyLearningPointsSchema).nullable().optional(),

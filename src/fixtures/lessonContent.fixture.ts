@@ -53,6 +53,7 @@ export const lessonContentFixture = ({
   teacher_tips: [teacherTipsFixture()],
   key_learning_points: null,
   pupil_lesson_outcome: "pupil-lesson-outcome",
+  phonics_outcome: null,
   lesson_keywords: [keywordsFixture()],
   content_guidance: [contentGuidanceFixture()],
   video_mux_playback_id: "video-mux-playback-id",
