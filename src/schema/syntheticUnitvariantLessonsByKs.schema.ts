@@ -1,20 +1,10 @@
 import { z } from "zod";
 import { syntheticUnitvariantLessonsSchema } from "./syntheticUnitvariantLessons.schema";
-import { unitvariantSchema } from "./unitvariant.schema";
-import { programmeFieldsSchema } from "./programmeFields.schema";
 
 export const syntheticUnitvariantLessonsByKsSchema = z.object({
-  ...syntheticUnitvariantLessonsSchema.omit({ null_unitvariant_id: true })
-    .shape,
-  unitvariant_id: z.number().nullable(),
-  null_unitvariant: unitvariantSchema,
-  programme_fields: programmeFieldsSchema.omit({
-    pathway: true,
-    pathway_description: true,
-    pathway_display_order: true,
-    pathway_id: true,
-    pathway_slug: true,
-  }),
+  ...syntheticUnitvariantLessonsSchema.omit({ supplementary_data: true }).shape,
+  programme_slug_by_year: z.string().array(),
+  order_in_unit: z.number(),
 });
 
 export type SyntheticUnitvariantLessonsByKs = z.infer<

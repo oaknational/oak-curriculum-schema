@@ -1,4 +1,4 @@
-import { syntheticUnitvariantLessonsByKsSchema } from "./syntheticUnitvariantLessonsByKs.schema";
+import { syntheticUnitvariantLessonsByKsSchema } from "./syntheticUnitvariantLessonsByKs.schema.old";
 import { z } from "zod";
 
 export const programmeListingResponseSchema =
