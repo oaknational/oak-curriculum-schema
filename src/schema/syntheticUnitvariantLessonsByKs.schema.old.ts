@@ -3,7 +3,7 @@ import { syntheticUnitvariantLessonsSchema } from "./syntheticUnitvariantLessons
 import { unitvariantSchema } from "./unitvariant.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 
-export const syntheticUnitvariantLessonsByKsSchema = z.object({
+export const syntheticUnitvariantLessonsByKsSchemaOld = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ null_unitvariant_id: true })
     .shape,
   unitvariant_id: z.number().nullable(),
@@ -17,6 +17,6 @@ export const syntheticUnitvariantLessonsByKsSchema = z.object({
   }),
 });
 
-export type SyntheticUnitvariantLessonsByKs = z.infer<
-  typeof syntheticUnitvariantLessonsByKsSchema
+export type SyntheticUnitvariantLessonsByKsOld = z.infer<
+  typeof syntheticUnitvariantLessonsByKsSchemaOld
 >;
