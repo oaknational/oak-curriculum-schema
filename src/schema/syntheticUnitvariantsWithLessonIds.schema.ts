@@ -1,6 +1,5 @@
 import { z } from "zod";
 import { unitDataSchema } from "./unitData.schema";
-import { unitvariantSchema } from "./unitvariant.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 import { actionsSchema } from "./actions.schema";
 
@@ -19,10 +18,10 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
     unit_order: z.number(),
   }),
   expired: z.boolean(),
-  actions: actionsSchema.nullable().optional(),
-  features: z.object({}).optional().nullable(),
+  actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
+  features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
 });
 
-export type syntheticUnitvariantsWithLessonIds = z.infer<
+export type SyntheticUnitvariantsWithLessonIds = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsSchema
 >;

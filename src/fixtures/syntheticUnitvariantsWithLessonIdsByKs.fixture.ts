@@ -1,15 +1,16 @@
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
-import { SyntheticUnitvariantsWithLessonIds } from "@/schema/syntheticUnitvariantsWithLessonIds.schema";
+import { SyntheticUnitvariantsWithLessonIdsByKs } from "@/schema/syntheticUnitvariantsWithLessonIdsByKs.schema";
 
-export const syntheticUnitvariantsWithLessonIdsFixture = ({
+export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<SyntheticUnitvariantsWithLessonIds>;
-} = {}): SyntheticUnitvariantsWithLessonIds => ({
+  overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByKs>;
+} = {}): SyntheticUnitvariantsWithLessonIdsByKs => ({
   base_slug: "base-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
+  programme_slug_by_year: "programme-slug-by-year",
   is_legacy: false,
   lesson_count: 1,
   lesson_sensitive_count: 0,
