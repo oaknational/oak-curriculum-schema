@@ -2,25 +2,21 @@ import { SyntheticUnitvariantLessonsByKs } from "@/schema/syntheticUnitvariantLe
 import { lessonDataFixture } from "./lessonData.fixture";
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
-import { unitvariantFixture } from "./unitvariant.fixture";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
   overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantLessonsByKs>;
 } = {}): SyntheticUnitvariantLessonsByKs => ({
-  unitvariant_id: 1,
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
+  programme_slug_by_year: ["programme-slug-year"],
   is_legacy: false,
   lesson_data: lessonDataFixture(),
   unit_data: unitDataFixture(),
-  null_unitvariant: unitvariantFixture(),
+  null_unitvariant_id: 1,
   programme_fields: programmeFieldsFixture(),
-  supplementary_data: {
-    unit_order: 1,
-    order_in_unit: 1,
-  },
+  order_in_unit: 1,
   ...overrides,
 });
