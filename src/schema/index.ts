@@ -16,3 +16,4 @@ export * from "./programmeListing.schema";
 export * from "./syntheticUnitvariantLessonsByKs.schema.old";
 export * from "./syntheticUnitvariantLessonsByKs.schema";
 export * from "./syntheticUnitvariantsWithLessonIdsByKs.schema";
+export * from "./thread.schema";

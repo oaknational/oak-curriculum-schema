@@ -22,5 +22,6 @@ export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
     unit_order: 1,
   },
   expired: false,
+  threads: null,
   ...overrides,
 });
