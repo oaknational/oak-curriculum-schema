@@ -5,6 +5,7 @@ import { unitDataFixture } from "./unitData.fixture";
 import { unitvariantFixture } from "./unitvariant.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 
+// To be deprecated
 export const syntheticUnitvariantLessonsFixture = ({
   overrides = {},
 }: {
