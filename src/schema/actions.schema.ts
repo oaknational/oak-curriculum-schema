@@ -14,6 +14,7 @@ export const queriesSchema = z.enum([
   "lessonOverviewQuery",
   "lessonDownloadsQuery",
   "lessonShareQuery",
+  "lessonMediaClipsQuery",
 ]);
 
 export const journeysSchema = z.enum(["pupil", "teacher", "curriculum"]);
