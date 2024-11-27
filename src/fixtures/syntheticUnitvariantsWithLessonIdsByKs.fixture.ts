@@ -15,6 +15,7 @@ export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   lesson_count: 1,
   lesson_sensitive_count: 0,
   lesson_expired_count: 0,
+  lesson_ids: [1],
   unit_data: unitDataFixture(),
   null_unitvariant_id: 0,
   programme_fields: programmeFieldsFixture(),
