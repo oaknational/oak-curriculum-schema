@@ -14,6 +14,7 @@ export const queriesSchema = z.enum([
   "lessonOverviewQuery",
   "lessonDownloadsQuery",
   "lessonShareQuery",
+  "teacherPreviewLessonQuery",
 ]);
 
 export const journeysSchema = z.enum(["pupil", "teacher", "curriculum"]);
@@ -29,5 +30,6 @@ export const actionsSchema = z
     opt_out: z.array(journeysAndQueriesSchema),
     programme_field_overrides: programmeFieldsSchema.partial(),
     display_expiring_banner: z.boolean(),
+    disable_pupil_share: z.boolean(),
   })
   .partial();
