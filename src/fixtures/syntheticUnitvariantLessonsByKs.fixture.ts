@@ -16,6 +16,7 @@ export const syntheticUnitvariantLessonsByKsFixture = ({
   lesson_data: lessonDataFixture(),
   unit_data: unitDataFixture(),
   null_unitvariant_id: 1,
+  unitvariant_id: 1,
   programme_fields: programmeFieldsFixture(),
   order_in_unit: 1,
   ...overrides,
