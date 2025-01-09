@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { quizQuestionSchema } from "./quizQuestion.schema";
 import { _stateSchema } from "./base.schema";
+import { additionalFilesSchema } from "./additionalFiles.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),
@@ -99,6 +100,7 @@ export const lessonContentSchema = z.object({
     .optional(),
   geo_restricted: z.boolean().nullable(),
   login_required: z.boolean().nullable(),
+  additional_files: additionalFilesSchema.nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
