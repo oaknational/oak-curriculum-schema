@@ -1,10 +1,13 @@
-import { additionalFilesSchema } from "@/schema/additionalFiles.schema";
+import {
+  AdditionalFiles,
+  additionalFilesSchema,
+} from "@/schema/additionalFiles.schema";
 
 export const additionalFilesFixture = ({
   overrides,
 }: {
-  overrides?: Partial<typeof additionalFilesSchema._type>;
-} = {}): typeof additionalFilesSchema._type => ({
+  overrides?: Partial<AdditionalFiles>;
+} = {}): AdditionalFiles => ({
   files: [
     {
       title: "Sample File 1",
