@@ -9,12 +9,14 @@ export const fileObjectSchema = z.object({
   format: z.string(),
   height: z.number(),
   version: z.number(),
-  duration: z.number(),
-  metadata: z.object({
-    source: z.string(),
-    usageRestrictions: z.string(),
-    attribution_required: z.string(),
-  }),
+  duration: z.number().nullish(),
+  metadata: z
+    .object({
+      source: z.string().nullish(),
+      usageRestrictions: z.string().nullish(),
+      attribution_required: z.string().nullish(),
+    })
+    .nullish(),
   created_at: z.string(),
   created_by: z.object({
     id: z.string(),
