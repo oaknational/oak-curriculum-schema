@@ -10,6 +10,7 @@ import {
   orderQuestion,
   shortAnswerQuestion,
 } from "./quizQuestion.fixture";
+import additionalFilesFixture from "@/fixtures/additionalFiles.fixture";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
@@ -96,6 +97,6 @@ export const lessonContentFixture = ({
   has_lesson_guide_asset_object: true,
   lesson_guide_asset_object_url: "lesson-guide-asset-object-url",
   has_lesson_guide_google_drive_downloadable_version: false,
-  additional_files: null,
+  additional_files: [additionalFilesFixture()],
   ...overrides,
 });

@@ -100,7 +100,7 @@ export const lessonContentSchema = z.object({
     .optional(),
   geo_restricted: z.boolean().nullable(),
   login_required: z.boolean().nullable(),
-  additional_files: additionalFilesSchema.nullable(),
+  additional_files: z.array(additionalFilesSchema).nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
