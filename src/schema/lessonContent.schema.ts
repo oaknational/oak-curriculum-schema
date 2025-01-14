@@ -3,6 +3,7 @@ import { z } from "zod";
 import { quizQuestionSchema } from "./quizQuestion.schema";
 import { _stateSchema } from "./base.schema";
 import { additionalFilesSchema } from "./additionalFiles.schema";
+import { lessonMediaClipsSchema } from "./mediaClips.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),
@@ -101,6 +102,8 @@ export const lessonContentSchema = z.object({
   geo_restricted: z.boolean().nullable(),
   login_required: z.boolean().nullable(),
   additional_files: z.array(additionalFilesSchema).nullable(),
+  has_additional_files: z.boolean().nullish(),
+  media_clips: lessonMediaClipsSchema.nullish(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
