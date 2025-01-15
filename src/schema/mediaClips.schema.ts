@@ -38,46 +38,50 @@ const TrackSchema = z
   })
   .partial();
 
-export const videoObjectSchema = z.object({
-  id: z.string(),
-  status: z.string(),
-  tracks: z.array(TrackSchema),
-  duration: z.number(),
-  created_at: z.number(),
-  mp4_support: z.string(),
-  passthrough: z.string(),
-  mux_asset_id: z.string(),
-  playback_ids: z.array(
-    z.object({
-      id: z.string(),
-      policy: z.string(),
+export const videoObjectSchema = z
+  .object({
+    id: z.string().optional(),
+    status: z.string().optional(),
+    tracks: z.array(TrackSchema).optional(),
+    duration: z.number(),
+    created_at: z.number(),
+    mp4_support: z.string(),
+    passthrough: z.string(),
+    mux_asset_id: z.string(),
+    playback_ids: z.array(
+      z.object({
+        id: z.string(),
+        policy: z.string(),
+      }),
+    ),
+    encoding_tier: z.string(),
+    video_quality: z.string(),
+    mux_playback_id: z.string(),
+    signed_stream_id: z.string(),
+    static_renditions: z.object({
+      status: z.string(),
     }),
-  ),
-  encoding_tier: z.string(),
-  video_quality: z.string(),
-  mux_playback_id: z.string(),
-  signed_stream_id: z.string(),
-  static_renditions: z.object({
-    status: z.string(),
-  }),
-  max_resolution_tier: z.string(),
-  max_stored_resolution: z.string(),
-  non_standard_input_reasons: z.object({
-    audio_codec: z.string(),
-  }),
-});
+    max_resolution_tier: z.string(),
+    max_stored_resolution: z.string(),
+    non_standard_input_reasons: z.object({
+      audio_codec: z.string(),
+    }),
+  })
+  .partial();
 
-export const mediaClipSchema = z.object({
-  order: z.string(),
-  media_id: z.string(),
-  video_id: z.number(),
-  media_type: z.string(),
-  custom_title: z.string(),
-  media_object: mediaObjectSchema,
-  video_object: videoObjectSchema,
-});
+export const mediaClipSchema = z
+  .object({
+    order: z.string(),
+    media_id: z.string(),
+    video_id: z.number(),
+    media_type: z.string(),
+    custom_title: z.string(),
+    media_object: mediaObjectSchema,
+    video_object: videoObjectSchema,
+  })
+  .partial();
 
-const MediaClipsSchema = z.record(z.string(), z.array(mediaClipSchema));
+export const MediaClipsSchema = z.record(z.string(), z.array(mediaClipSchema));
 
 export const lessonMediaClipsSchema = z.object({
   media_clips: MediaClipsSchema,
