@@ -13,6 +13,7 @@ export const queriesSchema = z.enum([
   "subjectListingQuery",
   "lessonOverviewQuery",
   "lessonDownloadsQuery",
+  "lessonBetaDownloadsQuery",
   "lessonShareQuery",
   "lessonMediaClipsQuery",
   "teacherPreviewLessonQuery",

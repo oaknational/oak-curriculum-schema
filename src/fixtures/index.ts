@@ -12,3 +12,4 @@ export * from "./syntheticUnitvariantLessonsByKs.fixture";
 export * from "./syntheticUnitvariantsWithLessonIdsByKs.fixture";
 export * from "./thread.fixture";
 export * from "./additionalFiles.fixture";
+export * from "./mediaClips.fixture";
