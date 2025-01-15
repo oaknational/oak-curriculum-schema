@@ -101,7 +101,7 @@ export const lessonContentSchema = z.object({
     .optional(),
   geo_restricted: z.boolean().nullable(),
   login_required: z.boolean().nullable(),
-  additional_files: z.array(additionalFilesSchema).nullable(),
+  additional_files: z.array(additionalFilesSchema).nullish(),
   has_additional_files: z.boolean().nullish(),
   media_clips: lessonMediaClipsSchema.nullish(),
 });
