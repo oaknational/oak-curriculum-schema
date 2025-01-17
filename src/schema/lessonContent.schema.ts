@@ -3,7 +3,7 @@ import { z } from "zod";
 import { quizQuestionSchema } from "./quizQuestion.schema";
 import { _stateSchema } from "./base.schema";
 import { additionalFilesSchema } from "./additionalFiles.schema";
-import { lessonMediaClipsSchema } from "./mediaClips.schema";
+import { mediaClipsRecordSchema } from "./mediaClips.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),
@@ -45,6 +45,10 @@ export const contentGuidanceSchema = z.object({
   contentguidance_label: z.string().nullable(),
   contentguidance_description: z.string().nullable(),
   contentguidance_area: z.string().nullable(),
+});
+
+export const lessonOutlineSchema = z.object({
+  lesson_outline: z.string(),
 });
 
 export type ContentGuidance = z.infer<typeof contentGuidanceSchema>;
@@ -103,7 +107,8 @@ export const lessonContentSchema = z.object({
   login_required: z.boolean().nullable(),
   additional_files: z.array(additionalFilesSchema).nullish(),
   has_additional_files: z.boolean().nullish(),
-  media_clips: lessonMediaClipsSchema.nullish(),
+  media_clips: mediaClipsRecordSchema.nullish(),
+  lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
