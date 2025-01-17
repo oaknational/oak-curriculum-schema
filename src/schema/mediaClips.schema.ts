@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const MetadataSchema = z
+const metadataSchema = z
   .object({
     asset_type: z.string(),
     source_type: z.string(),
@@ -11,7 +11,7 @@ const MetadataSchema = z
   })
   .partial();
 
-const mediaObjectSchema = z.object({
+export const clipMediaObjectSchema = z.object({
   id: z.string(),
   url: z.string(),
   type: z.string(),
@@ -21,7 +21,7 @@ const mediaObjectSchema = z.object({
   height: z.number(),
   version: z.number(),
   duration: z.number(),
-  metadata: MetadataSchema,
+  metadata: metadataSchema,
   secure_url: z.string(),
   access_mode: z.string(),
   asset_folder: z.string(),
@@ -29,7 +29,7 @@ const mediaObjectSchema = z.object({
   resource_type: z.string(),
 });
 
-const TrackSchema = z
+const trackSchema = z
   .object({
     id: z.string(),
     type: z.string(),
@@ -38,54 +38,59 @@ const TrackSchema = z
   })
   .partial();
 
-export const videoObjectSchema = z
-  .object({
-    id: z.string().optional(),
-    status: z.string().optional(),
-    tracks: z.array(TrackSchema).optional(),
-    duration: z.number(),
-    created_at: z.number(),
-    mp4_support: z.string(),
-    passthrough: z.string(),
-    mux_asset_id: z.string(),
-    playback_ids: z.array(
-      z.object({
-        id: z.string(),
-        policy: z.string(),
-      }),
-    ),
-    encoding_tier: z.string(),
-    video_quality: z.string(),
-    mux_playback_id: z.string(),
-    signed_stream_id: z.string(),
-    static_renditions: z.object({
-      status: z.string(),
+export const clipVideoObjectSchema = z.object({
+  id: z.string(),
+  status: z.string().optional(),
+  tracks: z.array(trackSchema).optional(),
+  duration: z.number(),
+  created_at: z.number(),
+  mp4_support: z.string(),
+  passthrough: z.string(),
+  mux_asset_id: z.string(),
+  playback_ids: z.array(
+    z.object({
+      id: z.string(),
+      policy: z.string(),
     }),
-    max_resolution_tier: z.string(),
-    max_stored_resolution: z.string(),
-    non_standard_input_reasons: z.object({
+  ),
+  encoding_tier: z.string(),
+  video_quality: z.string(),
+  mux_playback_id: z.string(),
+  signed_stream_id: z.string(),
+  static_renditions: z.object({
+    status: z.string(),
+  }),
+  max_resolution_tier: z.string(),
+  max_stored_resolution: z.string(),
+  non_standard_input_reasons: z
+    .object({
       audio_codec: z.string(),
-    }),
-  })
-  .partial();
+    })
+    .optional(),
+});
 
-export const mediaClipSchema = z
-  .object({
-    order: z.string(),
-    media_id: z.string(),
-    video_id: z.number(),
-    media_type: z.string(),
-    custom_title: z.string(),
-    media_object: mediaObjectSchema,
-    video_object: videoObjectSchema,
-  })
-  .partial();
+export const mediaClipCycleSchema = z.object({
+  // Test data had mixture of numbers and strings
+  order: z.number().or(z.string()),
+  media_id: z.number().or(z.string()),
+  video_id: z.number(),
+  media_type: z.string(),
+  custom_title: z.string(),
+  media_object: clipMediaObjectSchema,
+  video_object: clipVideoObjectSchema,
+});
 
-export const MediaClipsSchema = z.record(z.string(), z.array(mediaClipSchema));
+export const mediaClipsRecordSchema = z.record(
+  z.string(),
+  z.array(mediaClipCycleSchema),
+);
 
 export const lessonMediaClipsSchema = z.object({
-  media_clips: MediaClipsSchema,
+  media_clips: mediaClipsRecordSchema,
 });
+
+export type MediaObjectSchema = z.infer<typeof clipMediaObjectSchema>;
+export type VideoObjectSchema = z.infer<typeof clipVideoObjectSchema>;
+export type MediaClipCycleSchema = z.infer<typeof mediaClipCycleSchema>;
+export type MediaClipsRecordSchema = z.infer<typeof mediaClipsRecordSchema>;
 export type LessonMediaClipsSchema = z.infer<typeof lessonMediaClipsSchema>;
-export type MediaObjectSchema = z.infer<typeof mediaObjectSchema>;
-export type VideoObjectSchema = z.infer<typeof videoObjectSchema>;

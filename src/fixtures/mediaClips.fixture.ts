@@ -158,6 +158,87 @@ export const mediaClipsFixture = ({
         },
       },
     ],
+    cycle2: [
+      {
+        order: "1",
+        media_id: "191117",
+        video_id: 29877,
+        media_type: "video",
+        custom_title: "",
+        media_object: {
+          id: "3690e090829ca49c5506d6b90fd1106b",
+          url: "http://oaknationalacademy-res.cloudinary.com/video/upload/v1736420414/u5bptym7h8ts8nyyrpwg.mp4",
+          type: "upload",
+          bytes: 276767,
+          width: 1920,
+          format: "mp4",
+          height: 1080,
+          version: 1736420414,
+          duration: 5.613111,
+          metadata: {
+            asset_type: "video_other",
+            source_type: "partner_created",
+            asset_source: "partner_created",
+            licence_type: "no_licence",
+            content_cycle: "cycle_2",
+            permissionGranted: "notRequired",
+          },
+
+          secure_url:
+            "https://oaknationalacademy-res.cloudinary.com/video/upload/v1736420414/u5bptym7h8ts8nyyrpwg.mp4",
+          access_mode: "public",
+
+          asset_folder: "Test - Internal use only",
+          display_name: "australia fact",
+          resource_type: "video",
+        },
+        video_object: {
+          id: "4yb74fNKob6M6AT02AFTmsTrJEgXUl00WQWhpt01KttWcI",
+          status: "ready",
+          tracks: [
+            {
+              id: "A6wEzIy8eVnOiRczG6027ibMXQQ02vBLWrfsXYfza4kEE",
+              type: "audio",
+              duration: 5.58,
+            },
+            {
+              id: "8WDoX54TtLy7r02ZACcYYJAWunpvVsayudUrZ8JoGOBA",
+              type: "video",
+              duration: 5.566667,
+            },
+            {
+              id: "staging-mock-asset",
+              asset_id: "4yb74fNKob6M6AT02AFTmsTrJEgXUl00WQWhpt01KttWcI",
+            },
+          ],
+          duration: 5.613111,
+
+          created_at: 1736955070,
+          mp4_support: "standard",
+          passthrough: "VIDE-NSHCJ-29877",
+          mux_asset_id: "4yb74fNKob6M6AT02AFTmsTrJEgXUl00WQWhpt01KttWcI",
+          playback_ids: [
+            {
+              id: "RUIUNGcGf01kgZU1xC5peDCvGpC2d2YeRcwSMfJ4cvMk",
+              policy: "public",
+            },
+            {
+              id: "NVs5TJ5Lt6POkNwDBNtHZth2a2VtBvsyorgJPQfO6W4",
+              policy: "signed",
+            },
+          ],
+          encoding_tier: "smart",
+          video_quality: "plus",
+          mux_playback_id: "RUIUNGcGf01kgZU1xC5peDCvGpC2d2YeRcwSMfJ4cvMk",
+          signed_stream_id: "NVs5TJ5Lt6POkNwDBNtHZth2a2VtBvsyorgJPQfO6W4",
+          static_renditions: {
+            status: "preparing",
+          },
+          max_resolution_tier: "1080p",
+          max_stored_resolution: "HD",
+        },
+      },
+    ],
   },
   ...overrides,
 });
