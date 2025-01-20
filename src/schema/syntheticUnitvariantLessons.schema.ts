@@ -3,6 +3,7 @@ import { lessonDataSchema } from "./lessonData.schema";
 import { unitDataSchema } from "./unitData.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 import { actionsSchema } from "./actions.schema";
+import { mediaClipsRecordSchema } from "./mediaClips.schema";
 
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),
@@ -20,6 +21,7 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   }),
   actions: actionsSchema.nullable().optional(),
   features: z.object({}).optional().nullable(),
+  media_clips: mediaClipsRecordSchema.nullable().optional(),
 });
 
 export type SyntheticUnitvariantLessons = z.infer<
