@@ -77,9 +77,6 @@ export const mediaClipsFixture = ({
           },
           max_resolution_tier: "1080p",
           max_stored_resolution: "Audio only",
-          non_standard_input_reasons: {
-            audio_codec: "mp3",
-          },
         },
       },
       {
@@ -152,9 +149,6 @@ export const mediaClipsFixture = ({
           },
           max_resolution_tier: "1080p",
           max_stored_resolution: "Audio only",
-          non_standard_input_reasons: {
-            audio_codec: "mp3",
-          },
         },
       },
     ],

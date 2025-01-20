@@ -62,11 +62,6 @@ export const clipVideoObjectSchema = z.object({
   }),
   max_resolution_tier: z.string(),
   max_stored_resolution: z.string(),
-  non_standard_input_reasons: z
-    .object({
-      audio_codec: z.string(),
-    })
-    .optional(),
 });
 
 export const mediaClipCycleSchema = z.object({
