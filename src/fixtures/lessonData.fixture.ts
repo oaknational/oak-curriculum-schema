@@ -33,5 +33,6 @@ export const lessonDataFixture = ({
   updated_at: "2024-02-28T08:09:20.247619+00:00",
   expiration_date: null,
   lesson_outline: null,
+  media_clips: null,
   ...overrides,
 });

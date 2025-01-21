@@ -5,6 +5,7 @@ import {
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
 } from "./lessonContent.schema";
+import { mediaClipsRecordSchema } from "./mediaClips.schema";
 
 export const lessonDataSchema = z.object({
   lesson_id: z.number(),
@@ -33,6 +34,7 @@ export const lessonDataSchema = z.object({
   asset_id_worksheet: z.number().nullable(),
   expiration_date: z.string().nullable(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
+  media_clips: mediaClipsRecordSchema.nullable().optional(),
   deprecated_fields: z.record(z.unknown()).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
