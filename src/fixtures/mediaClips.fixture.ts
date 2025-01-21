@@ -1,10 +1,10 @@
-import { LessonMediaClipsSchema } from "@/schema/mediaClips.schema";
+import { LessonMediaClips } from "@/schema/mediaClips.schema";
 
 export const mediaClipsFixture = ({
   overrides,
 }: {
-  overrides?: Partial<LessonMediaClipsSchema>;
-} = {}): LessonMediaClipsSchema => ({
+  overrides?: Partial<LessonMediaClips>;
+} = {}): LessonMediaClips => ({
   media_clips: {
     intro: [
       {

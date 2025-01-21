@@ -58,8 +58,8 @@ export const lessonMediaClipsSchema = z.object({
   media_clips: mediaClipsRecordSchema,
 });
 
-export type MediaObjectSchema = z.infer<typeof clipMediaObjectSchema>;
-export type VideoObjectSchema = z.infer<typeof clipVideoObjectSchema>;
-export type MediaClipCycleSchema = z.infer<typeof mediaClipCycleSchema>;
-export type MediaClipsRecordSchema = z.infer<typeof mediaClipsRecordSchema>;
-export type LessonMediaClipsSchema = z.infer<typeof lessonMediaClipsSchema>;
+export type ClipMediaObject = z.infer<typeof clipMediaObjectSchema>;
+export type ClipVideoObject = z.infer<typeof clipVideoObjectSchema>;
+export type MediaClipCycle = z.infer<typeof mediaClipCycleSchema>;
+export type MediaClipsRecord = z.infer<typeof mediaClipsRecordSchema>;
+export type LessonMediaClips = z.infer<typeof lessonMediaClipsSchema>;
