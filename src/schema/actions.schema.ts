@@ -33,5 +33,7 @@ export const actionsSchema = z
     programme_field_overrides: programmeFieldsSchema.partial(),
     display_expiring_banner: z.boolean(),
     disable_pupil_share: z.boolean(),
+    display_PE_title: z.boolean(),
+    display_vocab_button: z.boolean(),
   })
   .partial();
