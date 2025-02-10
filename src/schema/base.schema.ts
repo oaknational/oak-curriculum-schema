@@ -97,7 +97,7 @@ export const tiers = z.enum(["core", "foundation", "higher"]);
 export const tierSlugs = z.enum(["core", "foundation", "higher"]);
 export const tierDescriptions = z.enum(["Core", "Foundation", "Higher"]);
 
-export const pathways = z.enum(["Core", "GCSE", "GCSE CS"]);
+export const pathways = z.enum(["Core", "GCSE"]);
 export const pathwaySlugs = z.enum(["core", "gcse"]);
 export const pathwayDescriptions = z.enum(["Core", "GCSE"]);
 
