@@ -36,6 +36,7 @@ export const actionsSchema = z
     display_PE_title: z.boolean(),
     display_vocab_button: z.boolean(),
     override_pathway: z.string(), // we have to override pathway in this way because we don't have the functionality to override different selection of programme fields across different queries
+    is_pe_practical: z.boolean(),
   })
   .partial();
 
