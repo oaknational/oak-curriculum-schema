@@ -9,6 +9,7 @@ export const actionsFixture = (): Actions => ({
   display_PE_title: true,
   display_vocab_button: true,
   override_pathway: "GSCE CS",
+  is_pe_practical: true,
 });
 
 export default actionsFixture;
