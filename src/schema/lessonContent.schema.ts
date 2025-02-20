@@ -97,7 +97,7 @@ export const lessonContentSchema = z.object({
   slide_deck_asset_object_url: z.string().nullable(),
   // currently set to optional whilst PE lessons are unpublished so as not to break lesson pages
   lesson_guide_asset_id: z.number().nullable().optional(),
-  has_lesson_guide_asset_object: z.boolean().nullable().optional(),
+  has_lesson_guide_object: z.boolean().nullable().optional(),
   lesson_guide_asset_object_url: z.string().nullable().optional(),
   has_lesson_guide_google_drive_downloadable_version: z
     .boolean()

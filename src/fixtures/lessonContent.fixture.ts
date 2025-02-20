@@ -95,7 +95,7 @@ export const lessonContentFixture = ({
   geo_restricted: false,
   login_required: false,
   lesson_guide_asset_id: 1,
-  has_lesson_guide_asset_object: true,
+  has_lesson_guide_object: true,
   lesson_guide_asset_object_url: "lesson-guide-asset-object-url",
   has_lesson_guide_google_drive_downloadable_version: false,
   additional_files: [additionalFilesFixture()],
