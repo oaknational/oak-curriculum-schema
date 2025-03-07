@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { programmeFieldsSchema } from "./programmeFields.schema";
+import { subjectSlugs } from "./base.schema";
 
 export const queriesSchema = z.enum([
   "pupilSubjectListingQuery",
@@ -37,6 +38,7 @@ export const actionsSchema = z
     display_vocab_button: z.boolean(),
     override_pathway: z.string(), // we have to override pathway in this way because we don't have the functionality to override different selection of programme fields across different queries
     is_pe_practical: z.boolean(),
+    related_subject_slugs: z.array(subjectSlugs),
   })
   .partial();
 
