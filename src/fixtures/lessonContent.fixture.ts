@@ -98,7 +98,6 @@ export const lessonContentFixture = ({
   has_lesson_guide_object: true,
   lesson_guide_asset_object_url: "lesson-guide-asset-object-url",
   has_lesson_guide_google_drive_downloadable_version: false,
-  additional_files: additionalFilesFixture().tpc_downloadablefiles,
   media_clips: mediaClipsFixture().media_clips,
   lesson_outline: [
     { lesson_outline: "lesson-outline-1" },
