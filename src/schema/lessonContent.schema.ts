@@ -2,7 +2,6 @@ import { z } from "zod";
 
 import { quizQuestionSchema } from "./quizQuestion.schema";
 import { _stateSchema } from "./base.schema";
-import { additionalFilesSchema } from "./additionalFiles.schema";
 import { mediaClipsRecordSchema } from "./mediaClips.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
@@ -104,8 +103,6 @@ export const lessonContentSchema = z.object({
     .optional(),
   geo_restricted: z.boolean().nullable(),
   login_required: z.boolean().nullable(),
-  additional_files: z.array(additionalFilesSchema).nullish(),
-  has_additional_files: z.boolean().nullish(),
   media_clips: mediaClipsRecordSchema.nullish(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
 });
