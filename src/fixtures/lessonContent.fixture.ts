@@ -103,5 +103,6 @@ export const lessonContentFixture = ({
     { lesson_outline: "lesson-outline-1" },
     { lesson_outline: "lesson-outline-2" },
   ],
+  downloadable_files: additionalFilesFixture().downloadable_files,
   ...overrides,
 });

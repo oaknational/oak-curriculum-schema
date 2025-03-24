@@ -11,7 +11,7 @@ export const additionalFileObjectSchema = z.object({
 });
 
 export const additionalFilesSchema = z.object({
-  tpc_downloadablefiles: z.array(additionalFileObjectSchema).nullish(),
+  downloadable_files: z.array(additionalFileObjectSchema).nullish(),
 });
 
 export type AdditionalFileObject = z.infer<typeof additionalFileObjectSchema>;
