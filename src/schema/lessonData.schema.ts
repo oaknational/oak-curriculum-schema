@@ -15,7 +15,7 @@ export const lessonDataSchema = z.object({
   description: z.string(),
   pupil_lesson_outcome: z.string(),
   phonics_outcome: z.string().nullable(),
-  key_learning_points: z.array(z.object({})),
+  key_learning_points: z.array(z.object({})).nullable(),
   equipment_and_resources: z
     .array(lessonEquipmentAndResourcesSchema)
     .nullable(),
