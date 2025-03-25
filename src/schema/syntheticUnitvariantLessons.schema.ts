@@ -4,6 +4,7 @@ import { unitDataSchema } from "./unitData.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 import { actionsSchema } from "./actions.schema";
 import { featuresSchema } from "./features.schema";
+import { staticLessonListSchema } from "./staticLessonList.schema";
 
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),
@@ -21,6 +22,7 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   }),
   actions: actionsSchema.nullable().optional(),
   features: featuresSchema.nullable().optional(),
+  static_lesson_list: staticLessonListSchema.nullish(),
 });
 
 export type SyntheticUnitvariantLessons = z.infer<

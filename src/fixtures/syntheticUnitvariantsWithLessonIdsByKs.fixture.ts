@@ -21,6 +21,9 @@ export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {
     unit_order: 1,
+    static_lesson_list: [
+      { slug: "lesson-slug", title: "lesson-title", order: 1 },
+    ],
   },
   expired: false,
   threads: null,
