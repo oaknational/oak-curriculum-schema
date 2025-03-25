@@ -5,23 +5,23 @@ export const additionalFilesFixture = ({
 }: {
   overrides?: Partial<AdditionalFiles>;
 } = {}): AdditionalFiles => ({
-  tpc_downloadablefiles: [
+  downloadable_files: [
     {
-      asset_id: 123,
-      media_id: 4567,
+      asset_id: 456,
+      media_id: 3456,
       media_object: {
-        url: "https://www.example.com",
+        url: "https://example.com/file1.pdf",
         bytes: 1000,
-        display_name: "Display Name",
+        display_name: "File 1",
       },
     },
     {
-      asset_id: 456,
-      media_id: 7890,
+      asset_id: 932,
+      media_id: 2435,
       media_object: {
-        url: "https://www.otherexample.com",
-        bytes: 45667,
-        display_name: "Display Name 2",
+        url: "https://example.com/file2.pdf",
+        bytes: 2000,
+        display_name: "File 2",
       },
     },
   ],
