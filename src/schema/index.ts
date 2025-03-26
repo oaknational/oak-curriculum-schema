@@ -20,3 +20,4 @@ export * from "./syntheticUnitvariantsWithLessonIdsByKs.schema";
 export * from "./thread.schema";
 export * from "./additionalFiles.schema";
 export * from "./mediaClips.schema";
+export * from "./staticLessonList.schema";

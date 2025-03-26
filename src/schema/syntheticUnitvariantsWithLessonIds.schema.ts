@@ -2,6 +2,7 @@ import { z } from "zod";
 import { unitDataSchema } from "./unitData.schema";
 import { programmeFieldsSchema } from "./programmeFields.schema";
 import { actionsSchema } from "./actions.schema";
+import { staticLessonListSchema } from "./staticLessonList.schema";
 
 export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   base_slug: z.string(),
@@ -16,6 +17,7 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
+    static_lesson_list: staticLessonListSchema.nullish(),
   }),
   expired: z.boolean(),
   actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
