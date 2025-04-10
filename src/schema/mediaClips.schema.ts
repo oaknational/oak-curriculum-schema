@@ -9,17 +9,19 @@ export const mediaClipObjectSchema = z.object({
   resource_type: z.string(),
 });
 
-export const videoClipObjectSchema = z.object({
-  duration: z.number().nullable(),
-  mux_asset_id: z.string(),
-  playback_ids: z.array(
-    z.object({
-      id: z.string(),
-      policy: z.string(),
-    }),
-  ),
-  mux_playback_id: z.string(),
-});
+export const videoClipObjectSchema = z
+  .object({
+    duration: z.number().nullable().optional(),
+    mux_asset_id: z.string(),
+    playback_ids: z.array(
+      z.object({
+        id: z.string(),
+        policy: z.string(),
+      }),
+    ),
+    mux_playback_id: z.string(),
+  })
+  .nullable();
 
 export const mediaClipCycleSchema = z.object({
   // text data had a mix of numbers and strings
