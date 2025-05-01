@@ -104,5 +104,6 @@ export const lessonContentFixture = ({
     { lesson_outline: "lesson-outline-2" },
   ],
   downloadable_files: additionalFilesFixture().downloadable_files,
+  lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
   ...overrides,
 });
