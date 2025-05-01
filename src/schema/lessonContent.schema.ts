@@ -107,6 +107,7 @@ export const lessonContentSchema = z.object({
   media_clips: mediaClipsRecordSchema.nullish(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
   downloadable_files: z.array(additionalFileObjectSchema).nullable().optional(),
+  lesson_release_date: z.string().nullable(),
 });
 
 export type LessonContent = z.infer<typeof lessonContentSchema>;
