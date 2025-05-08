@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import { syntheticUnitvariantsWithLessonIdsFixture } from "@/fixtures/syntheticUnitvariantsWithLessonIds.fixture";
-import { syntheticUnitvariantsWithLessonIdsSchema } from "@/schema/syntheticUnitvariantsWithLessonIds.schema";
+import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "@/schema/syntheticUnitvariantsWithLessonIdsBase.schema";
 
 describe("syntheticUnitvariantsWithLessonIds", () => {
   it("conforms to the schema", () => {
     const l = syntheticUnitvariantsWithLessonIdsFixture();
     expect(() =>
-      syntheticUnitvariantsWithLessonIdsSchema.parse(l),
+      syntheticUnitvariantsWithLessonIdsBaseSchema.parse(l),
     ).not.toThrow();
   });
 });
