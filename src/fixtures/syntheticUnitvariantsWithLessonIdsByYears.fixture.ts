@@ -1,12 +1,12 @@
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
-import { SyntheticUnitvariantsWithLessonIdsBase } from "@/schema/syntheticUnitvariantsWithLessonIdsBase.schema";
+import { SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/syntheticUnitvariantsWithLessonIdsByYears.schema";
 
-export const syntheticUnitvariantsWithLessonIdsFixture = ({
+export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<SyntheticUnitvariantsWithLessonIdsBase>;
-} = {}): SyntheticUnitvariantsWithLessonIdsBase => ({
+  overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByYears>;
+} = {}): SyntheticUnitvariantsWithLessonIdsByYears => ({
   base_slug: "base-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
@@ -19,7 +19,11 @@ export const syntheticUnitvariantsWithLessonIdsFixture = ({
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {
     unit_order: 1,
+    static_lesson_list: [
+      { slug: "lesson-slug", title: "lesson-title", order: 1 },
+    ],
   },
   expired: false,
+  age_restricted_lesson_count: 0,
   ...overrides,
 });

@@ -4,7 +4,7 @@ import { programmeFieldsSchema } from "./programmeFields.schema";
 import { actionsSchema } from "./actions.schema";
 import { staticLessonListSchema } from "./staticLessonList.schema";
 
-export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
+export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   base_slug: z.string(),
   unit_slug: z.string(),
   programme_slug: z.string(),
@@ -24,6 +24,6 @@ export const syntheticUnitvariantsWithLessonIdsSchema = z.object({
   features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
 });
 
-export type SyntheticUnitvariantsWithLessonIds = z.infer<
-  typeof syntheticUnitvariantsWithLessonIdsSchema
+export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<
+  typeof syntheticUnitvariantsWithLessonIdsBaseSchema
 >;
