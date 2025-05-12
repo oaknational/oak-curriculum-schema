@@ -2,7 +2,7 @@ import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 import { SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/syntheticUnitvariantsWithLessonIdsByYears.schema";
 
-export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
+export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByYears>;
