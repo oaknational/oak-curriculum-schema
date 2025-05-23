@@ -27,7 +27,7 @@ export const mediaClipCycleSchema = z.object({
   // text data had a mix of numbers and strings
   order: z.number().or(z.string()),
   media_id: z.number().or(z.string()),
-  video_id: z.number().nullable(),
+  video_id: z.number().nullish(),
   media_type: z.string().nullish(),
   custom_title: z.string().nullish(),
   media_object: mediaClipObjectSchema,

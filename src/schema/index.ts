@@ -1,4 +1,5 @@
 export * from "./base.schema";
+export * from "./internal.schema";
 export * from "./actions.schema";
 export * from "./features.schema";
 export * from "./lessonData.schema";
