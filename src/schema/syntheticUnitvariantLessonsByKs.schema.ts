@@ -5,6 +5,7 @@ export const syntheticUnitvariantLessonsByKsSchema = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ supplementary_data: true }).shape,
   programme_slug_by_year: z.string().array(),
   order_in_unit: z.number(),
+  uv_lessons_count: z.number(),
 });
 
 export type SyntheticUnitvariantLessonsByKs = z.infer<

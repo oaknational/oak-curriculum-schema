@@ -19,6 +19,7 @@ export const syntheticUnitvariantLessonsByKsFixture = ({
   unitvariant_id: 1,
   programme_fields: programmeFieldsFixture(),
   order_in_unit: 1,
+  uv_lessons_count: 1,
   static_lesson_list: [
     { slug: "lesson-slug", title: "lesson-title", order: 1 },
   ],
