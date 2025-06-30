@@ -7,6 +7,12 @@ export const mediaClipObjectSchema = z.object({
   format: z.string(),
   display_name: z.string(),
   resource_type: z.string(),
+  metadata: z
+    .object({
+      attribution: z.string().nullish(),
+      attributionRequired: z.string().nullish(),
+    })
+    .nullish(),
 });
 
 export const videoClipObjectSchema = z
