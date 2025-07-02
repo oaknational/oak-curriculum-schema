@@ -10,7 +10,6 @@ export const mediaClipObjectSchema = z.object({
   metadata: z
     .object({
       attribution: z.string().nullish(),
-      attributionRequired: z.string().nullish(),
     })
     .nullish(),
 });
