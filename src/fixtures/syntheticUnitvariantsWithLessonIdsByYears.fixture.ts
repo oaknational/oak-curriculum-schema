@@ -25,5 +25,6 @@ export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   },
   expired: false,
   age_restricted_lesson_count: 0,
+  complex_copyright_lesson_count: 0,
   ...overrides,
 });
