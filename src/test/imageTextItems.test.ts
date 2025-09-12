@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
+import { z } from "zod";
 
 import {
   imageItemFixture,
   imageObjectFixture,
+  textAndImageItemFixture,
   textItemFixture,
 } from "@/fixtures/imageTextItems.fixture";
 import {
@@ -21,6 +23,12 @@ describe("imageObject fixture", () => {
 describe("imageItem fixture", () => {
   it("conforms to the schema", () => {
     const l = imageItemFixture();
+    expect(() => imageItemSchema.parse(l)).not.toThrow();
+  });
+
+  it("handles empty metadata", () => {
+    const l = imageItemFixture();
+    l.image_object.metadata = [];
     expect(() => imageItemSchema.parse(l)).not.toThrow();
   });
 });

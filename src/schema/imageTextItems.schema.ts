@@ -7,10 +7,15 @@ export const imageObjectSchema = z
     url: z.string().url(),
     height: z.number(),
     width: z.number(),
-    metadata: z.object({
-      attribution: z.string(),
-      usageRestriction: z.string(),
-    }),
+    metadata: z.union([
+      z
+        .object({
+          attribution: z.string(),
+          usageRestriction: z.string(),
+        })
+        .partial(),
+      z.array(z.never()).length(0), // cloudinary provides an empty array if there is no metadata ?!
+    ]),
     public_id: z.string(),
     version: z.number(),
   })
