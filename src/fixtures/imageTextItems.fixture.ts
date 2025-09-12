@@ -30,3 +30,8 @@ export const textItemFixture = ({
   type: "text",
   ...overrides,
 });
+
+export const textAndImageItemFixture = (): (TextItem | ImageItem)[] => [
+  imageItemFixture(),
+  textItemFixture({ overrides: { text: "This is a text item." } }),
+];

@@ -22,7 +22,7 @@ export const shortAnswerFixture = ({
 }: {
   overrides?: Partial<ShortAnswer>;
 } = {}): ShortAnswer => ({
-  answer: [textItemFixture(), imageItemFixture()],
+  answer: [textItemFixture()],
   answer_is_active: true,
   answer_is_default: true,
   ...overrides,

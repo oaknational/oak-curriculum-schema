@@ -1,21 +1,25 @@
 import { z } from "zod";
 
-export const imageObjectSchema = z.object({
-  format: z.enum(["png", "jpg", "jpeg", "webp", "gif", "svg"]).optional(),
-  secure_url: z.string().url(),
-  url: z.string().url().optional(),
-  height: z.number().optional(),
-  width: z.number().optional(),
-  metadata: z.union([
-    z.array(z.any()),
-    z.object({
-      attribution: z.string().optional(),
-      usageRestriction: z.string().optional(),
-    }),
-  ]),
-  public_id: z.string().optional(),
-  version: z.number().optional(),
-});
+export const imageObjectSchema = z
+  .object({
+    format: z.enum(["png", "jpg", "jpeg", "webp", "gif", "svg"]),
+    secure_url: z.string().url(),
+    url: z.string().url(),
+    height: z.number(),
+    width: z.number(),
+    metadata: z.union([
+      z
+        .object({
+          attribution: z.string(),
+          usageRestriction: z.string(),
+        })
+        .partial(),
+      z.array(z.never()).length(0), // cloudinary provides an empty array if there is no metadata ?!
+    ]),
+    public_id: z.string(),
+    version: z.number(),
+  })
+  .partial();
 
 export type ImageObject = z.infer<typeof imageObjectSchema>;
 
