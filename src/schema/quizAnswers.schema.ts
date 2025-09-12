@@ -10,7 +10,7 @@ export const multipleChoiceSchema = z.object({
 export type MultipleChoice = z.infer<typeof multipleChoiceSchema>;
 
 export const shortAnswerSchema = z.object({
-  answer: z.array(z.union([textItemSchema, imageItemSchema]).optional()),
+  answer: z.array(textItemSchema.optional()),
   answer_is_active: z.boolean().optional(),
   answer_is_default: z.boolean().optional(),
 });
