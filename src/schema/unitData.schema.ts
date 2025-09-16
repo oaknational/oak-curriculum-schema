@@ -11,6 +11,7 @@ export const unitDataSchema = z.object({
   deprecated_fields: z.record(z.unknown()).nullable().optional(),
   title: z.string(),
   subjectcategories: z.array(z.union([z.number(), z.string()])).nullable(),
+  prior_knowledge_requirements: z.array(z.string()).nullish(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
   expiration_date: z.string().nullable(),

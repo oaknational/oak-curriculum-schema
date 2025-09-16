@@ -14,6 +14,7 @@ export const unitDataFixture = ({
   _state: "published",
   _cohort: "2023-2024",
   expiration_date: null,
+  prior_knowledge_requirements: ["requirement 1", "requirement 2"],
   subjectcategories: [1, 2, 3],
   ...overrides,
 });

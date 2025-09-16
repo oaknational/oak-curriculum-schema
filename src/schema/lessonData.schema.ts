@@ -2,6 +2,9 @@ import { z } from "zod";
 
 import { _stateSchema, _cohortSchema } from "./base.schema";
 import {
+  contentGuidanceSchema,
+  keyLearningPointsSchema,
+  keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
 } from "./lessonContent.schema";
@@ -15,17 +18,19 @@ export const lessonDataSchema = z.object({
   description: z.string(),
   pupil_lesson_outcome: z.string(),
   phonics_outcome: z.string().nullable(),
-  key_learning_points: z.array(z.object({})).nullable(),
+  key_learning_points: z.array(keyLearningPointsSchema).nullable(),
   equipment_and_resources: z
     .array(lessonEquipmentAndResourcesSchema)
     .nullable(),
-  content_guidance_details: z.array(z.object({})).nullable(),
+  content_guidance_details: z
+    .array(z.object({ details: z.string() }))
+    .nullable(),
   content_guidance: z.array(z.number()).nullable(),
   copyright_content: z.array(z.object({})).nullable(),
   supervision_level: z.string().nullable(),
   thirdpartycontent_list: z.array(z.number()).nullable(),
   misconceptions_and_common_mistakes: z.array(z.object({})).nullable(),
-  keywords: z.array(z.object({})).nullable(),
+  keywords: z.array(keywordsSchema).nullable(),
   video_id: z.number().nullable(),
   sign_language_video_id: z.number().nullable(),
   quiz_id_starter: z.number().nullable(),

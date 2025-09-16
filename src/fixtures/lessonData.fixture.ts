@@ -12,7 +12,7 @@ export const lessonDataFixture = ({
   slug: "lesson-slug",
   pupil_lesson_outcome: "pupil-lesson-outcome",
   phonics_outcome: null,
-  key_learning_points: [{}],
+  key_learning_points: [{ key_learning_point: "point 1" }],
   equipment_and_resources: null,
   content_guidance_details: null,
   content_guidance: null,
