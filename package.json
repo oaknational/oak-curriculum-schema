@@ -1,6 +1,6 @@
 {
   "name": "@oaknational/oak-curriculum-schema",
-  "version": "1.67.2",
+  "version": "1.67.3",
   "description": "Contract tests to ensure data integrity between  Oak apps and their data",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
