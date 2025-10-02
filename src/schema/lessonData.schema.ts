@@ -40,7 +40,7 @@ export const lessonDataSchema = z.object({
   expiration_date: z.string().nullable(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
   media_clips: mediaClipsRecordSchema.nullable().optional(),
-  deprecated_fields: z.record(z.unknown()).nullable(),
+  deprecated_fields: z.record(z.string(), z.unknown()).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
   updated_at: z.string(),
