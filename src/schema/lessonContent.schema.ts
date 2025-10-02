@@ -82,7 +82,7 @@ export const lessonContentSchema = z.object({
   exit_quiz_id: z.number().nullable(),
   _state: _stateSchema,
   is_legacy: z.boolean().nullable(),
-  deprecated_fields: z.record(z.unknown()).nullable(),
+  deprecated_fields: z.record(z.string(), z.unknown()).nullable(),
   has_worksheet_google_drive_downloadable_version: z.boolean().nullable(),
   slide_deck_asset_id: z.number().nullable(),
   has_slide_deck_asset_object: z.boolean().nullable(),
