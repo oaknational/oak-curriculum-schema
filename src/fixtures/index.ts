@@ -14,3 +14,4 @@ export * from "./thread.fixture";
 export * from "./additionalFiles.fixture";
 export * from "./mediaClips.fixture";
 export * from "./imageTextItems.fixture";
+export * from "./assets.fixture";
