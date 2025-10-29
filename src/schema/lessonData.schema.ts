@@ -2,7 +2,6 @@ import { z } from "zod";
 
 import { _stateSchema, _cohortSchema } from "./base.schema";
 import {
-  contentGuidanceSchema,
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
@@ -37,6 +36,9 @@ export const lessonDataSchema = z.object({
   quiz_id_exit: z.number().nullable(),
   asset_id_slidedeck: z.number().nullable(),
   asset_id_worksheet: z.number().nullable(),
+  asset_id_worksheet_answers: z.number().nullable(),
+  asset_id_supplementary_asset: z.number().nullable(),
+  asset_id_lesson_guide: z.number().nullable(),
   expiration_date: z.string().nullable(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
   media_clips: mediaClipsRecordSchema.nullable().optional(),
