@@ -1,10 +1,11 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const imageObjectSchema = z
   .object({
     format: z.enum(["png", "jpg", "jpeg", "webp", "gif", "svg"]),
-    secure_url: z.string().url(),
-    url: z.string().url(),
+    secure_url: z.url(),
+    url: z.url(),
     height: z.number(),
     width: z.number(),
     metadata: z.union([
@@ -36,3 +37,12 @@ export const textItemSchema = z.object({
 });
 
 export type TextItem = z.infer<typeof textItemSchema>;
+
+export const imageObjectSchemaCamel = zodToCamelCase(imageObjectSchema);
+export type ImageObjectCamel = z.infer<typeof imageObjectSchemaCamel>;
+
+export const imageItemSchemaCamel = zodToCamelCase(imageItemSchema);
+export type ImageItemCamel = z.infer<typeof imageItemSchemaCamel>;
+
+export const textItemSchemaCamel = zodToCamelCase(textItemSchema);
+export type TextItemCamel = z.infer<typeof textItemSchemaCamel>;

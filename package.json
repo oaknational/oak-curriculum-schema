@@ -23,6 +23,9 @@
   },
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "zod-to-camel-case": "^0.4.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
@@ -55,7 +58,7 @@
     "yalc": "^1.0.0-pre.53"
   },
   "peerDependencies": {
-    "zod": "^3.22.4"
+    "zod": "^4.1.13"
   },
   "repository": {
     "type": "git",

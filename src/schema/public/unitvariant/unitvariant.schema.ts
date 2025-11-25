@@ -1,8 +1,9 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema, _cohortSchema } from "../base/base.schema";
-import { unitDataSchema } from "../unitData/unitData.schema";
-import { programmeFieldsSchema } from "../programmeFields/programmeFields.schema";
+import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema";
+import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
 
 export const unitvariantSchema = z.object({
   _state: _stateSchema,
@@ -13,5 +14,7 @@ export const unitvariantSchema = z.object({
   unit_overrides: unitDataSchema.partial(),
   programme_fields: programmeFieldsSchema.partial(),
 });
-
 export type Unitvariant = z.infer<typeof unitvariantSchema>;
+
+export const unitvariantSchemaCamel = zodToCamelCase(unitvariantSchema);
+export type UnitvariantCamel = z.infer<typeof unitvariantSchemaCamel>;

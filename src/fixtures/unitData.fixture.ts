@@ -1,4 +1,4 @@
-import { UnitData } from "@/schema/public/unitData/unitData.schema";
+import type { UnitData } from "@/schema/public/unitData/unitData.schema";
 
 export const unitDataFixture = ({
   overrides = {},

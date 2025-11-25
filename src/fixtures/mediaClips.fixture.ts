@@ -1,4 +1,4 @@
-import {
+import type {
   LessonMediaClips,
   MediaClipObject,
   VideoClipObject,

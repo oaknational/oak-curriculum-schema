@@ -1,4 +1,4 @@
-import {
+import type {
   Keywords,
   LessonContent,
   TeacherTips,
@@ -10,7 +10,7 @@ import {
   orderQuestion,
   shortAnswerQuestion,
 } from "./quizQuestion.fixture";
-import additionalFilesFixture from "@/fixtures/additionalFiles.fixture";
+import additionalFilesFixture from "./additionalFiles.fixture";
 import mediaClipsFixture from "./mediaClips.fixture";
 
 export const lessonEquipmentAndResourcesFixture =

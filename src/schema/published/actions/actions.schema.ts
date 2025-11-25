@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
-import { subjectSlugs } from "../../public/base/base.schema";
+import zodToCamelCase from "zod-to-camel-case";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
+import { subjectSlugs } from "@/schema/public/base/base.schema";
 
 export const queriesSchema = z.enum([
   "pupilSubjectListingQuery",
@@ -44,5 +45,7 @@ export const actionsSchema = z
     group_units_as: z.string(),
   })
   .partial();
-
 export type Actions = z.infer<typeof actionsSchema>;
+
+export const actionsSchemaCamel = zodToCamelCase(actionsSchema);
+export type ActionsCamel = z.infer<typeof actionsSchemaCamel>;

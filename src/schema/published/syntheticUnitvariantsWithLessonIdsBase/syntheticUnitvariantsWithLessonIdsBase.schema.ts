@@ -1,8 +1,9 @@
 import { z } from "zod";
-import { unitDataSchema } from "../../public/unitData/unitData.schema";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
-import { actionsSchema } from "../actions/actions.schema";
-import { staticLessonListSchema } from "../../public/staticLessonList/staticLessonList.schema";
+import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
+import { actionsSchema } from "@/schema/published/actions/actions.schema";
+import { staticLessonListSchema } from "@/schema/public/staticLessonList/staticLessonList.schema";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   base_slug: z.string(),
@@ -26,4 +27,11 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
 
 export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsBaseSchema
+>;
+
+export const syntheticUnitvariantsWithLessonIdsBaseSchemaCamel = zodToCamelCase(
+  syntheticUnitvariantsWithLessonIdsBaseSchema,
+);
+export type SyntheticUnitvariantsWithLessonIdsBaseCamel = z.infer<
+  typeof syntheticUnitvariantsWithLessonIdsBaseSchemaCamel
 >;

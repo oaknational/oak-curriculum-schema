@@ -1,4 +1,5 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const threadsByUnitSchema = z.object({
   unit_id: z.number(),
@@ -8,3 +9,6 @@ export const threadsByUnitSchema = z.object({
 });
 
 export type ThreadsByUnit = z.infer<typeof threadsByUnitSchema>;
+
+export const threadsByUnitSchemaCamel = zodToCamelCase(threadsByUnitSchema);
+export type ThreadsByUnitCamel = z.infer<typeof threadsByUnitSchemaCamel>;
