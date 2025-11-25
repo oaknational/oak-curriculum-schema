@@ -1,6 +1,6 @@
-import { unitDataFixture } from "./unitData.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
-import type { SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema";
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
+import { type SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema";
 
 export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   overrides = {},

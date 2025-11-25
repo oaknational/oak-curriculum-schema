@@ -7,7 +7,7 @@ import {
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
-} from "@/schema/lessonContent.schema";
+} from "@/schema/published/lessonContent";
 import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema";
 
 export const lessonDataSchema = z.object({

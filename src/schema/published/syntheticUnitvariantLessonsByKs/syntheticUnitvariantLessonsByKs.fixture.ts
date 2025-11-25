@@ -1,7 +1,7 @@
-import type { SyntheticUnitvariantLessonsByKs } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
-import { lessonDataFixture } from "./lessonData.fixture";
-import { unitDataFixture } from "./unitData.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { type SyntheticUnitvariantLessonsByKs } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
+import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
   overrides = {},

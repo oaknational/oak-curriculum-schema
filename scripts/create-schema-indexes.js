@@ -4,10 +4,10 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 /**
- * Recursively find all directories containing .schema.ts files
+ * Recursively find all directories containing .schema.ts or .fixture.ts files
  * @param {string} dir - Directory to search
  * @param {string[]} results - Accumulator for results
- * @returns {string[]} - Array of directory paths containing .schema.ts files
+ * @returns {string[]} - Array of directory paths containing .schema.ts or .fixture.ts files
  */
 function findDirsWithSchemaFiles(dir, results = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -20,7 +20,10 @@ function findDirsWithSchemaFiles(dir, results = []) {
     if (entry.isDirectory()) {
       // Recursively search subdirectories
       findDirsWithSchemaFiles(fullPath, results);
-    } else if (entry.isFile() && entry.name.endsWith(".schema.ts")) {
+    } else if (
+      entry.isFile() &&
+      (entry.name.endsWith(".schema.ts") || entry.name.endsWith(".fixture.ts"))
+    ) {
       hasSchemaFile = true;
     }
   }
@@ -33,14 +36,19 @@ function findDirsWithSchemaFiles(dir, results = []) {
 }
 
 /**
- * Get all .schema.ts files in a directory (non-recursive)
+ * Get all .schema.ts and .fixture.ts files in a directory (non-recursive)
  * @param {string} dir - Directory path
- * @returns {string[]} - Array of .schema.ts filenames (sorted)
+ * @returns {string[]} - Array of .schema.ts and .fixture.ts filenames (sorted)
  */
 function getSchemaFilesInDir(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".schema.ts"))
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        (entry.name.endsWith(".schema.ts") ||
+          entry.name.endsWith(".fixture.ts")),
+    )
     .map((entry) => entry.name)
     .sort();
 }
@@ -80,18 +88,24 @@ function findDirsWithSubdirs(dir, results = new Set()) {
 }
 
 /**
- * Create an index.ts file with wildcard exports from .schema.ts files
+ * Create an index.ts file with wildcard exports from .schema.ts and .fixture.ts files
  * @param {string} dir - Directory path
  */
 function createIndexFile(dir) {
   const schemaFiles = getSchemaFilesInDir(dir);
 
-  // Generate export statements for each .schema.ts file (sorted)
+  // Generate export statements for each file (sorted)
   const exports = schemaFiles
     .map((filename) => {
-      const baseName = filename.replace(".schema.ts", "");
-      return `export * from "./${baseName}.schema";`;
+      if (filename.endsWith(".schema.ts")) {
+        const baseName = filename.replace(".schema.ts", "");
+        return `export * from "./${baseName}.schema";`;
+      } else if (filename.endsWith(".fixture.ts")) {
+        const baseName = filename.replace(".fixture.ts", "");
+        return `export * from "./${baseName}.fixture";`;
+      }
     })
+    .filter(Boolean)
     .join("\n");
 
   const content = exports + (exports ? "\n" : "");
@@ -121,10 +135,10 @@ function createParentIndexFile(dir) {
 }
 
 /**
- * Recursively find all .schema.ts files in subdirectories of a directory
+ * Recursively find all .schema.ts and .fixture.ts files in subdirectories of a directory
  * @param {string} dir - Directory to search
  * @param {string} baseDir - Base directory for relative path
- * @returns {string[]} - Array of relative paths to .schema.ts files
+ * @returns {string[]} - Array of relative paths to .schema.ts and .fixture.ts files
  */
 function findAllSchemaFilesInSubdirs(dir, baseDir) {
   let results = [];
@@ -133,7 +147,10 @@ function findAllSchemaFilesInSubdirs(dir, baseDir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results = results.concat(findAllSchemaFilesInSubdirs(fullPath, baseDir));
-    } else if (entry.isFile() && entry.name.endsWith(".schema.ts")) {
+    } else if (
+      entry.isFile() &&
+      (entry.name.endsWith(".schema.ts") || entry.name.endsWith(".fixture.ts"))
+    ) {
       // Only include if not in the root dir
       if (dir !== baseDir) {
         results.push(path.relative(baseDir, fullPath));
@@ -178,12 +195,14 @@ function createRootIndexFileExportsFromSubdirs(dir) {
 // Main execution
 const schemaDir = path.join(__dirname, "..", "src", "schema");
 
-console.log("Searching for directories with .schema.ts files...\n");
+console.log(
+  "Searching for directories with .schema.ts and .fixture.ts files...\n",
+);
 
 const dirsWithSchemas = findDirsWithSchemaFiles(schemaDir);
 
 console.log(
-  `Found ${dirsWithSchemas.length} directories with .schema.ts files:\n`,
+  `Found ${dirsWithSchemas.length} directories with .schema.ts or .fixture.ts files:\n`,
 );
 
 for (const dir of dirsWithSchemas) {

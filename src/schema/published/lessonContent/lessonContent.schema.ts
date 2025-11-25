@@ -75,6 +75,8 @@ export const contentGuidanceSchema = z.object({
   contentguidance_area: z.string().nullable(),
 });
 
+export type ContentGuidance = z.infer<typeof contentGuidanceSchema>;
+
 export const contentGuidanceSchemaCamel = zodToCamelCase(contentGuidanceSchema);
 export type ContentGuidanceCamel = z.infer<typeof contentGuidanceSchemaCamel>;
 

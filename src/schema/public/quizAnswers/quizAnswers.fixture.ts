@@ -1,10 +1,13 @@
-import type {
-  Match,
-  MultipleChoice,
-  Order,
-  ShortAnswer,
+import {
+  type Match,
+  type MultipleChoice,
+  type Order,
+  type ShortAnswer,
 } from "@/schema/public/quizAnswers/quizAnswers.schema";
-import { imageItemFixture, textItemFixture } from "./imageTextItems.fixture";
+import {
+  imageItemFixture,
+  textItemFixture,
+} from "@/schema/public/imageTextItems/imageTextItems.fixture";
 
 export const multipleChoiceFixture = ({
   overrides = {},

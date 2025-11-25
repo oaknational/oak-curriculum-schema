@@ -1,5 +1,5 @@
-import type { SyntheticProgrammesByYear } from "@/schema/published/syntheticProgrammesByYear/syntheticProgrammesByYear.schema";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { type SyntheticProgrammesByYear } from "@/schema/published/syntheticProgrammesByYear/syntheticProgrammesByYear.schema";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 
 export const syntheticProgrammesByYearFixture = ({
   overrides = {},

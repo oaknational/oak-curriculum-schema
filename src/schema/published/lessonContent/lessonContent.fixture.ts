@@ -1,17 +1,19 @@
-import type {
-  Keywords,
-  LessonContent,
-  TeacherTips,
-  LessonEquipmentAndResources,
-} from "@/schema/lessonContent.schema";
+import {
+  type Keywords,
+  type LessonContent,
+  type TeacherTips,
+  type LessonEquipmentAndResources,
+  type MisconceptionsAndCommonMistakes,
+  type ContentGuidance,
+} from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
   multipleChoiceQuestion,
   orderQuestion,
   shortAnswerQuestion,
-} from "./quizQuestion.fixture";
-import additionalFilesFixture from "./additionalFiles.fixture";
-import mediaClipsFixture from "./mediaClips.fixture";
+} from "@/schema/public/quizQuestion/quizQuestion.fixture";
+import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
+import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
@@ -27,12 +29,13 @@ export const keywordsFixture = (): Keywords => ({
   description: "description",
 });
 
-export const misconceptionsAndCommonMistakesFixture = () => ({
-  misconception: "misconception",
-  response: "response",
-});
+export const misconceptionsAndCommonMistakesFixture =
+  (): MisconceptionsAndCommonMistakes => ({
+    misconception: "misconception",
+    response: "response",
+  });
 
-export const contentGuidanceFixture = () => ({
+export const contentGuidanceFixture = (): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
   contentguidance_area: "contentguidance-area",

@@ -5,7 +5,7 @@ import {
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture,
-} from "./quizAnswers.fixture";
+} from "@/schema/public/quizAnswers/quizAnswers.fixture";
 
 export const multipleChoiceQuestion = ({
   overrides = {},
