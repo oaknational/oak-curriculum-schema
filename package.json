@@ -4,6 +4,7 @@
   "description": "Contract tests to ensure data integrity between  Oak apps and their data",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "type": "module",
   "types": "dist/types.d.ts",
   "files": [
     "dist"
@@ -23,6 +24,9 @@
   },
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "zod-to-camel-case": "^0.4.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
