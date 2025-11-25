@@ -14,6 +14,7 @@ export const multipleChoiceQuestion = ({
 } = {}): QuizQuestion => ({
   question_id: 1,
   question_uid: "question-1",
+  _state: "published",
   question_type: "multiple-choice",
   question_stem: [
     {
@@ -43,6 +44,7 @@ export const shortAnswerQuestion = ({
 } = {}): QuizQuestion => ({
   question_id: 2,
   question_uid: "question-2",
+  _state: "published",
   question_type: "short-answer",
   question_stem: [
     {
@@ -67,6 +69,7 @@ export const orderQuestion = ({
 } = {}): QuizQuestion => ({
   question_id: 3,
   question_uid: "question-3",
+  _state: "published",
   question_type: "order",
   question_stem: [
     {
@@ -96,6 +99,7 @@ export const matchQuestion = ({
 } = {}): QuizQuestion => ({
   question_id: 4,
   question_uid: "question-4",
+  _state: "published",
   question_type: "match",
   question_stem: [
     {
