@@ -44,5 +44,18 @@ export const unitDataPublishedSchema = unitDataSchema.extend({
   _state: publishedState,
 });
 
+export type UnitDataNew = z.infer<typeof unitDataNewSchema>;
+export type UnitDataPublished = z.infer<typeof unitDataPublishedSchema>;
+
 export const unitDataSchemaCamel = zodToCamelCase(unitDataSchema);
 export type UnitDataCamel = z.infer<typeof unitDataSchemaCamel>;
+
+export const unitDataNewSchemaCamel = zodToCamelCase(unitDataNewSchema);
+export type UnitDataNewCamel = z.infer<typeof unitDataNewSchemaCamel>;
+
+export const unitDataPublishedSchemaCamel = zodToCamelCase(
+  unitDataPublishedSchema,
+);
+export type UnitDataPublishedCamel = z.infer<
+  typeof unitDataPublishedSchemaCamel
+>;

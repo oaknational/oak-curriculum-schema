@@ -52,7 +52,6 @@ export const lessonDataSchema = timestampsSchema.extend({
   deprecated_fields: z.record(z.string(), z.unknown()).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
-  updated_at: z.string(),
   lesson_release_date: z.string().nullable(),
 });
 export type LessonData = z.infer<typeof lessonDataSchema>;
@@ -89,11 +88,25 @@ export const lessonDataNewSchema = lessonDataSchema
   })
   .extend({
     _state: newState,
+    pupil_lesson_outcome: z.string().nullable(),
   });
 
 export const lessonDataPublishedSchema = lessonDataSchema.extend({
   _state: publishedState,
 });
 
+export type LessonDataNew = z.infer<typeof lessonDataNewSchema>;
+export type LessonDataPublished = z.infer<typeof lessonDataPublishedSchema>;
+
 export const lessonDataSchemaCamel = zodToCamelCase(lessonDataSchema);
 export type LessonDataCamel = z.infer<typeof lessonDataSchemaCamel>;
+
+export const lessonDataNewSchemaCamel = zodToCamelCase(lessonDataNewSchema);
+export type LessonDataNewCamel = z.infer<typeof lessonDataNewSchemaCamel>;
+
+export const lessonDataPublishedSchemaCamel = zodToCamelCase(
+  lessonDataPublishedSchema,
+);
+export type LessonDataPublishedCamel = z.infer<
+  typeof lessonDataPublishedSchemaCamel
+>;

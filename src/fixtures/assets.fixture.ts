@@ -22,5 +22,7 @@ export const assetsFixture = (
   },
   tpc_media_ids: [101, 102],
   tpc_works_ids: [201, 202],
+  updated_at: "2024-02-28T08:09:20.247619+00:00",
+  created_at: "2024-02-28T08:09:20.247619+00:00",
   ...overrides,
 });
