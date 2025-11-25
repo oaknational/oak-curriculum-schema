@@ -1,4 +1,5 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const mediaClipObjectSchema = z.object({
   url: z.string(),
@@ -54,3 +55,18 @@ export type VideoClipObject = z.infer<typeof videoClipObjectSchema>;
 export type MediaClipCycle = z.infer<typeof mediaClipCycleSchema>;
 export type MediaClipsRecord = z.infer<typeof mediaClipsRecordSchema>;
 export type LessonMediaClips = z.infer<typeof lessonMediaClipsSchema>;
+
+export const mediaClipObjectSchemaCamel = zodToCamelCase(mediaClipObjectSchema);
+export type MediaClipObjectCamel = z.infer<typeof mediaClipObjectSchemaCamel>;
+
+export const videoClipObjectSchemaCamel = zodToCamelCase(videoClipObjectSchema);
+export type VideoClipObjectCamel = z.infer<typeof videoClipObjectSchemaCamel>;
+
+export const mediaClipCycleSchemaCamel = zodToCamelCase(mediaClipCycleSchema);
+export type MediaClipCycleCamel = z.infer<typeof mediaClipCycleSchemaCamel>;
+
+export const mediaClipsRecordSchemaCamel = zodToCamelCase(mediaClipsRecordSchema);
+export type MediaClipsRecordCamel = z.infer<typeof mediaClipsRecordSchemaCamel>;
+
+export const lessonMediaClipsSchemaCamel = zodToCamelCase(lessonMediaClipsSchema);
+export type LessonMediaClipsCamel = z.infer<typeof lessonMediaClipsSchemaCamel>;

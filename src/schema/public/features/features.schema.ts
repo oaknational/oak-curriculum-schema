@@ -1,4 +1,5 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const featuresSchema = z
   .object({
@@ -8,5 +9,7 @@ export const featuresSchema = z
     agf__login_required: z.boolean().nullish(),
   })
   .partial();
-
 export type Features = z.infer<typeof featuresSchema>;
+
+export const featuresSchemaCamel = zodToCamelCase(featuresSchema);
+export type FeaturesCamel = z.infer<typeof featuresSchemaCamel>;

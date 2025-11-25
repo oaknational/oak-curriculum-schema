@@ -1,5 +1,7 @@
 import { z } from "zod";
-import { _stateSchema } from "./base.schema";
+import zodToCamelCase from "zod-to-camel-case";
+
+import { _stateSchema } from "@/schema/public/base/base.schema";
 
 export const assetTypeSchema = z.enum([
   "lesson_guide",
@@ -50,5 +52,16 @@ export const assetsSchema = z.object({
   tpc_media_ids: z.array(z.number()).nullable(),
   tpc_works_ids: z.array(z.number()).nullable(),
 });
-
 export type AssetType = z.infer<typeof assetsSchema>;
+
+export const googleSchemaCamel = zodToCamelCase(googleSchema);
+export type GoogleTypeCamel = z.infer<typeof googleSchemaCamel>;
+
+export const bucketSchemaCamel = zodToCamelCase(bucketSchema);
+export type BucketTypeCamel = z.infer<typeof bucketSchemaCamel>;
+
+export const assetsSchemaCamel = zodToCamelCase(assetsSchema);
+export type AssetTypeCamel = z.infer<typeof assetsSchemaCamel>;
+
+export const assetObjectSchemaCamel = zodToCamelCase(assetObjectSchema);
+export type AssetObjectTypeCamel = z.infer<typeof assetObjectSchemaCamel>;

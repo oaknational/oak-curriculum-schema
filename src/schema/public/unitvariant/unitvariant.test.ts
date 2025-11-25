@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { unitvariantFixture } from "@/fixtures/unitvariant.fixture";
-import { unitvariantSchema } from "@/schema/public/unitvariant.schema";
+import { unitvariantSchema } from "@/schema/public/unitvariant/unitvariant.schema";
 
 describe("unitvariant", () => {
   it("conforms to the schema", () => {

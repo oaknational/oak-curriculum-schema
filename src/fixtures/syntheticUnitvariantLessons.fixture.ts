@@ -1,8 +1,7 @@
-import { SyntheticUnitvariantLessons } from "@/schema/syntheticUnitvariantLessons.schema";
+import type { SyntheticUnitvariantLessons } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 import { lessonDataFixture } from "./lessonData.fixture";
 import { unitDataFixture } from "./unitData.fixture";
-import { unitvariantFixture } from "./unitvariant.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 
 // To be deprecated

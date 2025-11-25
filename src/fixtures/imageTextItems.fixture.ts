@@ -1,8 +1,8 @@
-import {
+import type {
   ImageObject,
   ImageItem,
   TextItem,
-} from "@/schema/public/imageTextItems.schema";
+} from "@/schema/public/imageTextItems/imageTextItems.schema";
 
 export const imageObjectFixture = (): ImageObject => ({
   format: "png",

@@ -1,9 +1,9 @@
-import {
+import type {
   Match,
   MultipleChoice,
   Order,
   ShortAnswer,
-} from "@/schema/public/quizAnswers.schema";
+} from "@/schema/public/quizAnswers/quizAnswers.schema";
 import { imageItemFixture, textItemFixture } from "./imageTextItems.fixture";
 
 export const multipleChoiceFixture = ({

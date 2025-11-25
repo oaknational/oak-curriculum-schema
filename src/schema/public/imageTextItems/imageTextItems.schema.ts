@@ -1,4 +1,5 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const imageObjectSchema = z
   .object({
@@ -36,3 +37,12 @@ export const textItemSchema = z.object({
 });
 
 export type TextItem = z.infer<typeof textItemSchema>;
+
+export const imageObjectSchemaCamel = zodToCamelCase(imageObjectSchema);
+export type ImageObjectCamel = z.infer<typeof imageObjectSchemaCamel>;
+
+export const imageItemSchemaCamel = zodToCamelCase(imageItemSchema);
+export type ImageItemCamel = z.infer<typeof imageItemSchemaCamel>;
+
+export const textItemSchemaCamel = zodToCamelCase(textItemSchema);
+export type TextItemCamel = z.infer<typeof textItemSchemaCamel>;

@@ -1,4 +1,4 @@
-import { Thread } from "@/schema/public/thread.schema";
+import type { Thread } from "@/schema/public/thread/thread.schema";
 
 export const threadFixture = ({
   overrides = {},

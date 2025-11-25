@@ -1,6 +1,10 @@
 import { z } from "zod";
-import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "./syntheticUnitvariantsWithLessonIdsBase.schema";
-import { threadSchema } from "../public/thread.schema";
+import zodToCamelCase from "zod-to-camel-case";
+
+import {
+  syntheticUnitvariantsWithLessonIdsBaseSchema
+} from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema";
+import { threadSchema } from "@/schema/public/thread/thread.schema";
 
 export const syntheticUnitvariantsWithLessonIdsByKsSchema = z.object({
   ...syntheticUnitvariantsWithLessonIdsBaseSchema.shape,
@@ -8,7 +12,9 @@ export const syntheticUnitvariantsWithLessonIdsByKsSchema = z.object({
   lesson_ids: z.array(z.number()).nullable(),
   threads: z.array(threadSchema).nullable(),
 });
-
 export type SyntheticUnitvariantsWithLessonIdsByKs = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsByKsSchema
 >;
+
+export const syntheticUnitvariantsWithLessonIdsByKsSchemaCamel = zodToCamelCase(syntheticUnitvariantsWithLessonIdsByKsSchema);
+export type SyntheticUnitvariantsWithLessonIdsByKsCamel = z.infer<typeof syntheticUnitvariantsWithLessonIdsByKsSchemaCamel>;

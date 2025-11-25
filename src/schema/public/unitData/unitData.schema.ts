@@ -1,6 +1,7 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema, _cohortSchema } from "./base.schema";
+import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema";
 
 export const unitDataSchema = z.object({
   unit_id: z.number(),
@@ -16,5 +17,7 @@ export const unitDataSchema = z.object({
   _cohort: _cohortSchema,
   expiration_date: z.string().nullable(),
 });
-
 export type UnitData = z.infer<typeof unitDataSchema>;
+
+export const unitDataSchemaCamel = zodToCamelCase(unitDataSchema);
+export type UnitDataCamel = z.infer<typeof unitDataSchemaCamel>;

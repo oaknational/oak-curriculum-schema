@@ -1,12 +1,13 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
-import { imageItemSchema, textItemSchema } from "./imageTextItems.schema";
+import { imageItemSchema, textItemSchema } from "@/schema/public/imageTextItems/imageTextItems.schema";
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "./quizAnswers.schema";
+} from "@/schema/public/quizAnswers/quizAnswers.schema";
 
 export const quizQuestionSchema = z.object({
   question_id: z.number(),
@@ -30,5 +31,7 @@ export const quizQuestionSchema = z.object({
   active: z.boolean().optional(),
   order: z.number(),
 });
-
 export type QuizQuestion = z.infer<typeof quizQuestionSchema>;
+
+export const quizQuestionSchemaCamel = zodToCamelCase(quizQuestionSchema);
+export type QuizQuestionCamel = z.infer<typeof quizQuestionSchemaCamel>;

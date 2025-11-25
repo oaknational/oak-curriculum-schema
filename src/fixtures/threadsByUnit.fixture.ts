@@ -1,4 +1,4 @@
-import { ThreadsByUnit } from "@/schema/threadsByUnit.schema";
+import type { ThreadsByUnit } from "@/schema/threadsByUnit.schema";
 
 export const threadsByUnitFixture = ({
   overrides = {},

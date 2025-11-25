@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import featuresFixture from "@/fixtures/features.fixture";
-import { featuresSchema } from "@/schema/public/features.schema";
+import { featuresSchema } from "@/schema/public/features/features.schema";
 
 describe("actions fixture", () => {
   it("conforms to the schema", () => {

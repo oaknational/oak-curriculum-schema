@@ -1,13 +1,14 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema, _cohortSchema } from "./base.schema";
+import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema";
 import {
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
-} from "../lessonContent.schema";
-import { mediaClipsRecordSchema } from "./mediaClips.schema";
+} from "@/schema/lessonContent.schema";
+import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema";
 
 export const lessonDataSchema = z.object({
   lesson_id: z.number(),
@@ -48,5 +49,7 @@ export const lessonDataSchema = z.object({
   updated_at: z.string(),
   lesson_release_date: z.string().nullable(),
 });
-
 export type LessonData = z.infer<typeof lessonDataSchema>;
+
+export const lessonDataSchemaCamel = zodToCamelCase(lessonDataSchema);
+export type LessonDataCamel = z.infer<typeof lessonDataSchemaCamel>;

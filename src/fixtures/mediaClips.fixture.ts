@@ -1,9 +1,9 @@
-import {
+import type {
   LessonMediaClips,
   MediaClipObject,
   VideoClipObject,
   MediaClipCycle,
-} from "@/schema/public/mediaClips.schema";
+} from "@/schema/public/mediaClips/mediaClips.schema";
 
 export const mediaObjectFixture = ({
   overrides,
