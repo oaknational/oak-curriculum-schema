@@ -2,15 +2,13 @@ import { syntheticUnitvariantLessonsByKsSchemaOld } from "@/schema/published/syn
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-const programmeListingSchemaBase =
+export const programmeListingSchema =
   syntheticUnitvariantLessonsByKsSchemaOld.pick({
     lesson_data: true,
     programme_fields: true,
     is_legacy: true,
     programme_slug: true,
   });
-
-export const programmeListingSchema = programmeListingSchemaBase;
 export type ProgrammeListing = z.infer<typeof programmeListingSchema>;
 
 export const programmeListingSchemaCamel = zodToCamelCase(

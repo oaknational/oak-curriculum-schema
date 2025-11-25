@@ -1,15 +1,14 @@
-import type { SyntheticUnitvariantLessons } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
+import type {
+  SyntheticUnitvariantLessons,
+  SyntheticUnitvariantLessonsCamel,
+} from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 import { lessonDataFixture } from "./lessonData.fixture";
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
+import camelcaseKeys from "camelcase-keys";
 
-// To be deprecated
-export const syntheticUnitvariantLessonsFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<SyntheticUnitvariantLessons>;
-} = {}): SyntheticUnitvariantLessons => ({
+const baseSyntheticUnitvariantLessonsFixture: SyntheticUnitvariantLessons = {
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
@@ -22,5 +21,27 @@ export const syntheticUnitvariantLessonsFixture = ({
     unit_order: 1,
     order_in_unit: 1,
   },
+};
+
+// To be deprecated
+export const syntheticUnitvariantLessonsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantLessons>;
+} = {}): SyntheticUnitvariantLessons => ({
+  ...baseSyntheticUnitvariantLessonsFixture,
   ...overrides,
 });
+
+export const syntheticUnitvariantLessonsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantLessonsCamel>;
+} = {}): SyntheticUnitvariantLessonsCamel =>
+  camelcaseKeys(
+    {
+      ...baseSyntheticUnitvariantLessonsFixture,
+      ...overrides,
+    },
+    { deep: true },
+  ) as SyntheticUnitvariantLessonsCamel;

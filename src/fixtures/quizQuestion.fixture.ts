@@ -1,4 +1,7 @@
-import type { QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema";
+import type {
+  QuizQuestion,
+  QuizQuestionCamel,
+} from "@/schema/public/quizQuestion/quizQuestion.schema";
 
 import {
   matchFixture,
@@ -6,6 +9,7 @@ import {
   orderFixture,
   shortAnswerFixture,
 } from "./quizAnswers.fixture";
+import camelcaseKeys from "camelcase-keys";
 
 export const multipleChoiceQuestion = ({
   overrides = {},
@@ -112,3 +116,39 @@ export const matchQuestion = ({
   order: 4,
   ...overrides,
 });
+
+export const multipleChoiceQuestionCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<QuizQuestionCamel>;
+} = {}): QuizQuestionCamel =>
+  camelcaseKeys(multipleChoiceQuestion(overrides as any), {
+    deep: true,
+  }) as QuizQuestionCamel;
+
+export const shortAnswerQuestionCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<QuizQuestionCamel>;
+} = {}): QuizQuestionCamel =>
+  camelcaseKeys(shortAnswerQuestion(overrides as any), {
+    deep: true,
+  }) as QuizQuestionCamel;
+
+export const orderQuestionCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<QuizQuestionCamel>;
+} = {}): QuizQuestionCamel =>
+  camelcaseKeys(orderQuestion(overrides as any), {
+    deep: true,
+  }) as QuizQuestionCamel;
+
+export const matchQuestionCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<QuizQuestionCamel>;
+} = {}): QuizQuestionCamel =>
+  camelcaseKeys(matchQuestion(overrides as any), {
+    deep: true,
+  }) as QuizQuestionCamel;

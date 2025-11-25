@@ -1,10 +1,10 @@
-import type { UnitData } from "@/schema/public/unitData/unitData.schema";
+import type {
+  UnitData,
+  UnitDataCamel,
+} from "@/schema/public/unitData/unitData.schema";
+import camelcaseKeys from "camelcase-keys";
 
-export const unitDataFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<UnitData>;
-} = {}): UnitData => ({
+const baseUnitDataFixture: UnitData = {
   unit_id: 0,
   unit_uid: "unit-uid",
   description: null,
@@ -16,5 +16,27 @@ export const unitDataFixture = ({
   expiration_date: null,
   prior_knowledge_requirements: ["requirement 1", "requirement 2"],
   subjectcategories: [1, 2, 3],
+};
+
+const baseUnitDataFixtureCamel: UnitDataCamel = camelcaseKeys(
+  baseUnitDataFixture,
+  { deep: true },
+);
+
+export const unitDataFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<UnitData>;
+} = {}): UnitData => ({
+  ...baseUnitDataFixture,
+  ...overrides,
+});
+
+export const unitDataFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<UnitDataCamel>;
+} = {}): UnitDataCamel => ({
+  ...baseUnitDataFixtureCamel,
   ...overrides,
 });

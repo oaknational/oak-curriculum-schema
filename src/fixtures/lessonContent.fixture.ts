@@ -1,6 +1,7 @@
 import type {
   Keywords,
   LessonContent,
+  LessonContentCamel,
   TeacherTips,
   LessonEquipmentAndResources,
 } from "@/schema/lessonContent.schema";
@@ -12,6 +13,7 @@ import {
 } from "./quizQuestion.fixture";
 import additionalFilesFixture from "./additionalFiles.fixture";
 import mediaClipsFixture from "./mediaClips.fixture";
+import camelcaseKeys from "camelcase-keys";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
@@ -38,11 +40,7 @@ export const contentGuidanceFixture = () => ({
   contentguidance_area: "contentguidance-area",
 });
 
-export const lessonContentFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<LessonContent>;
-} = {}): LessonContent => ({
+const baseLessonContentFixture: LessonContent = {
   lesson_id: 1,
   lesson_title: "lesson-title",
   lesson_slug: "lesson-slug",
@@ -105,5 +103,27 @@ export const lessonContentFixture = ({
   ],
   downloadable_files: additionalFilesFixture().downloadable_files,
   lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
+};
+
+const baseLessonContentFixtureCamel: LessonContentCamel = camelcaseKeys(
+  baseLessonContentFixture,
+  { deep: true },
+);
+
+export const lessonContentFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonContent>;
+} = {}): LessonContent => ({
+  ...baseLessonContentFixture,
+  ...overrides,
+});
+
+export const lessonContentFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonContentCamel>;
+} = {}): LessonContentCamel => ({
+  ...baseLessonContentFixtureCamel,
   ...overrides,
 });

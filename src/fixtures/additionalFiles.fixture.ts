@@ -1,10 +1,10 @@
-import type { AdditionalFiles } from "@/schema/public/additionalFiles/additionalFiles.schema";
+import type {
+  AdditionalFiles,
+  AdditionalFilesCamel,
+} from "@/schema/public/additionalFiles/additionalFiles.schema";
+import camelcaseKeys from "camelcase-keys";
 
-export const additionalFilesFixture = ({
-  overrides,
-}: {
-  overrides?: Partial<AdditionalFiles>;
-} = {}): AdditionalFiles => ({
+const baseAdditionalFilesFixture: AdditionalFiles = {
   downloadable_files: [
     {
       asset_id: 456,
@@ -25,6 +25,29 @@ export const additionalFilesFixture = ({
       },
     },
   ],
+};
+
+const baseAdditionalFilesFixtureCamel: AdditionalFilesCamel = camelcaseKeys(
+  baseAdditionalFilesFixture,
+  { deep: true },
+);
+
+export const additionalFilesFixture = ({
+  overrides,
+}: {
+  overrides?: Partial<AdditionalFiles>;
+} = {}): AdditionalFiles => ({
+  ...baseAdditionalFilesFixture,
   ...overrides,
 });
+
+export const additionalFilesFixtureCamel = ({
+  overrides,
+}: {
+  overrides?: Partial<AdditionalFilesCamel>;
+} = {}): AdditionalFilesCamel => ({
+  ...baseAdditionalFilesFixtureCamel,
+  ...overrides,
+});
+
 export default additionalFilesFixture;
