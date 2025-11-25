@@ -1,2 +1,2 @@
-export * from "./quizAnswers.fixture";
-export * from "./quizAnswers.schema";
+export * from "./quizAnswers.fixture"
+export * from "./quizAnswers.schema"
