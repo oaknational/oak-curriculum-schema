@@ -1,2 +1,2 @@
-export * from "./syntheticUnitvariantsWithLessonIdsByKs.fixture";
-export * from "./syntheticUnitvariantsWithLessonIdsByKs.schema";
+export * from './syntheticUnitvariantsWithLessonIdsByKs.fixture'
+export * from './syntheticUnitvariantsWithLessonIdsByKs.schema'

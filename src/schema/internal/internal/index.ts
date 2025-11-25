@@ -1,1 +1,1 @@
-export * from "./internal.schema";
+export * from './internal.schema'

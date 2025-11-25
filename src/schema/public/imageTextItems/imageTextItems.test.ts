@@ -1,10 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { z } from 'zod'
 
 import {
   imageItemFixture,
   imageObjectFixture,
-  textAndImageItemFixture,
   textItemFixture
 } from '@/schema/public/imageTextItems/imageTextItems.fixture'
 import {

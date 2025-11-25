@@ -2,7 +2,6 @@ import { type SyntheticUnitvariantLessons } from '@/schema/published/syntheticUn
 
 import { lessonDataFixture } from '@/schema/public/lessonData/lessonData.fixture'
 import { unitDataFixture } from '@/schema/public/unitData/unitData.fixture'
-import { unitvariantFixture } from '@/schema/public/unitvariant/unitvariant.fixture'
 import { programmeFieldsFixture } from '@/schema/public/programmeFields/programmeFields.fixture'
 
 // To be deprecated
