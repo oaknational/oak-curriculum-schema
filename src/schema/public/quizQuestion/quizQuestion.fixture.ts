@@ -1,4 +1,4 @@
-import { type QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema"
+import type { QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema"
 
 import {
   matchFixture,

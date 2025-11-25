@@ -1,4 +1,5 @@
 import { z } from "zod"
+import zodToCamelCase from "zod-to-camel-case"
 import { lessonDataSchema } from "@/schema/public/lessonData/lessonData.schema"
 import { unitDataSchema } from "@/schema/public/unitData/unitData.schema"
 import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema"
@@ -24,7 +25,13 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   features: featuresSchema.nullable().optional(),
   static_lesson_list: staticLessonListSchema.nullish(),
 })
-
 export type SyntheticUnitvariantLessons = z.infer<
   typeof syntheticUnitvariantLessonsSchema
+>
+
+export const syntheticUnitvariantLessonsSchemaCamel = zodToCamelCase(
+  syntheticUnitvariantLessonsSchema,
+)
+export type SyntheticUnitvariantLessonsCamel = z.infer<
+  typeof syntheticUnitvariantLessonsSchemaCamel
 >

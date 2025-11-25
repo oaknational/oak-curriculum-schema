@@ -1,4 +1,4 @@
-import { type Unitvariant } from "@/schema/public/unitvariant/unitvariant.schema"
+import type { Unitvariant } from "@/schema/public/unitvariant/unitvariant.schema"
 
 export const unitvariantFixture = ({
   overrides = {},

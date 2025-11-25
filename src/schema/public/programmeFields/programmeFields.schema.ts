@@ -21,6 +21,7 @@ import {
   pathwaySlugs,
   pathwayDescriptions,
 } from "@/schema/public/base/base.schema"
+import zodToCamelCase from "zod-to-camel-case"
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),
@@ -70,5 +71,7 @@ export const programmeFieldsSchema = z.object({
   legacy: z.string().optional(),
   dataset: z.string().optional(),
 })
-
 export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>
+
+export const programmeFieldsSchemaCamel = zodToCamelCase(programmeFieldsSchema)
+export type ProgrammeFieldsCamel = z.infer<typeof programmeFieldsSchemaCamel>

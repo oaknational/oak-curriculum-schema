@@ -1,4 +1,5 @@
 import { z } from "zod"
+import zodToCamelCase from "zod-to-camel-case"
 
 import {
   imageItemSchema,
@@ -33,5 +34,7 @@ export const quizQuestionSchema = z.object({
   active: z.boolean().optional(),
   order: z.number(),
 })
-
 export type QuizQuestion = z.infer<typeof quizQuestionSchema>
+
+export const quizQuestionSchemaCamel = zodToCamelCase(quizQuestionSchema)
+export type QuizQuestionCamel = z.infer<typeof quizQuestionSchemaCamel>

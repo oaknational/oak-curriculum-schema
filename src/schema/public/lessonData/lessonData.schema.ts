@@ -1,4 +1,5 @@
 import { z } from "zod"
+import zodToCamelCase from "zod-to-camel-case"
 
 import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema"
 import {
@@ -6,7 +7,7 @@ import {
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
-} from "@/schema/published/lessonContent/lessonContent.schema"
+} from "@/schema/published/lessonContent"
 import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema"
 
 export const lessonDataSchema = z.object({
@@ -42,11 +43,13 @@ export const lessonDataSchema = z.object({
   expiration_date: z.string().nullable(),
   lesson_outline: z.array(lessonOutlineSchema).nullable().optional(),
   media_clips: mediaClipsRecordSchema.nullable().optional(),
-  deprecated_fields: z.record(z.unknown()).nullable(),
+  deprecated_fields: z.record(z.string(), z.unknown()).nullable(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
   updated_at: z.string(),
   lesson_release_date: z.string().nullable(),
 })
-
 export type LessonData = z.infer<typeof lessonDataSchema>
+
+export const lessonDataSchemaCamel = zodToCamelCase(lessonDataSchema)
+export type LessonDataCamel = z.infer<typeof lessonDataSchemaCamel>

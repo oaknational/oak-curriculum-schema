@@ -1,7 +1,7 @@
-import {
-  type ImageObject,
-  type ImageItem,
-  type TextItem,
+import type {
+  ImageObject,
+  ImageItem,
+  TextItem,
 } from "@/schema/public/imageTextItems/imageTextItems.schema"
 
 export const imageObjectFixture = (): ImageObject => ({
