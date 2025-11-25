@@ -5,7 +5,7 @@ import type {
 import camelcaseKeys from "camelcase-keys";
 
 export const additionalFilesFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<AdditionalFiles>;
 } = {}): AdditionalFiles => ({
@@ -33,7 +33,7 @@ export const additionalFilesFixture = ({
 });
 
 export const additionalFilesFixtureCamel = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<AdditionalFilesCamel>;
 } = {}): AdditionalFilesCamel => ({

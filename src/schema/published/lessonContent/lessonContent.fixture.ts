@@ -17,30 +17,53 @@ import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFi
 import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
 import camelcaseKeys from "camelcase-keys";
 
-export const lessonEquipmentAndResourcesFixture =
-  (): LessonEquipmentAndResources => ({
-    equipment: "equipment",
-  });
-
-export const teacherTipsFixture = (): TeacherTips => ({
-  teacher_tip: "teacher-tip",
+export const lessonEquipmentAndResourcesFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonEquipmentAndResources>;
+} = {}): LessonEquipmentAndResources => ({
+  equipment: "equipment",
+  ...overrides,
 });
 
-export const keywordsFixture = (): Keywords => ({
+export const teacherTipsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<TeacherTips>;
+} = {}): TeacherTips => ({
+  teacher_tip: "teacher-tip",
+  ...overrides,
+});
+
+export const keywordsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<Keywords>;
+} = {}): Keywords => ({
   keyword: "keyword",
   description: "description",
+  ...overrides,
 });
 
-export const misconceptionsAndCommonMistakesFixture =
-  (): MisconceptionsAndCommonMistakes => ({
-    misconception: "misconception",
-    response: "response",
-  });
+export const misconceptionsAndCommonMistakesFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MisconceptionsAndCommonMistakes>;
+} = {}): MisconceptionsAndCommonMistakes => ({
+  misconception: "misconception",
+  response: "response",
+  ...overrides,
+});
 
-export const contentGuidanceFixture = (): ContentGuidance => ({
+export const contentGuidanceFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<ContentGuidance>;
+} = {}): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
   contentguidance_area: "contentguidance-area",
+  ...overrides,
 });
 
 export const lessonContentFixture = ({

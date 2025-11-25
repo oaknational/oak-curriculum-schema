@@ -8,7 +8,9 @@ import type {
 } from "@/schema/public/imageTextItems/imageTextItems.schema";
 import camelcaseKeys from "camelcase-keys";
 
-export const imageObjectFixture = (): ImageObject => ({
+export const imageObjectFixture = ({
+  overrides = {},
+}: { overrides?: Partial<ImageObject> } = {}): ImageObject => ({
   format: "png",
   secure_url: "https://res.cloudinary.com/demo/image/upload/sample.png",
   url: "http://res.cloudinary.com/demo/image/upload/sample.png",
@@ -20,18 +22,30 @@ export const imageObjectFixture = (): ImageObject => ({
   },
   public_id: "sample",
   version: 1234567890,
+  ...overrides,
 });
 
-export const imageObjectFixtureCamel = (): ImageObjectCamel =>
-  camelcaseKeys(imageObjectFixture(), { deep: true }) as ImageObjectCamel;
+export const imageObjectFixtureCamel = ({
+  overrides = {},
+}: { overrides?: Partial<ImageObjectCamel> } = {}): ImageObjectCamel => ({
+  ...camelcaseKeys(imageObjectFixture(), { deep: true }),
+  ...overrides,
+});
 
-export const imageItemFixture = (): ImageItem => ({
+export const imageItemFixture = ({
+  overrides = {},
+}: { overrides?: Partial<ImageItem> } = {}): ImageItem => ({
   image_object: imageObjectFixture(),
   type: "image",
+  ...overrides,
 });
 
-export const imageItemFixtureCamel = (): ImageItemCamel =>
-  camelcaseKeys(imageItemFixture(), { deep: true }) as ImageItemCamel;
+export const imageItemFixtureCamel = ({
+  overrides = {},
+}: { overrides?: Partial<ImageItemCamel> } = {}): ImageItemCamel => ({
+  ...camelcaseKeys(imageItemFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const textItemFixture = ({
   overrides = {},
@@ -48,15 +62,22 @@ export const textItemFixtureCamel = ({
   ...overrides,
 });
 
-export const textAndImageItemFixture = (): Array<TextItem | ImageItem> => [
+export const textAndImageItemFixture = ({
+  overrides = [],
+}: {
+  overrides?: Array<TextItem | ImageItem>;
+} = {}): Array<TextItem | ImageItem> => [
   imageItemFixture(),
   textItemFixture({ overrides: { text: "This is a text item." } }),
+  ...overrides,
 ];
 
-export const textAndImageItemFixtureCamel = (): (
-  | TextItemCamel
-  | ImageItemCamel
-)[] => [
+export const textAndImageItemFixtureCamel = ({
+  overrides = [],
+}: {
+  overrides?: Array<TextItemCamel | ImageItemCamel>;
+} = {}): Array<TextItemCamel | ImageItemCamel> => [
   imageItemFixtureCamel(),
   textItemFixtureCamel({ overrides: { text: "This is a text item." } }),
+  ...overrides,
 ];

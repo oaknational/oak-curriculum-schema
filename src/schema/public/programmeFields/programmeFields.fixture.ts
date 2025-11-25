@@ -5,7 +5,7 @@ import type {
 import camelcaseKeys from "camelcase-keys";
 
 export const programmeFieldsFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<ProgrammeFields>;
 } = {}): ProgrammeFields => ({
@@ -49,7 +49,7 @@ export const programmeFieldsFixture = ({
 });
 
 export const programmeFieldsFixtureCamel = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<ProgrammeFieldsCamel>;
 } = {}): ProgrammeFieldsCamel => ({
