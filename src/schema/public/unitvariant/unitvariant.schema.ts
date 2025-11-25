@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-import { _stateSchema, _cohortSchema } from "./base.schema";
-import { unitDataSchema } from "./unitData.schema";
-import { programmeFieldsSchema } from "./programmeFields.schema";
+import { _stateSchema, _cohortSchema } from "../base/base.schema";
+import { unitDataSchema } from "../unitData/unitData.schema";
+import { programmeFieldsSchema } from "../programmeFields/programmeFields.schema";
 
 export const unitvariantSchema = z.object({
   _state: _stateSchema,

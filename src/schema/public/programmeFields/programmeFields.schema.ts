@@ -20,7 +20,7 @@ import {
   pathways,
   pathwaySlugs,
   pathwayDescriptions,
-} from "./base.schema";
+} from "../base/base.schema";
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),

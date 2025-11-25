@@ -11,7 +11,7 @@ import {
   imageItemSchema,
   imageObjectSchema,
   textItemSchema,
-} from "@/schema/public/imageTextItems.schema";
+} from "@/schema/public/imageTextItems/imageTextItems.schema";
 
 describe("imageObject fixture", () => {
   it("conforms to the schema", () => {

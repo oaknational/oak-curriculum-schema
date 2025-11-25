@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "./syntheticUnitvariantsWithLessonIdsBase.schema";
+import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "../syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema";
 
 export const syntheticUnitvariantsWithLessonIdsByYearsSchema = z.object({
   ...syntheticUnitvariantsWithLessonIdsBaseSchema.shape,

@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { imageItemSchema, textItemSchema } from "./imageTextItems.schema";
+import {
+  imageItemSchema,
+  textItemSchema,
+} from "../imageTextItems/imageTextItems.schema";
 
 export const multipleChoiceSchema = z.object({
   answer: z.array(z.union([textItemSchema, imageItemSchema]).optional()),

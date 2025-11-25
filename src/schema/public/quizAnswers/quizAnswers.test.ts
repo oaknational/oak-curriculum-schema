@@ -10,7 +10,7 @@ import {
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "@/schema/public/quizAnswers.schema";
+} from "@/schema/public/quizAnswers/quizAnswers.schema";
 
 describe("multipleChoice answer", () => {
   it("conforms to the schema", () => {

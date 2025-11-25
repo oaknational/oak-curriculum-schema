@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { _stateSchema } from "./base.schema";
+import { _stateSchema } from "../base/base.schema";
 
 export const assetTypeSchema = z.enum([
   "lesson_guide",

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { syntheticProgrammesByYearFixture } from "@/fixtures/syntheticProgrammesByYear.fixture";
-import { syntheticProgrammesByYearSchema } from "@/schema/published/syntheticProgrammesByYear.schema";
+import { syntheticProgrammesByYearSchema } from "@/schema/published/syntheticProgrammesByYear/syntheticProgrammesByYear.schema";
 
 describe("syntheticProgrammesByYear", () => {
   it("conforms to the schema", () => {

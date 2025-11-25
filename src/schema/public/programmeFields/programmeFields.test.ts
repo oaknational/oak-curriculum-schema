@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { programmeFieldsFixture } from "@/fixtures/programmeFields.fixture";
-import { programmeFieldsSchema } from "@/schema/public/programmeFields.schema";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
 
 describe("programmeFields", () => {
   it("conforms to the schema", () => {

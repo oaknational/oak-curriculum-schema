@@ -1,4 +1,4 @@
-import { SyntheticUnitvariantLessons } from "@/schema/syntheticUnitvariantLessons.schema";
+import { SyntheticUnitvariantLessons } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 import { lessonDataFixture } from "./lessonData.fixture";
 import { unitDataFixture } from "./unitData.fixture";

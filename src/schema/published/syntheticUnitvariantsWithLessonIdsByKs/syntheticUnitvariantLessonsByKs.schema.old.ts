@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { syntheticUnitvariantLessonsSchema } from "../syntheticUnitvariantLessons.schema";
-import { unitvariantSchema } from "../../public/unitvariant.schema";
-import { programmeFieldsSchema } from "../../public/programmeFields.schema";
+import { syntheticUnitvariantLessonsSchema } from "../syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
+import { unitvariantSchema } from "../../public/unitvariant/unitvariant.schema";
+import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
 
 export const syntheticUnitvariantLessonsByKsSchemaOld = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ null_unitvariant_id: true })

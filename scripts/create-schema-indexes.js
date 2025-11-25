@@ -121,32 +121,55 @@ function createParentIndexFile(dir) {
 }
 
 /**
- * Create an index.ts file that exports from both subdirectories and schema files
- * @param {string} dir - Directory path
- * @param {string} schemaDir - Root schema directory path
+ * Recursively find all .schema.ts files in subdirectories of a directory
+ * @param {string} dir - Directory to search
+ * @param {string} baseDir - Base directory for relative path
+ * @returns {string[]} - Array of relative paths to .schema.ts files
  */
-function createRootIndexFile(dir, schemaDir) {
+function findAllSchemaFilesInSubdirs(dir, baseDir) {
+  let results = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results = results.concat(findAllSchemaFilesInSubdirs(fullPath, baseDir));
+    } else if (entry.isFile() && entry.name.endsWith(".schema.ts")) {
+      // Only include if not in the root dir
+      if (dir !== baseDir) {
+        results.push(path.relative(baseDir, fullPath));
+      }
+    }
+  }
+  return results;
+}
+
+/**
+ * Create an index.ts file in src/schema that exports everything from each .schema.ts file in all subdirectories
+ * and also exports from the subdirectories themselves
+ * @param {string} dir - Root schema directory path
+ */
+function createRootIndexFileExportsFromSubdirs(dir) {
   const subdirs = getSubdirectories(dir);
-  const schemaFiles = getSchemaFilesInDir(dir);
+  const schemaFiles = findAllSchemaFilesInSubdirs(dir, dir);
 
   const allExports = [];
 
-  // Add subdirectory exports (sorted)
+  // Add subdirectory exports
   for (const subdir of subdirs) {
     allExports.push(`export * from "./${subdir}";`);
   }
 
-  // Add schema file exports (sorted)
-  for (const filename of schemaFiles) {
-    const baseName = filename.replace(".schema.ts", "");
-    allExports.push(`export * from "./${baseName}.schema";`);
+  // Add schema file exports
+  for (const relPath of schemaFiles) {
+    // Remove .ts extension for import
+    const noExt = relPath.replace(/\.ts$/, "");
+    allExports.push(`export * from "./${noExt.replace(/\\/g, "/")}";`);
   }
 
   // Sort all exports alphabetically
   allExports.sort();
 
   const content = allExports.join("\n") + (allExports.length > 0 ? "\n" : "");
-
   const indexPath = path.join(dir, "index.ts");
   fs.writeFileSync(indexPath, content, "utf8");
   console.log(`Created: ${indexPath}`);
@@ -181,8 +204,8 @@ for (const dir of dirsWithSubdirs) {
 
 console.log("\nCreating index.ts files...\n");
 
-// Handle the root schema directory specially - it exports both subdirectories and schema files
-createRootIndexFile(schemaDir, schemaDir);
+// Update src/schema/index.ts to export everything from each .schema.ts file in all subdirectories
+createRootIndexFileExportsFromSubdirs(schemaDir);
 
 // Process other directories: parent directories export subdirectories,
 // leaf directories export schema files

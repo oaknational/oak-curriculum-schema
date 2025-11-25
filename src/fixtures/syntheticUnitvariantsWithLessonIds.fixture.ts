@@ -1,6 +1,6 @@
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
-import { SyntheticUnitvariantsWithLessonIdsBase } from "@/schema/syntheticUnitvariantsWithLessonIdsBase.schema";
+import { SyntheticUnitvariantsWithLessonIdsBase } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema";
 
 export const syntheticUnitvariantsWithLessonIdsFixture = ({
   overrides = {},

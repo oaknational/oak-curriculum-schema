@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { syntheticUnitvariantLessonsSchema } from "./syntheticUnitvariantLessons.schema";
+import { syntheticUnitvariantLessonsSchema } from "../syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 export const syntheticUnitvariantLessonsByKsSchema = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ supplementary_data: true }).shape,

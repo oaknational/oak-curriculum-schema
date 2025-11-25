@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { lessonDataSchema } from "./public/lessonData.schema";
-import { unitDataSchema } from "./unitData.schema";
-import { programmeFieldsSchema } from "./public/programmeFields.schema";
-import { actionsSchema } from "./published/actions.schema";
-import { featuresSchema } from "./public/features.schema";
-import { staticLessonListSchema } from "./public/staticLessonList.schema";
+import { lessonDataSchema } from "../../public/lessonData/lessonData.schema";
+import { unitDataSchema } from "../../public/unitData/unitData.schema";
+import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
+import { actionsSchema } from "../actions/actions.schema";
+import { featuresSchema } from "../../public/features/features.schema";
+import { staticLessonListSchema } from "../../public/staticLessonList/staticLessonList.schema";
 
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),

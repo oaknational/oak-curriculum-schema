@@ -1,12 +1,15 @@
 import { z } from "zod";
 
-import { imageItemSchema, textItemSchema } from "./imageTextItems.schema";
+import {
+  imageItemSchema,
+  textItemSchema,
+} from "../imageTextItems/imageTextItems.schema";
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "./quizAnswers.schema";
+} from "../quizAnswers/quizAnswers.schema";
 
 export const quizQuestionSchema = z.object({
   question_id: z.number(),
