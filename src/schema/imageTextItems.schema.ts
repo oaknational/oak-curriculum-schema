@@ -3,8 +3,8 @@ import { z } from "zod";
 export const imageObjectSchema = z
   .object({
     format: z.enum(["png", "jpg", "jpeg", "webp", "gif", "svg"]),
-    secure_url: z.string().url(),
-    url: z.string().url(),
+    secure_url: z.url(),
+    url: z.url(),
     height: z.number(),
     width: z.number(),
     metadata: z.union([

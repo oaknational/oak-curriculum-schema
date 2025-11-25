@@ -14,7 +14,7 @@ export type AssetTypeType = z.infer<typeof assetTypeSchema>;
 
 export const googleSchema = z.object({
   id: z.string().nullable(),
-  url: z.string().url().nullable(),
+  url: z.url().nullable(),
 });
 
 export type GoogleType = z.infer<typeof googleSchema>;
@@ -45,7 +45,7 @@ export const assetsSchema = z.object({
   title: z.string(),
   description: z.string(),
   asset_type: assetTypeSchema,
-  url: z.string().url(),
+  url: z.url(),
   asset_object: assetObjectSchema,
   tpc_media_ids: z.array(z.number()).nullable(),
   tpc_works_ids: z.array(z.number()).nullable(),
