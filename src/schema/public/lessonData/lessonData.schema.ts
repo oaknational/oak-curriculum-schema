@@ -1,7 +1,13 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema";
+import {
+  _stateSchema,
+  _cohortSchema,
+  timestampsSchema,
+  newState,
+  publishedState,
+} from "@/schema/public/base/base.schema";
 import {
   keyLearningPointsSchema,
   keywordsSchema,
@@ -10,7 +16,7 @@ import {
 } from "@/schema/lessonContent.schema";
 import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema";
 
-export const lessonDataSchema = z.object({
+export const lessonDataSchema = timestampsSchema.extend({
   lesson_id: z.number(),
   lesson_uid: z.string(),
   slug: z.string(),
@@ -50,6 +56,44 @@ export const lessonDataSchema = z.object({
   lesson_release_date: z.string().nullable(),
 });
 export type LessonData = z.infer<typeof lessonDataSchema>;
+
+export const lessonDataNewSchema = lessonDataSchema
+  .pick({
+    lesson_id: true,
+    lesson_uid: true,
+    phonics_outcome: true,
+    key_learning_points: true,
+    equipment_and_resources: true,
+    content_guidance_details: true,
+    content_guidance: true,
+    copyright_content: true,
+    supervision_level: true,
+    thirdpartycontent_list: true,
+    misconceptions_and_common_mistakes: true,
+    keywords: true,
+    video_id: true,
+    sign_language_video_id: true,
+    quiz_id_starter: true,
+    quiz_id_exit: true,
+    asset_id_slidedeck: true,
+    asset_id_worksheet: true,
+    asset_id_worksheet_answers: true,
+    asset_id_supplementary_asset: true,
+    asset_id_lesson_guide: true,
+    expiration_date: true,
+    lesson_outline: true,
+    media_clips: true,
+    deprecated_fields: true,
+    _cohort: true,
+    lesson_release_date: true,
+  })
+  .extend({
+    _state: newState,
+  });
+
+export const lessonDataPublishedSchema = lessonDataSchema.extend({
+  _state: publishedState,
+});
 
 export const lessonDataSchemaCamel = zodToCamelCase(lessonDataSchema);
 export type LessonDataCamel = z.infer<typeof lessonDataSchemaCamel>;

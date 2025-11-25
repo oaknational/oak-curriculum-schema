@@ -1,7 +1,12 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema } from "@/schema/public/base/base.schema";
+import {
+  _stateSchema,
+  newState,
+  publishedState,
+  timestampsSchema,
+} from "@/schema/public/base/base.schema";
 
 export const assetTypeSchema = z.enum([
   "lesson_guide",
@@ -40,7 +45,7 @@ export const assetObjectSchema = z
 
 export type AssetObjectType = z.infer<typeof assetObjectSchema>;
 
-export const assetsSchema = z.object({
+export const assetsSchema = timestampsSchema.extend({
   asset_id: z.number(),
   asset_uid: z.string(),
   _state: _stateSchema,
@@ -54,6 +59,30 @@ export const assetsSchema = z.object({
 });
 export type AssetType = z.infer<typeof assetsSchema>;
 
+export const assetsNewSchema = assetsSchema
+  .pick({
+    asset_id: true,
+    asset_uid: true,
+    asset_type: true,
+    asset_object: true,
+    tpc_media_ids: true,
+    tpc_works_ids: true,
+    created_at: true,
+    updated_at: true,
+  })
+  .extend({
+    _state: newState,
+    url: z.url().nullable(),
+    title: z.string().nullable(),
+    description: z.string().nullable(),
+  });
+export type AssetTypeNew = z.infer<typeof assetsNewSchema>;
+
+export const assetsPublishedSchema = assetsSchema.extend({
+  _state: publishedState,
+});
+export type AssetTypePublished = z.infer<typeof assetsPublishedSchema>;
+
 export const googleSchemaCamel = zodToCamelCase(googleSchema);
 export type GoogleTypeCamel = z.infer<typeof googleSchemaCamel>;
 
@@ -62,6 +91,14 @@ export type BucketTypeCamel = z.infer<typeof bucketSchemaCamel>;
 
 export const assetsSchemaCamel = zodToCamelCase(assetsSchema);
 export type AssetTypeCamel = z.infer<typeof assetsSchemaCamel>;
+
+export const assetsNewSchemaCamel = zodToCamelCase(assetsNewSchema);
+export type AssetTypeNewCamel = z.infer<typeof assetsNewSchemaCamel>;
+
+export const assetsPublishedSchemaCamel = zodToCamelCase(assetsPublishedSchema);
+export type AssetTypePublishedCamel = z.infer<
+  typeof assetsPublishedSchemaCamel
+>;
 
 export const assetObjectSchemaCamel = zodToCamelCase(assetObjectSchema);
 export type AssetObjectTypeCamel = z.infer<typeof assetObjectSchemaCamel>;

@@ -1,6 +1,15 @@
 import { z } from "zod";
 
-export const _stateSchema = z.enum(["published", "new", "migration"]);
+export const publishedState = z.literal("published");
+export const newState = z.literal("new");
+export const migrationState = z.literal("migration");
+
+export const timestampsSchema = z.object({
+  created_at: z.string(),
+  updated_at: z.string(),
+});
+
+export const _stateSchema = z.union([publishedState, newState, migrationState]);
 export const _cohortSchema = z.enum([
   "2020-2023",
   "2023-2024",
