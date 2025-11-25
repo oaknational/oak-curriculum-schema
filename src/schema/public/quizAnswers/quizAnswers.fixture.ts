@@ -4,7 +4,10 @@ import {
   Order,
   ShortAnswer,
 } from "@/schema/public/quizAnswers/quizAnswers.schema";
-import { imageItemFixture, textItemFixture } from "./imageTextItems.fixture";
+import {
+  imageItemFixture,
+  textItemFixture,
+} from "../imageTextItems/imageTextItems.fixture";
 
 export const multipleChoiceFixture = ({
   overrides = {},

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { programmeFieldsFixture } from "@/fixtures/programmeFields.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
 
 describe("programmeFields", () => {

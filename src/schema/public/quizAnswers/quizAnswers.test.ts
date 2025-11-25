@@ -4,7 +4,7 @@ import {
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture,
-} from "@/fixtures/quizAnswers.fixture";
+} from "@/schema/public/quizAnswers/quizAnswers.fixture";
 import {
   matchSchema,
   multipleChoiceSchema,

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { quizQuestionSchema } from "@/schema/public/quizQuestion/quizQuestion.schema";
-import { multipleChoiceQuestion } from "@/fixtures/quizQuestion.fixture";
-import { textAndImageItemFixture } from "@/fixtures/imageTextItems.fixture";
+import { multipleChoiceQuestion } from "@/schema/public/quizQuestion/quizQuestion.fixture";
+import { textAndImageItemFixture } from "@/schema/public/imageTextItems/imageTextItems.fixture";
 
 describe("multipleChoice question", () => {
   it("conforms to the schema", () => {

@@ -3,15 +3,15 @@ import {
   LessonContent,
   TeacherTips,
   LessonEquipmentAndResources,
-} from "@/schema/lessonContent.schema";
+} from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
   multipleChoiceQuestion,
   orderQuestion,
   shortAnswerQuestion,
-} from "./quizQuestion.fixture";
-import additionalFilesFixture from "@/fixtures/additionalFiles.fixture";
-import mediaClipsFixture from "./mediaClips.fixture";
+} from "../../public/quizQuestion/quizQuestion.fixture";
+import additionalFilesFixture from "../../public/additionalFiles/additionalFiles.fixture";
+import mediaClipsFixture from "../../public/mediaClips/mediaClips.fixture";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({

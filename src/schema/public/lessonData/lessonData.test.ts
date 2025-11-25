@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { lessonDataFixture } from "@/fixtures/lessonData.fixture";
+import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
 import { lessonDataSchema } from "@/schema/public/lessonData/lessonData.schema";
 
 describe("lessonData", () => {

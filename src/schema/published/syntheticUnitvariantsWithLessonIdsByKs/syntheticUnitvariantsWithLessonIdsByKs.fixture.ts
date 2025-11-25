@@ -1,5 +1,5 @@
-import { unitDataFixture } from "./unitData.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { unitDataFixture } from "../../public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "../../public/programmeFields/programmeFields.fixture";
 import { SyntheticUnitvariantsWithLessonIdsByKs } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantsWithLessonIdsByKs.schema";
 
 export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({

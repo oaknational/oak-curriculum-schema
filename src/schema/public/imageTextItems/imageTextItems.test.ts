@@ -6,7 +6,7 @@ import {
   imageObjectFixture,
   textAndImageItemFixture,
   textItemFixture,
-} from "@/fixtures/imageTextItems.fixture";
+} from "@/schema/public/imageTextItems/imageTextItems.fixture";
 import {
   imageItemSchema,
   imageObjectSchema,

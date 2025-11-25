@@ -1,4 +1,5 @@
 export * from "./actions";
+export * from "./lessonContent";
 export * from "./programmeListing";
 export * from "./syntheticProgrammesByYear";
 export * from "./syntheticUnitvariantLessons";

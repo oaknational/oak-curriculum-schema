@@ -1,9 +1,9 @@
 import { SyntheticUnitvariantLessons } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
-import { lessonDataFixture } from "./lessonData.fixture";
-import { unitDataFixture } from "./unitData.fixture";
-import { unitvariantFixture } from "./unitvariant.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { lessonDataFixture } from "../../public/lessonData/lessonData.fixture";
+import { unitDataFixture } from "../../public/unitData/unitData.fixture";
+import { unitvariantFixture } from "../../public/unitvariant/unitvariant.fixture";
+import { programmeFieldsFixture } from "../../public/programmeFields/programmeFields.fixture";
 
 // To be deprecated
 export const syntheticUnitvariantLessonsFixture = ({
