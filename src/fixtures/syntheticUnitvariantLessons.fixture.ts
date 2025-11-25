@@ -8,7 +8,12 @@ import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 import camelcaseKeys from "camelcase-keys";
 
-const baseSyntheticUnitvariantLessonsFixture: SyntheticUnitvariantLessons = {
+// To be deprecated
+export const syntheticUnitvariantLessonsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantLessons>;
+} = {}): SyntheticUnitvariantLessons => ({
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
   programme_slug: "programme-slug",
@@ -21,15 +26,6 @@ const baseSyntheticUnitvariantLessonsFixture: SyntheticUnitvariantLessons = {
     unit_order: 1,
     order_in_unit: 1,
   },
-};
-
-// To be deprecated
-export const syntheticUnitvariantLessonsFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<SyntheticUnitvariantLessons>;
-} = {}): SyntheticUnitvariantLessons => ({
-  ...baseSyntheticUnitvariantLessonsFixture,
   ...overrides,
 });
 
@@ -37,11 +33,7 @@ export const syntheticUnitvariantLessonsFixtureCamel = ({
   overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantLessonsCamel>;
-} = {}): SyntheticUnitvariantLessonsCamel =>
-  camelcaseKeys(
-    {
-      ...baseSyntheticUnitvariantLessonsFixture,
-      ...overrides,
-    },
-    { deep: true },
-  ) as SyntheticUnitvariantLessonsCamel;
+} = {}): SyntheticUnitvariantLessonsCamel => ({
+  ...camelcaseKeys(syntheticUnitvariantLessonsFixture(), { deep: true }),
+  ...overrides,
+});

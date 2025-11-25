@@ -40,7 +40,11 @@ export const contentGuidanceFixture = () => ({
   contentguidance_area: "contentguidance-area",
 });
 
-const baseLessonContentFixture: LessonContent = {
+export const lessonContentFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonContent>;
+} = {}): LessonContent => ({
   lesson_id: 1,
   lesson_title: "lesson-title",
   lesson_slug: "lesson-slug",
@@ -103,19 +107,6 @@ const baseLessonContentFixture: LessonContent = {
   ],
   downloadable_files: additionalFilesFixture().downloadable_files,
   lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
-};
-
-const baseLessonContentFixtureCamel: LessonContentCamel = camelcaseKeys(
-  baseLessonContentFixture,
-  { deep: true },
-);
-
-export const lessonContentFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<LessonContent>;
-} = {}): LessonContent => ({
-  ...baseLessonContentFixture,
   ...overrides,
 });
 
@@ -124,6 +115,6 @@ export const lessonContentFixtureCamel = ({
 }: {
   overrides?: Partial<LessonContentCamel>;
 } = {}): LessonContentCamel => ({
-  ...baseLessonContentFixtureCamel,
+  ...camelcaseKeys(lessonContentFixture(), { deep: true }),
   ...overrides,
 });

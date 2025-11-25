@@ -4,7 +4,11 @@ import type {
 } from "@/schema/public/unitvariant/unitvariant.schema";
 import camelcaseKeys from "camelcase-keys";
 
-const baseUnitvariantFixture: Unitvariant = {
+export const unitvariantFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<Unitvariant>;
+} = {}): Unitvariant => ({
   unitvariant_id: 1,
   unit_id: 1,
   _deleted: false,
@@ -12,19 +16,6 @@ const baseUnitvariantFixture: Unitvariant = {
   _cohort: "2023-2024",
   unit_overrides: {},
   programme_fields: {},
-};
-
-const baseUnitvariantFixtureCamel: UnitvariantCamel = camelcaseKeys(
-  baseUnitvariantFixture,
-  { deep: true },
-);
-
-export const unitvariantFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<Unitvariant>;
-} = {}): Unitvariant => ({
-  ...baseUnitvariantFixture,
   ...overrides,
 });
 
@@ -33,6 +24,6 @@ export const unitvariantFixtureCamel = ({
 }: {
   overrides?: Partial<UnitvariantCamel>;
 } = {}): UnitvariantCamel => ({
-  ...baseUnitvariantFixtureCamel,
+  ...camelcaseKeys(unitvariantFixture(), { deep: true }),
   ...overrides,
 });

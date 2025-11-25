@@ -8,7 +8,7 @@ import type {
 } from "@/schema/public/imageTextItems/imageTextItems.schema";
 import camelcaseKeys from "camelcase-keys";
 
-const baseImageObjectFixture: ImageObject = {
+export const imageObjectFixture = (): ImageObject => ({
   format: "png",
   secure_url: "https://res.cloudinary.com/demo/image/upload/sample.png",
   url: "http://res.cloudinary.com/demo/image/upload/sample.png",
@@ -20,14 +20,10 @@ const baseImageObjectFixture: ImageObject = {
   },
   public_id: "sample",
   version: 1234567890,
-};
-
-export const imageObjectFixture = (): ImageObject => ({
-  ...baseImageObjectFixture,
 });
 
 export const imageObjectFixtureCamel = (): ImageObjectCamel =>
-  camelcaseKeys(baseImageObjectFixture, { deep: true }) as ImageObjectCamel;
+  camelcaseKeys(imageObjectFixture(), { deep: true }) as ImageObjectCamel;
 
 export const imageItemFixture = (): ImageItem => ({
   image_object: imageObjectFixture(),
@@ -35,36 +31,22 @@ export const imageItemFixture = (): ImageItem => ({
 });
 
 export const imageItemFixtureCamel = (): ImageItemCamel =>
-  camelcaseKeys(
-    {
-      image_object: imageObjectFixture(),
-      type: "image",
-    },
-    { deep: true },
-  ) as ImageItemCamel;
-
-const baseTextItemFixture: TextItem = {
-  text: "Hello, World!",
-  type: "text",
-};
+  camelcaseKeys(imageItemFixture(), { deep: true }) as ImageItemCamel;
 
 export const textItemFixture = ({
   overrides = {},
 }: { overrides?: Partial<TextItem> } = {}): TextItem => ({
-  ...baseTextItemFixture,
+  text: "Hello, World!",
+  type: "text",
   ...overrides,
 });
 
 export const textItemFixtureCamel = ({
   overrides = {},
-}: { overrides?: Partial<TextItemCamel> } = {}): TextItemCamel =>
-  camelcaseKeys(
-    {
-      ...baseTextItemFixture,
-      ...overrides,
-    },
-    { deep: true },
-  ) as TextItemCamel;
+}: { overrides?: Partial<TextItemCamel> } = {}): TextItemCamel => ({
+  ...camelcaseKeys(textItemFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const textAndImageItemFixture = (): (TextItem | ImageItem)[] => [
   imageItemFixture(),

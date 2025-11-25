@@ -26,16 +26,10 @@ export const multipleChoiceFixtureCamel = ({
   overrides = {},
 }: {
   overrides?: Partial<MultipleChoiceCamel>;
-} = {}): MultipleChoiceCamel =>
-  camelcaseKeys(
-    {
-      answer: [textItemFixture(), imageItemFixture()],
-      answer_is_active: true,
-      answer_is_correct: true,
-      ...overrides,
-    },
-    { deep: true },
-  ) as MultipleChoiceCamel;
+} = {}): MultipleChoiceCamel => ({
+  ...camelcaseKeys(multipleChoiceFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const shortAnswerFixture = ({
   overrides = {},
@@ -52,16 +46,10 @@ export const shortAnswerFixtureCamel = ({
   overrides = {},
 }: {
   overrides?: Partial<ShortAnswerCamel>;
-} = {}): ShortAnswerCamel =>
-  camelcaseKeys(
-    {
-      answer: [textItemFixture()],
-      answer_is_active: true,
-      answer_is_default: true,
-      ...overrides,
-    },
-    { deep: true },
-  ) as ShortAnswerCamel;
+} = {}): ShortAnswerCamel => ({
+  ...camelcaseKeys(shortAnswerFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const orderFixture = ({
   overrides = {},
@@ -78,16 +66,10 @@ export const orderFixtureCamel = ({
   overrides = {},
 }: {
   overrides?: Partial<OrderCamel>;
-} = {}): OrderCamel =>
-  camelcaseKeys(
-    {
-      answer: [textItemFixture()],
-      correct_order: 1,
-      answer_is_active: true,
-      ...overrides,
-    },
-    { deep: true },
-  ) as OrderCamel;
+} = {}): OrderCamel => ({
+  ...camelcaseKeys(orderFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const matchFixture = ({
   overrides = {},
@@ -104,15 +86,7 @@ export const matchFixtureCamel = ({
   overrides = {},
 }: {
   overrides?: Partial<MatchCamel>;
-} = {}): MatchCamel =>
-  camelcaseKeys(
-    {
-      answer_is_active: true,
-      correct_choice: [textItemFixture({ overrides: { text: "Paris" } })],
-      match_option: [
-        textItemFixture({ overrides: { text: "Capital of France" } }),
-      ],
-      ...overrides,
-    },
-    { deep: true },
-  ) as MatchCamel;
+} = {}): MatchCamel => ({
+  ...camelcaseKeys(matchFixture(), { deep: true }),
+  ...overrides,
+});

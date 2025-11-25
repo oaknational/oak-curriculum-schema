@@ -4,19 +4,12 @@ import type {
 } from "@/schema/public/features/features.schema";
 import camelcaseKeys from "camelcase-keys";
 
-const baseFeaturesFixture: Features = {
+export const featuresFixture = (): Features => ({
   pe_practical: true,
-};
-
-const baseFeaturesFixtureCamel: FeaturesCamel = camelcaseKeys(
-  baseFeaturesFixture,
-  { deep: true },
-);
-
-export const featuresFixture = (): Features => ({ ...baseFeaturesFixture });
+});
 
 export const featuresFixtureCamel = (): FeaturesCamel => ({
-  ...baseFeaturesFixtureCamel,
+  ...camelcaseKeys(featuresFixture(), { deep: true }),
 });
 
 export default featuresFixture;

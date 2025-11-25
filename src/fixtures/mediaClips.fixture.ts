@@ -10,21 +10,17 @@ import type {
 } from "@/schema/public/mediaClips/mediaClips.schema";
 import camelcaseKeys from "camelcase-keys";
 
-const baseMediaObjectFixture: MediaClipObject = {
+export const mediaObjectFixture = ({
+  overrides,
+}: {
+  overrides?: Partial<MediaClipObject>;
+} = {}): MediaClipObject => ({
   url: "http://example.com/video1.mp3",
   type: "upload",
   bytes: 81127,
   format: "mp3",
   display_name: "9_task_C1_3",
   resource_type: "video",
-};
-
-export const mediaObjectFixture = ({
-  overrides,
-}: {
-  overrides?: Partial<MediaClipObject>;
-} = {}): MediaClipObject => ({
-  ...baseMediaObjectFixture,
   ...overrides,
 });
 
@@ -32,14 +28,10 @@ export const mediaObjectFixtureCamel = ({
   overrides,
 }: {
   overrides?: Partial<MediaClipObjectCamel>;
-} = {}): MediaClipObjectCamel =>
-  camelcaseKeys(
-    {
-      ...baseMediaObjectFixture,
-      ...overrides,
-    },
-    { deep: true },
-  ) as MediaClipObjectCamel;
+} = {}): MediaClipObjectCamel => ({
+  ...camelcaseKeys(mediaObjectFixture(), { deep: true }),
+  ...overrides,
+});
 
 export const videoObjectFixture = ({
   overrides,
