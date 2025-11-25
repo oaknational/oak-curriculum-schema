@@ -1,12 +1,17 @@
 import type {
   LessonMediaClips,
+  LessonMediaClipsCamel,
   MediaClipObject,
+  MediaClipObjectCamel,
   VideoClipObject,
+  VideoClipObjectCamel,
   MediaClipCycle,
+  MediaClipCycleCamel,
 } from "@/schema/public/mediaClips/mediaClips.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const mediaObjectFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<MediaClipObject>;
 } = {}): MediaClipObject => ({
@@ -19,8 +24,17 @@ export const mediaObjectFixture = ({
   ...overrides,
 });
 
+export const mediaObjectFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MediaClipObjectCamel>;
+} = {}): MediaClipObjectCamel => ({
+  ...camelcaseKeys(mediaObjectFixture(), { deep: true }),
+  ...overrides,
+});
+
 export const videoObjectFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<VideoClipObject>;
 } = {}): VideoClipObject => ({
@@ -41,7 +55,7 @@ export const videoObjectFixture = ({
 });
 
 export const mediaClipCycleFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<MediaClipCycle>;
 } = {}): MediaClipCycle => ({
@@ -56,7 +70,7 @@ export const mediaClipCycleFixture = ({
 });
 
 export const mediaClipsFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<LessonMediaClips>;
 } = {}): LessonMediaClips => ({
@@ -138,6 +152,37 @@ export const mediaClipsFixture = ({
   ...overrides,
 });
 
+export const mediaClipsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonMediaClipsCamel>;
+} = {}): LessonMediaClipsCamel => ({
+  ...camelcaseKeys(mediaClipsFixture(), { deep: true }),
+  ...overrides,
+});
+
+export const videoObjectFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<NonNullable<VideoClipObjectCamel>>;
+} = {}): VideoClipObjectCamel => {
+  const baseFixture = videoObjectFixture();
+  if (!baseFixture) return null;
+  return {
+    ...camelcaseKeys(baseFixture, { deep: true }),
+    ...overrides,
+  };
+};
+
+export const mediaClipCycleFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MediaClipCycleCamel>;
+} = {}): MediaClipCycleCamel => ({
+  ...camelcaseKeys(mediaClipCycleFixture(), { deep: true }),
+  ...overrides,
+});
+
 export const additionalCyclesFixture = {
   media_clips: {
     cycle3: [mediaClipCycleFixture()],
@@ -153,5 +198,10 @@ export const additionalCyclesFixture = {
     ],
   },
 };
+
+export const additionalCyclesFixtureCamel = camelcaseKeys(
+  additionalCyclesFixture,
+  { deep: true },
+);
 
 export default mediaClipsFixture;

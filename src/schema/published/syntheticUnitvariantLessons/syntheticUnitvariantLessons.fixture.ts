@@ -1,8 +1,12 @@
-import { type SyntheticUnitvariantLessons } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
+import type {
+  SyntheticUnitvariantLessons,
+  SyntheticUnitvariantLessonsCamel,
+} from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
+import camelcaseKeys from "camelcase-keys";
 
 // To be deprecated
 export const syntheticUnitvariantLessonsFixture = ({
@@ -22,5 +26,14 @@ export const syntheticUnitvariantLessonsFixture = ({
     unit_order: 1,
     order_in_unit: 1,
   },
+  ...overrides,
+});
+
+export const syntheticUnitvariantLessonsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantLessonsCamel>;
+} = {}): SyntheticUnitvariantLessonsCamel => ({
+  ...camelcaseKeys(syntheticUnitvariantLessonsFixture(), { deep: true }),
   ...overrides,
 });

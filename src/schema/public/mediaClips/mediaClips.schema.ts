@@ -27,7 +27,7 @@ export const videoClipObjectSchema = z
     ),
     mux_playback_id: z.string(),
   })
-  .nullable();
+  .nullable(); // FIXME why is this nullable?
 
 export const mediaClipCycleSchema = z.object({
   // text data had a mix of numbers and strings

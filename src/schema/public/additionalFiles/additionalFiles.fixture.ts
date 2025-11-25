@@ -1,7 +1,11 @@
-import type { AdditionalFiles } from "@/schema/public/additionalFiles/additionalFiles.schema";
+import type {
+  AdditionalFiles,
+  AdditionalFilesCamel,
+} from "@/schema/public/additionalFiles/additionalFiles.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const additionalFilesFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<AdditionalFiles>;
 } = {}): AdditionalFiles => ({
@@ -27,4 +31,14 @@ export const additionalFilesFixture = ({
   ],
   ...overrides,
 });
+
+export const additionalFilesFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<AdditionalFilesCamel>;
+} = {}): AdditionalFilesCamel => ({
+  ...camelcaseKeys(additionalFilesFixture(), { deep: true }),
+  ...overrides,
+});
+
 export default additionalFilesFixture;

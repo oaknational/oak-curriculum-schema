@@ -1,13 +1,18 @@
-import {
-  type Match,
-  type MultipleChoice,
-  type Order,
-  type ShortAnswer,
+import type {
+  Match,
+  MatchCamel,
+  MultipleChoice,
+  MultipleChoiceCamel,
+  Order,
+  OrderCamel,
+  ShortAnswer,
+  ShortAnswerCamel,
 } from "@/schema/public/quizAnswers/quizAnswers.schema";
 import {
   imageItemFixture,
   textItemFixture,
 } from "@/schema/public/imageTextItems/imageTextItems.fixture";
+import camelcaseKeys from "camelcase-keys";
 
 export const multipleChoiceFixture = ({
   overrides = {},
@@ -17,6 +22,15 @@ export const multipleChoiceFixture = ({
   answer: [textItemFixture(), imageItemFixture()],
   answer_is_active: true,
   answer_is_correct: true,
+  ...overrides,
+});
+
+export const multipleChoiceFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MultipleChoiceCamel>;
+} = {}): MultipleChoiceCamel => ({
+  ...camelcaseKeys(multipleChoiceFixture(), { deep: true }),
   ...overrides,
 });
 
@@ -31,6 +45,15 @@ export const shortAnswerFixture = ({
   ...overrides,
 });
 
+export const shortAnswerFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<ShortAnswerCamel>;
+} = {}): ShortAnswerCamel => ({
+  ...camelcaseKeys(shortAnswerFixture(), { deep: true }),
+  ...overrides,
+});
+
 export const orderFixture = ({
   overrides = {},
 }: {
@@ -42,6 +65,15 @@ export const orderFixture = ({
   ...overrides,
 });
 
+export const orderFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<OrderCamel>;
+} = {}): OrderCamel => ({
+  ...camelcaseKeys(orderFixture(), { deep: true }),
+  ...overrides,
+});
+
 export const matchFixture = ({
   overrides = {},
 }: {
@@ -50,5 +82,14 @@ export const matchFixture = ({
   answer_is_active: true,
   correct_choice: [textItemFixture({ overrides: { text: "Paris" } })],
   match_option: [textItemFixture({ overrides: { text: "Capital of France" } })],
+  ...overrides,
+});
+
+export const matchFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MatchCamel>;
+} = {}): MatchCamel => ({
+  ...camelcaseKeys(matchFixture(), { deep: true }),
   ...overrides,
 });

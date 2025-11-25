@@ -1,6 +1,10 @@
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
-import { type SyntheticUnitvariantsWithLessonIdsByKs } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantsWithLessonIdsByKs.schema";
+import type {
+  SyntheticUnitvariantsWithLessonIdsByKs,
+  SyntheticUnitvariantsWithLessonIdsByKsCamel,
+} from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantsWithLessonIdsByKs.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   overrides = {},
@@ -27,5 +31,16 @@ export const syntheticUnitvariantsWithLessonIdsByKsFixture = ({
   },
   expired: false,
   threads: null,
+  ...overrides,
+});
+
+export const syntheticUnitvariantsWithLessonIdsByKsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByKsCamel>;
+} = {}): SyntheticUnitvariantsWithLessonIdsByKsCamel => ({
+  ...camelcaseKeys(syntheticUnitvariantsWithLessonIdsByKsFixture(), {
+    deep: true,
+  }),
   ...overrides,
 });

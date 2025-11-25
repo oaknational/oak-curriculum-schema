@@ -1,10 +1,11 @@
-import {
-  type Keywords,
-  type LessonContent,
-  type TeacherTips,
-  type LessonEquipmentAndResources,
-  type MisconceptionsAndCommonMistakes,
-  type ContentGuidance,
+import type {
+  Keywords,
+  LessonContent,
+  LessonContentCamel,
+  TeacherTips,
+  LessonEquipmentAndResources,
+  MisconceptionsAndCommonMistakes,
+  ContentGuidance,
 } from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
@@ -14,31 +15,55 @@ import {
 } from "@/schema/public/quizQuestion/quizQuestion.fixture";
 import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
 import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
+import camelcaseKeys from "camelcase-keys";
 
-export const lessonEquipmentAndResourcesFixture =
-  (): LessonEquipmentAndResources => ({
-    equipment: "equipment",
-  });
-
-export const teacherTipsFixture = (): TeacherTips => ({
-  teacher_tip: "teacher-tip",
+export const lessonEquipmentAndResourcesFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonEquipmentAndResources>;
+} = {}): LessonEquipmentAndResources => ({
+  equipment: "equipment",
+  ...overrides,
 });
 
-export const keywordsFixture = (): Keywords => ({
+export const teacherTipsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<TeacherTips>;
+} = {}): TeacherTips => ({
+  teacher_tip: "teacher-tip",
+  ...overrides,
+});
+
+export const keywordsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<Keywords>;
+} = {}): Keywords => ({
   keyword: "keyword",
   description: "description",
+  ...overrides,
 });
 
-export const misconceptionsAndCommonMistakesFixture =
-  (): MisconceptionsAndCommonMistakes => ({
-    misconception: "misconception",
-    response: "response",
-  });
+export const misconceptionsAndCommonMistakesFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<MisconceptionsAndCommonMistakes>;
+} = {}): MisconceptionsAndCommonMistakes => ({
+  misconception: "misconception",
+  response: "response",
+  ...overrides,
+});
 
-export const contentGuidanceFixture = (): ContentGuidance => ({
+export const contentGuidanceFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<ContentGuidance>;
+} = {}): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
   contentguidance_area: "contentguidance-area",
+  ...overrides,
 });
 
 export const lessonContentFixture = ({
@@ -108,5 +133,14 @@ export const lessonContentFixture = ({
   ],
   downloadable_files: additionalFilesFixture().downloadable_files,
   lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
+  ...overrides,
+});
+
+export const lessonContentFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonContentCamel>;
+} = {}): LessonContentCamel => ({
+  ...camelcaseKeys(lessonContentFixture(), { deep: true }),
   ...overrides,
 });

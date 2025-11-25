@@ -1,4 +1,8 @@
-import type { Unitvariant } from "@/schema/public/unitvariant/unitvariant.schema";
+import type {
+  Unitvariant,
+  UnitvariantCamel,
+} from "@/schema/public/unitvariant/unitvariant.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const unitvariantFixture = ({
   overrides = {},
@@ -12,5 +16,14 @@ export const unitvariantFixture = ({
   _cohort: "2023-2024",
   unit_overrides: {},
   programme_fields: {},
+  ...overrides,
+});
+
+export const unitvariantFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<UnitvariantCamel>;
+} = {}): UnitvariantCamel => ({
+  ...camelcaseKeys(unitvariantFixture(), { deep: true }),
   ...overrides,
 });
