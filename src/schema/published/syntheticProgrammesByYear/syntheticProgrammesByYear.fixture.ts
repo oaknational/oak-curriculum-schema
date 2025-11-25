@@ -2,7 +2,7 @@ import type {
   SyntheticProgrammesByYear,
   SyntheticProgrammesByYearCamel,
 } from "@/schema/published/syntheticProgrammesByYear/syntheticProgrammesByYear.schema";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 import camelcaseKeys from "camelcase-keys";
 
 export const syntheticProgrammesByYearFixture = ({

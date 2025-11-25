@@ -1,5 +1,5 @@
-import { unitDataFixture } from "./unitData.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 import type {
   SyntheticUnitvariantsWithLessonIdsByYears,
   SyntheticUnitvariantsWithLessonIdsByYearsCamel,

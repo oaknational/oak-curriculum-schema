@@ -3,9 +3,9 @@ import type {
   SyntheticUnitvariantLessonsCamel,
 } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
-import { lessonDataFixture } from "./lessonData.fixture";
-import { unitDataFixture } from "./unitData.fixture";
-import { programmeFieldsFixture } from "./programmeFields.fixture";
+import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 import camelcaseKeys from "camelcase-keys";
 
 // To be deprecated

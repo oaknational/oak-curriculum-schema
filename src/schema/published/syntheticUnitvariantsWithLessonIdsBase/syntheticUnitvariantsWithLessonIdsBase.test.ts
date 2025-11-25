@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { syntheticUnitvariantsWithLessonIdsFixture } from "@/fixtures/syntheticUnitvariantsWithLessonIds.fixture";
+import { syntheticUnitvariantsWithLessonIdsFixture } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIds.fixture";
 import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema";
 
 describe("syntheticUnitvariantsWithLessonIds", () => {

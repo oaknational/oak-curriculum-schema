@@ -4,15 +4,17 @@ import type {
   LessonContentCamel,
   TeacherTips,
   LessonEquipmentAndResources,
-} from "@/schema/lessonContent.schema";
+  MisconceptionsAndCommonMistakes,
+  ContentGuidance,
+} from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
   multipleChoiceQuestion,
   orderQuestion,
   shortAnswerQuestion,
-} from "./quizQuestion.fixture";
-import additionalFilesFixture from "./additionalFiles.fixture";
-import mediaClipsFixture from "./mediaClips.fixture";
+} from "@/schema/public/quizQuestion/quizQuestion.fixture";
+import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
+import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
 import camelcaseKeys from "camelcase-keys";
 
 export const lessonEquipmentAndResourcesFixture =
@@ -29,12 +31,13 @@ export const keywordsFixture = (): Keywords => ({
   description: "description",
 });
 
-export const misconceptionsAndCommonMistakesFixture = () => ({
-  misconception: "misconception",
-  response: "response",
-});
+export const misconceptionsAndCommonMistakesFixture =
+  (): MisconceptionsAndCommonMistakes => ({
+    misconception: "misconception",
+    response: "response",
+  });
 
-export const contentGuidanceFixture = () => ({
+export const contentGuidanceFixture = (): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
   contentguidance_area: "contentguidance-area",

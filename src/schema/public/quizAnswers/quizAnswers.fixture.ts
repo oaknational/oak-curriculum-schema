@@ -8,7 +8,10 @@ import type {
   ShortAnswer,
   ShortAnswerCamel,
 } from "@/schema/public/quizAnswers/quizAnswers.schema";
-import { imageItemFixture, textItemFixture } from "./imageTextItems.fixture";
+import {
+  imageItemFixture,
+  textItemFixture,
+} from "@/schema/public/imageTextItems/imageTextItems.fixture";
 import camelcaseKeys from "camelcase-keys";
 
 export const multipleChoiceFixture = ({
