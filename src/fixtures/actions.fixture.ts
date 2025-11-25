@@ -1,4 +1,4 @@
-import type { Actions } from "@/schema/actions.schema";
+import type { Actions } from "@/schema/published/actions.schema";
 
 export const actionsFixture = (): Actions => ({
   exclusions: ["lessonDownloadsQuery"],

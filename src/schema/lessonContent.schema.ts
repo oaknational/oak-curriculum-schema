@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-import { quizQuestionSchema } from "./quizQuestion.schema";
-import { _stateSchema } from "./base.schema";
-import { mediaClipsRecordSchema } from "./mediaClips.schema";
-import { additionalFileObjectSchema } from "./additionalFiles.schema";
+import { quizQuestionSchema } from "./public/quizQuestion.schema";
+import { _stateSchema } from "./public/base.schema";
+import { mediaClipsRecordSchema } from "./public/mediaClips.schema";
+import { additionalFileObjectSchema } from "./public/additionalFiles.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),

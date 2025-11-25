@@ -1,4 +1,4 @@
-import { SyntheticProgrammesByYear } from "@/schema/syntheticProgrammesByYear.schema";
+import { SyntheticProgrammesByYear } from "@/schema/published/syntheticProgrammesByYear.schema";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
 
 export const syntheticProgrammesByYearFixture = ({

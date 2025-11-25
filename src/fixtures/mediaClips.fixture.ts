@@ -3,7 +3,7 @@ import {
   MediaClipObject,
   VideoClipObject,
   MediaClipCycle,
-} from "@/schema/mediaClips.schema";
+} from "@/schema/public/mediaClips.schema";
 
 export const mediaObjectFixture = ({
   overrides,

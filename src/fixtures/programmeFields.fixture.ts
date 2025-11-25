@@ -1,4 +1,4 @@
-import { ProgrammeFields } from "@/schema/programmeFields.schema";
+import { ProgrammeFields } from "@/schema/public/programmeFields.schema";
 
 export const programmeFieldsFixture = ({
   overrides,
