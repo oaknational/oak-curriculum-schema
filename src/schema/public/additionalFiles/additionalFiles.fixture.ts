@@ -1,9 +1,9 @@
-import type { AdditionalFiles } from "@/schema/public/additionalFiles/additionalFiles.schema"
+import type { AdditionalFiles } from "@/schema/public/additionalFiles/additionalFiles.schema";
 
 export const additionalFilesFixture = ({
   overrides,
 }: {
-  overrides?: Partial<AdditionalFiles>
+  overrides?: Partial<AdditionalFiles>;
 } = {}): AdditionalFiles => ({
   downloadable_files: [
     {
@@ -26,5 +26,5 @@ export const additionalFilesFixture = ({
     },
   ],
   ...overrides,
-})
-export default additionalFilesFixture
+});
+export default additionalFilesFixture;

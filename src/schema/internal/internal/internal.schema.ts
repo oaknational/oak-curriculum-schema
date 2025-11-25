@@ -1,12 +1,12 @@
-import z from "zod"
+import z from "zod";
 
 export const baseIngestStates = z.enum([
   "ingest_started",
   "ingest_complete",
   "ready_to_ingest",
-])
+]);
 
-export const assetIngestStates = z.enum(["no_asset"])
+export const assetIngestStates = z.enum(["no_asset"]);
 
 export const videoIngestStates = z.enum([
   "adding_captions",
@@ -18,4 +18,4 @@ export const videoIngestStates = z.enum([
   "rev_complete",
   "sent_to_rev",
   "rev_skipped",
-])
+]);

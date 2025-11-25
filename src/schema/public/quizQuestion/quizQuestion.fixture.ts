@@ -1,16 +1,16 @@
-import type { QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema"
+import type { QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema";
 
 import {
   matchFixture,
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture,
-} from "@/schema/public/quizAnswers/quizAnswers.fixture"
+} from "@/schema/public/quizAnswers/quizAnswers.fixture";
 
 export const multipleChoiceQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>
+  overrides?: Partial<QuizQuestion>;
 } = {}): QuizQuestion => ({
   question_id: 1,
   question_uid: "question-1",
@@ -34,12 +34,12 @@ export const multipleChoiceQuestion = ({
   active: true,
   order: 1,
   ...overrides,
-})
+});
 
 export const shortAnswerQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>
+  overrides?: Partial<QuizQuestion>;
 } = {}): QuizQuestion => ({
   question_id: 2,
   question_uid: "question-2",
@@ -58,12 +58,12 @@ export const shortAnswerQuestion = ({
   active: true,
   order: 2,
   ...overrides,
-})
+});
 
 export const orderQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>
+  overrides?: Partial<QuizQuestion>;
 } = {}): QuizQuestion => ({
   question_id: 3,
   question_uid: "question-3",
@@ -87,12 +87,12 @@ export const orderQuestion = ({
   active: true,
   order: 3,
   ...overrides,
-})
+});
 
 export const matchQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>
+  overrides?: Partial<QuizQuestion>;
 } = {}): QuizQuestion => ({
   question_id: 4,
   question_uid: "question-4",
@@ -111,4 +111,4 @@ export const matchQuestion = ({
   active: true,
   order: 4,
   ...overrides,
-})
+});

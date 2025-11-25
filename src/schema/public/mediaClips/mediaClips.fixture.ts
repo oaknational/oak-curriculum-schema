@@ -3,12 +3,12 @@ import type {
   MediaClipObject,
   VideoClipObject,
   MediaClipCycle,
-} from "@/schema/public/mediaClips/mediaClips.schema"
+} from "@/schema/public/mediaClips/mediaClips.schema";
 
 export const mediaObjectFixture = ({
   overrides,
 }: {
-  overrides?: Partial<MediaClipObject>
+  overrides?: Partial<MediaClipObject>;
 } = {}): MediaClipObject => ({
   url: "http://example.com/video1.mp3",
   type: "upload",
@@ -17,12 +17,12 @@ export const mediaObjectFixture = ({
   display_name: "9_task_C1_3",
   resource_type: "video",
   ...overrides,
-})
+});
 
 export const videoObjectFixture = ({
   overrides,
 }: {
-  overrides?: Partial<VideoClipObject>
+  overrides?: Partial<VideoClipObject>;
 } = {}): VideoClipObject => ({
   duration: 5.055667,
   mux_asset_id: "hug9i01Tnpf1y83irOm00HRbvAJpttJPU78KNYzPav3mg",
@@ -38,12 +38,12 @@ export const videoObjectFixture = ({
   ],
   mux_playback_id: "BW00NkK9R01jB8PPO7R00YCFl2XBDn13GTkhd0001PNtheF00",
   ...overrides,
-})
+});
 
 export const mediaClipCycleFixture = ({
   overrides,
 }: {
-  overrides?: Partial<MediaClipCycle>
+  overrides?: Partial<MediaClipCycle>;
 } = {}): MediaClipCycle => ({
   order: "1",
   media_id: "191188",
@@ -53,12 +53,12 @@ export const mediaClipCycleFixture = ({
   media_object: mediaObjectFixture(),
   video_object: videoObjectFixture(),
   ...overrides,
-})
+});
 
 export const mediaClipsFixture = ({
   overrides,
 }: {
-  overrides?: Partial<LessonMediaClips>
+  overrides?: Partial<LessonMediaClips>;
 } = {}): LessonMediaClips => ({
   media_clips: {
     intro: [
@@ -136,7 +136,7 @@ export const mediaClipsFixture = ({
     ],
   },
   ...overrides,
-})
+});
 
 export const additionalCyclesFixture = {
   media_clips: {
@@ -152,6 +152,6 @@ export const additionalCyclesFixture = {
       }),
     ],
   },
-}
+};
 
-export default mediaClipsFixture
+export default mediaClipsFixture;

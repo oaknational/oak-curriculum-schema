@@ -1,16 +1,16 @@
-import { z } from "zod"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 import {
   imageItemSchema,
   textItemSchema,
-} from "@/schema/public/imageTextItems/imageTextItems.schema"
+} from "@/schema/public/imageTextItems/imageTextItems.schema";
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "@/schema/public/quizAnswers/quizAnswers.schema"
+} from "@/schema/public/quizAnswers/quizAnswers.schema";
 
 export const quizQuestionSchema = z.object({
   question_id: z.number(),
@@ -33,8 +33,8 @@ export const quizQuestionSchema = z.object({
   hint: z.string().optional().nullable(),
   active: z.boolean().optional(),
   order: z.number(),
-})
-export type QuizQuestion = z.infer<typeof quizQuestionSchema>
+});
+export type QuizQuestion = z.infer<typeof quizQuestionSchema>;
 
-export const quizQuestionSchemaCamel = zodToCamelCase(quizQuestionSchema)
-export type QuizQuestionCamel = z.infer<typeof quizQuestionSchemaCamel>
+export const quizQuestionSchemaCamel = zodToCamelCase(quizQuestionSchema);
+export type QuizQuestionCamel = z.infer<typeof quizQuestionSchemaCamel>;

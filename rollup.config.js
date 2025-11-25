@@ -1,13 +1,13 @@
-import { nodeResolve } from "@rollup/plugin-node-resolve"
-import peerDepsExternal from "rollup-plugin-peer-deps-external"
-import commonjs from "@rollup/plugin-commonjs"
-import typescript from "@rollup/plugin-typescript"
-import dts from "rollup-plugin-dts"
-import terser from "@rollup/plugin-terser"
-import copy from "rollup-plugin-copy"
-import { typescriptPaths } from "rollup-plugin-typescript-paths"
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
+import dts from "rollup-plugin-dts";
+import terser from "@rollup/plugin-terser";
+import copy from "rollup-plugin-copy";
+import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
-const packageJson = require("./package.json")
+const packageJson = require("./package.json");
 
 export default [
   {
@@ -43,4 +43,4 @@ export default [
     output: [{ file: "dist/types.d.ts", format: "es" }],
     plugins: [typescriptPaths({ preserveExtensions: true }), dts.default()],
   },
-]
+];

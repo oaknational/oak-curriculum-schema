@@ -1,9 +1,9 @@
-import type { ProgrammeFields } from "@/schema/public/programmeFields/programmeFields.schema"
+import type { ProgrammeFields } from "@/schema/public/programmeFields/programmeFields.schema";
 
 export const programmeFieldsFixture = ({
   overrides,
 }: {
-  overrides?: Partial<ProgrammeFields>
+  overrides?: Partial<ProgrammeFields>;
 } = {}): ProgrammeFields => ({
   tier: null,
   tier_id: null,
@@ -42,4 +42,4 @@ export const programmeFieldsFixture = ({
   subject_display_order: 1,
   subject_parent: "Maths",
   ...overrides,
-})
+});

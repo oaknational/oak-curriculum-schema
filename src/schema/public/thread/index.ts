@@ -1,2 +1,2 @@
-export * from "./thread.fixture"
-export * from "./thread.schema"
+export * from "./thread.fixture";
+export * from "./thread.schema";

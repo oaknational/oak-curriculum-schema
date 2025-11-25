@@ -1,5 +1,5 @@
-import { z } from "zod"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const imageObjectSchema = z
   .object({
@@ -20,29 +20,29 @@ export const imageObjectSchema = z
     public_id: z.string(),
     version: z.number(),
   })
-  .partial()
+  .partial();
 
-export type ImageObject = z.infer<typeof imageObjectSchema>
+export type ImageObject = z.infer<typeof imageObjectSchema>;
 
 export const imageItemSchema = z.object({
   image_object: imageObjectSchema,
   type: z.literal("image"),
-})
+});
 
-export type ImageItem = z.infer<typeof imageItemSchema>
+export type ImageItem = z.infer<typeof imageItemSchema>;
 
 export const textItemSchema = z.object({
   text: z.string(),
   type: z.literal("text"),
-})
+});
 
-export type TextItem = z.infer<typeof textItemSchema>
+export type TextItem = z.infer<typeof textItemSchema>;
 
-export const imageObjectSchemaCamel = zodToCamelCase(imageObjectSchema)
-export type ImageObjectCamel = z.infer<typeof imageObjectSchemaCamel>
+export const imageObjectSchemaCamel = zodToCamelCase(imageObjectSchema);
+export type ImageObjectCamel = z.infer<typeof imageObjectSchemaCamel>;
 
-export const imageItemSchemaCamel = zodToCamelCase(imageItemSchema)
-export type ImageItemCamel = z.infer<typeof imageItemSchemaCamel>
+export const imageItemSchemaCamel = zodToCamelCase(imageItemSchema);
+export type ImageItemCamel = z.infer<typeof imageItemSchemaCamel>;
 
-export const textItemSchemaCamel = zodToCamelCase(textItemSchema)
-export type TextItemCamel = z.infer<typeof textItemSchemaCamel>
+export const textItemSchemaCamel = zodToCamelCase(textItemSchema);
+export type TextItemCamel = z.infer<typeof textItemSchemaCamel>;

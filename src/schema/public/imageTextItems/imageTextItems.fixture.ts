@@ -2,7 +2,7 @@ import type {
   ImageObject,
   ImageItem,
   TextItem,
-} from "@/schema/public/imageTextItems/imageTextItems.schema"
+} from "@/schema/public/imageTextItems/imageTextItems.schema";
 
 export const imageObjectFixture = (): ImageObject => ({
   format: "png",
@@ -16,12 +16,12 @@ export const imageObjectFixture = (): ImageObject => ({
   },
   public_id: "sample",
   version: 1234567890,
-})
+});
 
 export const imageItemFixture = (): ImageItem => ({
   image_object: imageObjectFixture(),
   type: "image",
-})
+});
 
 export const textItemFixture = ({
   overrides = {},
@@ -29,9 +29,9 @@ export const textItemFixture = ({
   text: "Hello, World!",
   type: "text",
   ...overrides,
-})
+});
 
 export const textAndImageItemFixture = (): Array<TextItem | ImageItem> => [
   imageItemFixture(),
   textItemFixture({ overrides: { text: "This is a text item." } }),
-]
+];

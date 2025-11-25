@@ -1,4 +1,4 @@
-import type { AssetType } from "@/schema/public/assets/assets.schema"
+import type { AssetType } from "@/schema/public/assets/assets.schema";
 
 export const assetsFixture = (
   overrides: Partial<AssetType> = {},
@@ -23,4 +23,4 @@ export const assetsFixture = (
   tpc_media_ids: [101, 102],
   tpc_works_ids: [201, 202],
   ...overrides,
-})
+});

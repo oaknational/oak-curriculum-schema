@@ -1,12 +1,12 @@
-import { type SyntheticUnitvariantLessonsByKs } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema"
-import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture"
-import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture"
-import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture"
+import { type SyntheticUnitvariantLessonsByKs } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
+import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<SyntheticUnitvariantLessonsByKs>
+  overrides?: Partial<SyntheticUnitvariantLessonsByKs>;
 } = {}): SyntheticUnitvariantLessonsByKs => ({
   lesson_slug: "lesson-slug",
   unit_slug: "unit-slug",
@@ -23,4 +23,4 @@ export const syntheticUnitvariantLessonsByKsFixture = ({
     { slug: "lesson-slug", title: "lesson-title", order: 1 },
   ],
   ...overrides,
-})
+});

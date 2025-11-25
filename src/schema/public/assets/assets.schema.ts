@@ -1,7 +1,7 @@
-import { z } from "zod"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
-import { _stateSchema } from "@/schema/public/base/base.schema"
+import { _stateSchema } from "@/schema/public/base/base.schema";
 
 export const assetTypeSchema = z.enum([
   "lesson_guide",
@@ -10,23 +10,23 @@ export const assetTypeSchema = z.enum([
   "worksheet",
   "worksheet_answers",
   "supplementary_resource",
-])
+]);
 
-export type AssetTypeType = z.infer<typeof assetTypeSchema>
+export type AssetTypeType = z.infer<typeof assetTypeSchema>;
 
 export const googleSchema = z.object({
   id: z.string().nullable(),
   url: z.url().nullable(),
-})
+});
 
-export type GoogleType = z.infer<typeof googleSchema>
+export type GoogleType = z.infer<typeof googleSchema>;
 
 export const bucketSchema = z.object({
   bucket_name: z.string().nullable(),
   bucket_path: z.string().nullable(),
-})
+});
 
-export type BucketType = z.infer<typeof bucketSchema>
+export type BucketType = z.infer<typeof bucketSchema>;
 
 export const assetObjectSchema = z
   .object({
@@ -36,9 +36,9 @@ export const assetObjectSchema = z
     google_drive: googleSchema,
     google_slide: googleSchema.pick({ url: true }),
   })
-  .partial()
+  .partial();
 
-export type AssetObjectType = z.infer<typeof assetObjectSchema>
+export type AssetObjectType = z.infer<typeof assetObjectSchema>;
 
 export const assetsSchema = z.object({
   asset_id: z.number(),
@@ -51,17 +51,17 @@ export const assetsSchema = z.object({
   asset_object: assetObjectSchema,
   tpc_media_ids: z.array(z.number()).nullable(),
   tpc_works_ids: z.array(z.number()).nullable(),
-})
-export type AssetType = z.infer<typeof assetsSchema>
+});
+export type AssetType = z.infer<typeof assetsSchema>;
 
-export const googleSchemaCamel = zodToCamelCase(googleSchema)
-export type GoogleTypeCamel = z.infer<typeof googleSchemaCamel>
+export const googleSchemaCamel = zodToCamelCase(googleSchema);
+export type GoogleTypeCamel = z.infer<typeof googleSchemaCamel>;
 
-export const bucketSchemaCamel = zodToCamelCase(bucketSchema)
-export type BucketTypeCamel = z.infer<typeof bucketSchemaCamel>
+export const bucketSchemaCamel = zodToCamelCase(bucketSchema);
+export type BucketTypeCamel = z.infer<typeof bucketSchemaCamel>;
 
-export const assetsSchemaCamel = zodToCamelCase(assetsSchema)
-export type AssetTypeCamel = z.infer<typeof assetsSchemaCamel>
+export const assetsSchemaCamel = zodToCamelCase(assetsSchema);
+export type AssetTypeCamel = z.infer<typeof assetsSchemaCamel>;
 
-export const assetObjectSchemaCamel = zodToCamelCase(assetObjectSchema)
-export type AssetObjectTypeCamel = z.infer<typeof assetObjectSchemaCamel>
+export const assetObjectSchemaCamel = zodToCamelCase(assetObjectSchema);
+export type AssetObjectTypeCamel = z.infer<typeof assetObjectSchemaCamel>;

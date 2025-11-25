@@ -1,9 +1,9 @@
-import { z } from "zod"
-import { unitDataSchema } from "@/schema/public/unitData/unitData.schema"
-import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema"
-import { actionsSchema } from "@/schema/published/actions/actions.schema"
-import { staticLessonListSchema } from "@/schema/public/staticLessonList/staticLessonList.schema"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
+import { actionsSchema } from "@/schema/published/actions/actions.schema";
+import { staticLessonListSchema } from "@/schema/public/staticLessonList/staticLessonList.schema";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   base_slug: z.string(),
@@ -23,15 +23,15 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   expired: z.boolean(),
   actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
   features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
-})
+});
 
 export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsBaseSchema
->
+>;
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchemaCamel = zodToCamelCase(
   syntheticUnitvariantsWithLessonIdsBaseSchema,
-)
+);
 export type SyntheticUnitvariantsWithLessonIdsBaseCamel = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsBaseSchemaCamel
->
+>;

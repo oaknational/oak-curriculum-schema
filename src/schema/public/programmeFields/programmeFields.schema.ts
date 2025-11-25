@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod";
 import {
   keystages,
   keystageSlugs,
@@ -20,8 +20,8 @@ import {
   pathways,
   pathwaySlugs,
   pathwayDescriptions,
-} from "@/schema/public/base/base.schema"
-import zodToCamelCase from "zod-to-camel-case"
+} from "@/schema/public/base/base.schema";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),
@@ -70,8 +70,8 @@ export const programmeFieldsSchema = z.object({
   optionality: z.string().optional(),
   legacy: z.string().optional(),
   dataset: z.string().optional(),
-})
-export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>
+});
+export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>;
 
-export const programmeFieldsSchemaCamel = zodToCamelCase(programmeFieldsSchema)
-export type ProgrammeFieldsCamel = z.infer<typeof programmeFieldsSchemaCamel>
+export const programmeFieldsSchemaCamel = zodToCamelCase(programmeFieldsSchema);
+export type ProgrammeFieldsCamel = z.infer<typeof programmeFieldsSchemaCamel>;

@@ -1,9 +1,9 @@
-import type { UnitData } from "@/schema/public/unitData/unitData.schema"
+import type { UnitData } from "@/schema/public/unitData/unitData.schema";
 
 export const unitDataFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<UnitData>
+  overrides?: Partial<UnitData>;
 } = {}): UnitData => ({
   unit_id: 0,
   unit_uid: "unit-uid",
@@ -17,4 +17,4 @@ export const unitDataFixture = ({
   prior_knowledge_requirements: ["requirement 1", "requirement 2"],
   subjectcategories: [1, 2, 3],
   ...overrides,
-})
+});

@@ -1,2 +1,2 @@
-export * from "./assets.fixture"
-export * from "./assets.schema"
+export * from "./assets.fixture";
+export * from "./assets.schema";

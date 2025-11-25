@@ -1,5 +1,5 @@
-import { z } from "zod"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const mediaClipObjectSchema = z.object({
   url: z.string(),
@@ -13,7 +13,7 @@ export const mediaClipObjectSchema = z.object({
       attribution: z.string().nullish(),
     })
     .nullish(),
-})
+});
 
 export const videoClipObjectSchema = z
   .object({
@@ -27,7 +27,7 @@ export const videoClipObjectSchema = z
     ),
     mux_playback_id: z.string(),
   })
-  .nullable()
+  .nullable();
 
 export const mediaClipCycleSchema = z.object({
   // text data had a mix of numbers and strings
@@ -39,38 +39,38 @@ export const mediaClipCycleSchema = z.object({
   media_object: mediaClipObjectSchema,
   video_object: videoClipObjectSchema,
   transcriptSentences: z.array(z.string()).nullish(),
-})
+});
 
 export const mediaClipsRecordSchema = z.record(
   z.string(),
   z.array(mediaClipCycleSchema),
-)
+);
 
 export const lessonMediaClipsSchema = z.object({
   media_clips: mediaClipsRecordSchema,
-})
+});
 
-export type MediaClipObject = z.infer<typeof mediaClipObjectSchema>
-export type VideoClipObject = z.infer<typeof videoClipObjectSchema>
-export type MediaClipCycle = z.infer<typeof mediaClipCycleSchema>
-export type MediaClipsRecord = z.infer<typeof mediaClipsRecordSchema>
-export type LessonMediaClips = z.infer<typeof lessonMediaClipsSchema>
+export type MediaClipObject = z.infer<typeof mediaClipObjectSchema>;
+export type VideoClipObject = z.infer<typeof videoClipObjectSchema>;
+export type MediaClipCycle = z.infer<typeof mediaClipCycleSchema>;
+export type MediaClipsRecord = z.infer<typeof mediaClipsRecordSchema>;
+export type LessonMediaClips = z.infer<typeof lessonMediaClipsSchema>;
 
-export const mediaClipObjectSchemaCamel = zodToCamelCase(mediaClipObjectSchema)
-export type MediaClipObjectCamel = z.infer<typeof mediaClipObjectSchemaCamel>
+export const mediaClipObjectSchemaCamel = zodToCamelCase(mediaClipObjectSchema);
+export type MediaClipObjectCamel = z.infer<typeof mediaClipObjectSchemaCamel>;
 
-export const videoClipObjectSchemaCamel = zodToCamelCase(videoClipObjectSchema)
-export type VideoClipObjectCamel = z.infer<typeof videoClipObjectSchemaCamel>
+export const videoClipObjectSchemaCamel = zodToCamelCase(videoClipObjectSchema);
+export type VideoClipObjectCamel = z.infer<typeof videoClipObjectSchemaCamel>;
 
-export const mediaClipCycleSchemaCamel = zodToCamelCase(mediaClipCycleSchema)
-export type MediaClipCycleCamel = z.infer<typeof mediaClipCycleSchemaCamel>
+export const mediaClipCycleSchemaCamel = zodToCamelCase(mediaClipCycleSchema);
+export type MediaClipCycleCamel = z.infer<typeof mediaClipCycleSchemaCamel>;
 
 export const mediaClipsRecordSchemaCamel = zodToCamelCase(
   mediaClipsRecordSchema,
-)
-export type MediaClipsRecordCamel = z.infer<typeof mediaClipsRecordSchemaCamel>
+);
+export type MediaClipsRecordCamel = z.infer<typeof mediaClipsRecordSchemaCamel>;
 
 export const lessonMediaClipsSchemaCamel = zodToCamelCase(
   lessonMediaClipsSchema,
-)
-export type LessonMediaClipsCamel = z.infer<typeof lessonMediaClipsSchemaCamel>
+);
+export type LessonMediaClipsCamel = z.infer<typeof lessonMediaClipsSchemaCamel>;

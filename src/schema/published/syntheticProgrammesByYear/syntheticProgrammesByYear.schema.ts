@@ -1,8 +1,8 @@
-import { z } from "zod"
-import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema"
-import { yearSlugs } from "@/schema/public/base/base.schema"
-import { actionsSchema } from "@/schema/published/actions/actions.schema"
-import zodToCamelCase from "zod-to-camel-case"
+import { z } from "zod";
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
+import { yearSlugs } from "@/schema/public/base/base.schema";
+import { actionsSchema } from "@/schema/published/actions/actions.schema";
+import zodToCamelCase from "zod-to-camel-case";
 
 export const syntheticProgrammesByYearSchema = z.object({
   year_slug: yearSlugs,
@@ -15,14 +15,14 @@ export const syntheticProgrammesByYearSchema = z.object({
     .object({ nonCurriculum: z.boolean().optional() })
     .optional()
     .nullable(), // the optional should be removed once old mvs are retired
-})
+});
 export type SyntheticProgrammesByYear = z.infer<
   typeof syntheticProgrammesByYearSchema
->
+>;
 
 export const syntheticProgrammesByYearSchemaCamel = zodToCamelCase(
   syntheticProgrammesByYearSchema,
-)
+);
 export type SyntheticProgrammesByYearCamel = z.infer<
   typeof syntheticProgrammesByYearSchemaCamel
->
+>;

@@ -1,20 +1,20 @@
-import { z } from "zod"
+import { z } from "zod";
 
-export const _stateSchema = z.enum(["published", "new", "migration"])
+export const _stateSchema = z.enum(["published", "new", "migration"]);
 export const _cohortSchema = z.enum([
   "2020-2023",
   "2023-2024",
   "2024-2025",
   "0",
-])
+]);
 
-export const phaseSlugs = z.enum(["foundation", "primary", "secondary"])
+export const phaseSlugs = z.enum(["foundation", "primary", "secondary"]);
 export const phaseDescriptions = z.enum([
   "Early Years Foundation Stage",
   "Primary",
   "Secondary",
-])
-export const phases = z.enum(["foundation", "primary", "secondary"])
+]);
+export const phases = z.enum(["foundation", "primary", "secondary"]);
 
 export const keystages = z.enum([
   "KS1",
@@ -23,7 +23,7 @@ export const keystages = z.enum([
   "KS4",
   "EYFS",
   "All key stages",
-])
+]);
 export const keystageSlugs = z.enum([
   "ks1",
   "ks2",
@@ -31,7 +31,7 @@ export const keystageSlugs = z.enum([
   "ks4",
   "early-years-foundation-stage",
   "all-ks",
-])
+]);
 export const keystageDescriptions = z.enum([
   "Key Stage 1",
   "Key Stage 2",
@@ -39,7 +39,7 @@ export const keystageDescriptions = z.enum([
   "Key Stage 4",
   "Early Years Foundation Stage",
   "All Key Stages",
-])
+]);
 
 export const years = z.enum([
   "1",
@@ -57,7 +57,7 @@ export const years = z.enum([
   "13",
   "R",
   "All",
-])
+]);
 export const yearSlugs = z.enum([
   "reception",
   "year-1",
@@ -74,7 +74,7 @@ export const yearSlugs = z.enum([
   "year-12",
   "year-13",
   "all-years",
-])
+]);
 export const yearDescriptions = z.enum([
   "Year 1",
   "Year 2",
@@ -91,15 +91,15 @@ export const yearDescriptions = z.enum([
   "Year 13",
   "Reception",
   "All years",
-])
+]);
 
-export const tiers = z.enum(["core", "foundation", "higher"])
-export const tierSlugs = z.enum(["core", "foundation", "higher"])
-export const tierDescriptions = z.enum(["Core", "Foundation", "Higher"])
+export const tiers = z.enum(["core", "foundation", "higher"]);
+export const tierSlugs = z.enum(["core", "foundation", "higher"]);
+export const tierDescriptions = z.enum(["Core", "Foundation", "Higher"]);
 
-export const pathways = z.enum(["Core", "GCSE"])
-export const pathwaySlugs = z.enum(["core", "gcse"])
-export const pathwayDescriptions = z.enum(["Core", "GCSE"])
+export const pathways = z.enum(["Core", "GCSE"]);
+export const pathwaySlugs = z.enum(["core", "gcse"]);
+export const pathwayDescriptions = z.enum(["Core", "GCSE"]);
 
 export const examboardSlugs = z.enum([
   "aqa",
@@ -108,7 +108,7 @@ export const examboardSlugs = z.enum([
   "ocr",
   "wjec",
   "edexcelb",
-])
+]);
 export const examboards = z.enum([
   "AQA",
   "Edexcel",
@@ -116,7 +116,7 @@ export const examboards = z.enum([
   "OCR",
   "WJEC",
   "Edexcel B",
-])
+]);
 export const examboardDescriptions = z.enum([
   "Assessment and Qualifications Alliance",
   "Edexcel",
@@ -124,7 +124,7 @@ export const examboardDescriptions = z.enum([
   "Oxford, Cambridge and RSA Examinations",
   "Welsh Joint Education Committee",
   "Edexcel B",
-])
+]);
 
 export const subjects = z.enum([
   "Computing (non-GCSE)",
@@ -172,7 +172,7 @@ export const subjects = z.enum([
   "Speech and language therapy",
   "QA testing only",
   "Cooking and nutrition",
-])
+]);
 export const subjectSlugs = z.enum([
   "computing-non-gcse",
   "art",
@@ -218,4 +218,4 @@ export const subjectSlugs = z.enum([
   "speech-and-language-therapy",
   "testing-not-for-publication",
   "cooking-nutrition",
-])
+]);

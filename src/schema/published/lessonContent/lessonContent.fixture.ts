@@ -5,46 +5,46 @@ import {
   type LessonEquipmentAndResources,
   type MisconceptionsAndCommonMistakes,
   type ContentGuidance,
-} from "@/schema/published/lessonContent/lessonContent.schema"
+} from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
   multipleChoiceQuestion,
   orderQuestion,
   shortAnswerQuestion,
-} from "@/schema/public/quizQuestion/quizQuestion.fixture"
-import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture"
-import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture"
+} from "@/schema/public/quizQuestion/quizQuestion.fixture";
+import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
+import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
     equipment: "equipment",
-  })
+  });
 
 export const teacherTipsFixture = (): TeacherTips => ({
   teacher_tip: "teacher-tip",
-})
+});
 
 export const keywordsFixture = (): Keywords => ({
   keyword: "keyword",
   description: "description",
-})
+});
 
 export const misconceptionsAndCommonMistakesFixture =
   (): MisconceptionsAndCommonMistakes => ({
     misconception: "misconception",
     response: "response",
-  })
+  });
 
 export const contentGuidanceFixture = (): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
   contentguidance_area: "contentguidance-area",
-})
+});
 
 export const lessonContentFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<LessonContent>
+  overrides?: Partial<LessonContent>;
 } = {}): LessonContent => ({
   lesson_id: 1,
   lesson_title: "lesson-title",
@@ -109,4 +109,4 @@ export const lessonContentFixture = ({
   downloadable_files: additionalFilesFixture().downloadable_files,
   lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
   ...overrides,
-})
+});

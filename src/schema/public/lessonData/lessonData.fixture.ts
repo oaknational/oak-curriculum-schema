@@ -1,9 +1,9 @@
-import type { LessonData } from "@/schema/public/lessonData/lessonData.schema"
+import type { LessonData } from "@/schema/public/lessonData/lessonData.schema";
 
 export const lessonDataFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<LessonData>
+  overrides?: Partial<LessonData>;
 } = {}): LessonData => ({
   lesson_id: 1,
   lesson_uid: "lesson-uid",
@@ -39,4 +39,4 @@ export const lessonDataFixture = ({
   media_clips: null,
   lesson_release_date: null,
   ...overrides,
-})
+});
