@@ -1,1 +1,1 @@
-export * from "./programmeListing.schema";
+export * from "./programmeListing.schema"

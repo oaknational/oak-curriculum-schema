@@ -1,2 +1,2 @@
-export * from "./features.fixture";
-export * from "./features.schema";
+export * from "./features.fixture"
+export * from "./features.schema"
