@@ -6,7 +6,7 @@ import { programmeFieldsFixture } from "@/schema/public/programmeFields/programm
 
 // To be deprecated
 export const syntheticUnitvariantLessonsFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantLessons>
 } = {}): SyntheticUnitvariantLessons => ({
@@ -20,7 +20,7 @@ export const syntheticUnitvariantLessonsFixture = ({
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {
     unit_order: 1,
-    order_in_unit: 1
+    order_in_unit: 1,
   },
-  ...overrides
+  ...overrides,
 })

@@ -1,7 +1,7 @@
 import { type ProgrammeFields } from "@/schema/public/programmeFields/programmeFields.schema"
 
 export const programmeFieldsFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<ProgrammeFields>
 } = {}): ProgrammeFields => ({
@@ -41,5 +41,5 @@ export const programmeFieldsFixture = ({
   subject_description: "subject-description",
   subject_display_order: 1,
   subject_parent: "Maths",
-  ...overrides
+  ...overrides,
 })

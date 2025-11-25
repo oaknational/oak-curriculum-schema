@@ -3,12 +3,12 @@ import { describe, expect, it } from "vitest"
 import {
   imageItemFixture,
   imageObjectFixture,
-  textItemFixture
+  textItemFixture,
 } from "@/schema/public/imageTextItems/imageTextItems.fixture"
 import {
   imageItemSchema,
   imageObjectSchema,
-  textItemSchema
+  textItemSchema,
 } from "@/schema/public/imageTextItems/imageTextItems.schema"
 
 describe("imageObject fixture", () => {

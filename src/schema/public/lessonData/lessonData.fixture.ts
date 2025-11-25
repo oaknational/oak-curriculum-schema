@@ -1,7 +1,7 @@
 import { type LessonData } from "@/schema/public/lessonData/lessonData.schema"
 
 export const lessonDataFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<LessonData>
 } = {}): LessonData => ({
@@ -38,5 +38,5 @@ export const lessonDataFixture = ({
   lesson_outline: null,
   media_clips: null,
   lesson_release_date: null,
-  ...overrides
+  ...overrides,
 })

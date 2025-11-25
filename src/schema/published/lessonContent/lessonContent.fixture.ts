@@ -4,45 +4,45 @@ import {
   type TeacherTips,
   type LessonEquipmentAndResources,
   type MisconceptionsAndCommonMistakes,
-  type ContentGuidance
+  type ContentGuidance,
 } from "@/schema/published/lessonContent/lessonContent.schema"
 import {
   matchQuestion,
   multipleChoiceQuestion,
   orderQuestion,
-  shortAnswerQuestion
+  shortAnswerQuestion,
 } from "@/schema/public/quizQuestion/quizQuestion.fixture"
 import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture"
 import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture"
 
 export const lessonEquipmentAndResourcesFixture =
   (): LessonEquipmentAndResources => ({
-    equipment: "equipment"
+    equipment: "equipment",
   })
 
 export const teacherTipsFixture = (): TeacherTips => ({
-  teacher_tip: "teacher-tip"
+  teacher_tip: "teacher-tip",
 })
 
 export const keywordsFixture = (): Keywords => ({
   keyword: "keyword",
-  description: "description"
+  description: "description",
 })
 
 export const misconceptionsAndCommonMistakesFixture =
   (): MisconceptionsAndCommonMistakes => ({
     misconception: "misconception",
-    response: "response"
+    response: "response",
   })
 
 export const contentGuidanceFixture = (): ContentGuidance => ({
   contentguidance_label: "contentguidance-label",
   contentguidance_description: "contentguidance-description",
-  contentguidance_area: "contentguidance-area"
+  contentguidance_area: "contentguidance-area",
 })
 
 export const lessonContentFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<LessonContent>
 } = {}): LessonContent => ({
@@ -52,7 +52,7 @@ export const lessonContentFixture = ({
   deprecated_fields: {},
   is_legacy: false,
   misconceptions_and_common_mistakes: [
-    misconceptionsAndCommonMistakesFixture()
+    misconceptionsAndCommonMistakesFixture(),
   ],
   equipment_and_resources: [lessonEquipmentAndResourcesFixture()],
   teacher_tips: [teacherTipsFixture()],
@@ -70,13 +70,13 @@ export const lessonContentFixture = ({
   transcript_sentences: "this is the transcript",
   starter_quiz: [
     multipleChoiceQuestion({
-      overrides: { order: 1, question_uid: "starter-quiz-1" }
+      overrides: { order: 1, question_uid: "starter-quiz-1" },
     }),
     orderQuestion({ overrides: { order: 2, question_uid: "starter-quiz-2" } }),
     matchQuestion({ overrides: { order: 3, question_uid: "starter-quiz-3" } }),
     shortAnswerQuestion({
-      overrides: { order: 4, question_uid: "starter-quiz-4" }
-    })
+      overrides: { order: 4, question_uid: "starter-quiz-4" },
+    }),
   ],
   starter_quiz_id: 1,
   exit_quiz: null,
@@ -104,9 +104,9 @@ export const lessonContentFixture = ({
   media_clips: mediaClipsFixture().media_clips,
   lesson_outline: [
     { lesson_outline: "lesson-outline-1" },
-    { lesson_outline: "lesson-outline-2" }
+    { lesson_outline: "lesson-outline-2" },
   ],
   downloadable_files: additionalFilesFixture().downloadable_files,
   lesson_release_date: "2024-05-10T08:34:55.166149+00:00",
-  ...overrides
+  ...overrides,
 })

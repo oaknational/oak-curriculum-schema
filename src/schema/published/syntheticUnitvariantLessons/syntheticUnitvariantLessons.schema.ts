@@ -18,11 +18,11 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
-    order_in_unit: z.number()
+    order_in_unit: z.number(),
   }),
   actions: actionsSchema.nullable().optional(),
   features: featuresSchema.nullable().optional(),
-  static_lesson_list: staticLessonListSchema.nullish()
+  static_lesson_list: staticLessonListSchema.nullish(),
 })
 
 export type SyntheticUnitvariantLessons = z.infer<

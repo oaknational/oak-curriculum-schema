@@ -14,7 +14,7 @@ export const unitDataSchema = z.object({
   prior_knowledge_requirements: z.array(z.string()).nullish(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
-  expiration_date: z.string().nullable()
+  expiration_date: z.string().nullable(),
 })
 
 export type UnitData = z.infer<typeof unitDataSchema>

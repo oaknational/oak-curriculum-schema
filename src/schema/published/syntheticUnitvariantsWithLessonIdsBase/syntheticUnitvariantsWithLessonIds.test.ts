@@ -7,7 +7,7 @@ describe("syntheticUnitvariantsWithLessonIds", () => {
   it("conforms to the schema", () => {
     const l = syntheticUnitvariantsWithLessonIdsFixture()
     expect(() =>
-      syntheticUnitvariantsWithLessonIdsBaseSchema.parse(l)
+      syntheticUnitvariantsWithLessonIdsBaseSchema.parse(l),
     ).not.toThrow()
   })
 })

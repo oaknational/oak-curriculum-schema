@@ -13,8 +13,8 @@ export const syntheticUnitvariantLessonsByKsSchemaOld = z.object({
     pathway_description: true,
     pathway_display_order: true,
     pathway_id: true,
-    pathway_slug: true
-  })
+    pathway_slug: true,
+  }),
 })
 
 export type SyntheticUnitvariantLessonsByKsOld = z.infer<

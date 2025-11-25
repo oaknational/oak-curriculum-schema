@@ -19,7 +19,7 @@ import {
   subjectSlugs,
   pathways,
   pathwaySlugs,
-  pathwayDescriptions
+  pathwayDescriptions,
 } from "@/schema/public/base/base.schema"
 
 export const programmeFieldsSchema = z.object({
@@ -68,7 +68,7 @@ export const programmeFieldsSchema = z.object({
 
   optionality: z.string().optional(),
   legacy: z.string().optional(),
-  dataset: z.string().optional()
+  dataset: z.string().optional(),
 })
 
 export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>

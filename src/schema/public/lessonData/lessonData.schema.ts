@@ -5,7 +5,7 @@ import {
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
-  lessonOutlineSchema
+  lessonOutlineSchema,
 } from "@/schema/published/lessonContent/lessonContent.schema"
 import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema"
 
@@ -46,7 +46,7 @@ export const lessonDataSchema = z.object({
   _state: _stateSchema,
   _cohort: _cohortSchema,
   updated_at: z.string(),
-  lesson_release_date: z.string().nullable()
+  lesson_release_date: z.string().nullable(),
 })
 
 export type LessonData = z.infer<typeof lessonDataSchema>

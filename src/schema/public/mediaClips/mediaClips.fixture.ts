@@ -2,11 +2,11 @@ import {
   type LessonMediaClips,
   type MediaClipObject,
   type VideoClipObject,
-  type MediaClipCycle
+  type MediaClipCycle,
 } from "@/schema/public/mediaClips/mediaClips.schema"
 
 export const mediaObjectFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<MediaClipObject>
 } = {}): MediaClipObject => ({
@@ -16,11 +16,11 @@ export const mediaObjectFixture = ({
   format: "mp3",
   display_name: "9_task_C1_3",
   resource_type: "video",
-  ...overrides
+  ...overrides,
 })
 
 export const videoObjectFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<VideoClipObject>
 } = {}): VideoClipObject => ({
@@ -29,19 +29,19 @@ export const videoObjectFixture = ({
   playback_ids: [
     {
       id: "mVkKUtOfoD1100012GNC1pCO6RvUgyGwqGoq01pYsy7WeA",
-      policy: "signed"
+      policy: "signed",
     },
     {
       id: "BW00NkK9R01jB8PPO7R00YCFl2XBDn13GTkhd0001PNtheF00",
-      policy: "public"
-    }
+      policy: "public",
+    },
   ],
   mux_playback_id: "BW00NkK9R01jB8PPO7R00YCFl2XBDn13GTkhd0001PNtheF00",
-  ...overrides
+  ...overrides,
 })
 
 export const mediaClipCycleFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<MediaClipCycle>
 } = {}): MediaClipCycle => ({
@@ -52,11 +52,11 @@ export const mediaClipCycleFixture = ({
   custom_title: "Intro Video 1",
   media_object: mediaObjectFixture(),
   video_object: videoObjectFixture(),
-  ...overrides
+  ...overrides,
 })
 
 export const mediaClipsFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<LessonMediaClips>
 } = {}): LessonMediaClips => ({
@@ -69,7 +69,7 @@ export const mediaClipsFixture = ({
         media_type: "video",
         custom_title: "Intro Video 1",
         media_object: mediaObjectFixture(),
-        video_object: videoObjectFixture()
+        video_object: videoObjectFixture(),
       },
       {
         order: "2",
@@ -83,7 +83,7 @@ export const mediaClipsFixture = ({
           bytes: 122087,
           format: "mp3",
           display_name: "8_task_C1_2",
-          resource_type: "video"
+          resource_type: "video",
         },
         video_object: {
           duration: 7.603667,
@@ -91,16 +91,16 @@ export const mediaClipsFixture = ({
           playback_ids: [
             {
               id: "9a02PY7PivjOBUHyH4N2mAwJH00aJoZeybWyy9hiwXVQY",
-              policy: "public"
+              policy: "public",
             },
             {
               id: "02mDhMdHMs4MOCAMutPLWzylp00NQgDYfiydlLQPDWI3M",
-              policy: "signed"
-            }
+              policy: "signed",
+            },
           ],
-          mux_playback_id: "9a02PY7PivjOBUHyH4N2mAwJH00aJoZeybWyy9hiwXVQY"
-        }
-      }
+          mux_playback_id: "9a02PY7PivjOBUHyH4N2mAwJH00aJoZeybWyy9hiwXVQY",
+        },
+      },
     ],
     cycle2: [
       {
@@ -115,7 +115,7 @@ export const mediaClipsFixture = ({
           bytes: 276767,
           format: "mp4",
           display_name: "australia fact",
-          resource_type: "video"
+          resource_type: "video",
         },
         video_object: {
           duration: 5.613111,
@@ -123,19 +123,19 @@ export const mediaClipsFixture = ({
           playback_ids: [
             {
               id: "RUIUNGcGf01kgZU1xC5peDCvGpC2d2YeRcwSMfJ4cvMk",
-              policy: "public"
+              policy: "public",
             },
             {
               id: "NVs5TJ5Lt6POkNwDBNtHZth2a2VtBvsyorgJPQfO6W4",
-              policy: "signed"
-            }
+              policy: "signed",
+            },
           ],
-          mux_playback_id: "RUIUNGcGf01kgZU1xC5peDCvGpC2d2YeRcwSMfJ4cvMk"
-        }
-      }
-    ]
+          mux_playback_id: "RUIUNGcGf01kgZU1xC5peDCvGpC2d2YeRcwSMfJ4cvMk",
+        },
+      },
+    ],
   },
-  ...overrides
+  ...overrides,
 })
 
 export const additionalCyclesFixture = {
@@ -147,11 +147,11 @@ export const additionalCyclesFixture = {
         overrides: {
           order: "2",
           media_id: "1911749",
-          video_id: 298345
-        }
-      })
-    ]
-  }
+          video_id: 298345,
+        },
+      }),
+    ],
+  },
 }
 
 export default mediaClipsFixture

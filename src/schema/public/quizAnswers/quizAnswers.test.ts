@@ -3,13 +3,13 @@ import {
   matchFixture,
   multipleChoiceFixture,
   orderFixture,
-  shortAnswerFixture
+  shortAnswerFixture,
 } from "@/schema/public/quizAnswers/quizAnswers.fixture"
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
-  shortAnswerSchema
+  shortAnswerSchema,
 } from "@/schema/public/quizAnswers/quizAnswers.schema"
 
 describe("multipleChoice answer", () => {

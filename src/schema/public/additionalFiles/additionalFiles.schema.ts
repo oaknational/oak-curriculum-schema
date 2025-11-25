@@ -6,12 +6,12 @@ export const additionalFileObjectSchema = z.object({
   media_object: z.object({
     url: z.string(),
     bytes: z.number(),
-    display_name: z.string()
-  })
+    display_name: z.string(),
+  }),
 })
 
 export const additionalFilesSchema = z.object({
-  downloadable_files: z.array(additionalFileObjectSchema).nullish()
+  downloadable_files: z.array(additionalFileObjectSchema).nullish(),
 })
 
 export type AdditionalFileObject = z.infer<typeof additionalFileObjectSchema>

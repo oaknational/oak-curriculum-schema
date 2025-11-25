@@ -2,13 +2,13 @@ import { z } from "zod"
 
 import {
   imageItemSchema,
-  textItemSchema
+  textItemSchema,
 } from "@/schema/public/imageTextItems/imageTextItems.schema"
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
-  shortAnswerSchema
+  shortAnswerSchema,
 } from "@/schema/public/quizAnswers/quizAnswers.schema"
 
 export const quizQuestionSchema = z.object({
@@ -24,14 +24,14 @@ export const quizQuestionSchema = z.object({
       "multiple-choice": z.array(multipleChoiceSchema).optional(),
       "short-answer": z.array(shortAnswerSchema).optional(),
       order: z.array(orderSchema).optional(),
-      match: z.array(matchSchema).optional()
+      match: z.array(matchSchema).optional(),
     })
     .optional()
     .nullable(),
   feedback: z.string().optional().nullable(),
   hint: z.string().optional().nullable(),
   active: z.boolean().optional(),
-  order: z.number()
+  order: z.number(),
 })
 
 export type QuizQuestion = z.infer<typeof quizQuestionSchema>

@@ -3,7 +3,7 @@ import { programmeFieldsFixture } from "@/schema/public/programmeFields/programm
 import { type SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema"
 
 export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByYears>
 } = {}): SyntheticUnitvariantsWithLessonIdsByYears => ({
@@ -20,11 +20,11 @@ export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   supplementary_data: {
     unit_order: 1,
     static_lesson_list: [
-      { slug: "lesson-slug", title: "lesson-title", order: 1 }
-    ]
+      { slug: "lesson-slug", title: "lesson-title", order: 1 },
+    ],
   },
   expired: false,
   age_restricted_lesson_count: 0,
   complex_copyright_lesson_count: 0,
-  ...overrides
+  ...overrides,
 })

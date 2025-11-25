@@ -19,15 +19,12 @@ export const queriesSchema = z.enum([
   "lessonMediaClipsQuery",
   "teacherPreviewLessonQuery",
   "teachersPreviewLessonDownloadQuery",
-  "teachersPreviewUnitListingQuery"
+  "teachersPreviewUnitListingQuery",
 ])
 
 export const journeysSchema = z.enum(["pupil", "teacher", "curriculum"])
 
-export const journeysAndQueriesSchema = z.union([
-  queriesSchema,
-  journeysSchema
-])
+export const journeysAndQueriesSchema = z.union([queriesSchema, journeysSchema])
 
 export const actionsSchema = z
   .object({
@@ -41,7 +38,7 @@ export const actionsSchema = z
     override_pathway: z.string(), // we have to override pathway in this way because we don't have the functionality to override different selection of programme fields across different queries
     is_pe_practical: z.boolean(),
     related_subject_slugs: z.array(subjectSlugs),
-    group_units_as: z.string()
+    group_units_as: z.string(),
   })
   .partial()
 

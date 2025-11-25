@@ -11,7 +11,7 @@ export const unitvariantSchema = z.object({
   unitvariant_id: z.number(),
   _deleted: z.boolean(),
   unit_overrides: unitDataSchema.partial(),
-  programme_fields: programmeFieldsSchema.partial()
+  programme_fields: programmeFieldsSchema.partial(),
 })
 
 export type Unitvariant = z.infer<typeof unitvariantSchema>

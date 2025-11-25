@@ -1,7 +1,7 @@
 import { type AssetType } from "@/schema/public/assets/assets.schema"
 
 export const assetsFixture = (
-  overrides: Partial<AssetType> = {}
+  overrides: Partial<AssetType> = {},
 ): AssetType => ({
   asset_id: 1,
   asset_uid: "asset-uid-123",
@@ -13,14 +13,14 @@ export const assetsFixture = (
   asset_object: {
     pdf: {
       bucket_name: "sample-bucket",
-      bucket_path: "path/to/asset.pdf"
+      bucket_path: "path/to/asset.pdf",
     },
     google_drive: {
       id: "google-drive-id-123",
-      url: "https://drive.google.com/file/d/google-drive-id-123/view"
-    }
+      url: "https://drive.google.com/file/d/google-drive-id-123/view",
+    },
   },
   tpc_media_ids: [101, 102],
   tpc_works_ids: [201, 202],
-  ...overrides
+  ...overrides,
 })

@@ -1,7 +1,7 @@
 import { type AdditionalFiles } from "@/schema/public/additionalFiles/additionalFiles.schema"
 
 export const additionalFilesFixture = ({
-  overrides
+  overrides,
 }: {
   overrides?: Partial<AdditionalFiles>
 } = {}): AdditionalFiles => ({
@@ -12,8 +12,8 @@ export const additionalFilesFixture = ({
       media_object: {
         url: "https://example.com/file1.pdf",
         bytes: 1000,
-        display_name: "File 1"
-      }
+        display_name: "File 1",
+      },
     },
     {
       asset_id: 932,
@@ -21,10 +21,10 @@ export const additionalFilesFixture = ({
       media_object: {
         url: "https://example.com/file2.pdf",
         bytes: 2000,
-        display_name: "File 2"
-      }
-    }
+        display_name: "File 2",
+      },
+    },
   ],
-  ...overrides
+  ...overrides,
 })
 export default additionalFilesFixture

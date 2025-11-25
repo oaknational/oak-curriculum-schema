@@ -2,7 +2,7 @@ import { type SyntheticProgrammesByYear } from "@/schema/published/syntheticProg
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture"
 
 export const syntheticProgrammesByYearFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<SyntheticProgrammesByYear>
 } = {}): SyntheticProgrammesByYear => ({
@@ -10,5 +10,5 @@ export const syntheticProgrammesByYearFixture = ({
   base_slug: "maths-primary-year-1",
   programme_slug: "maths-primary-year-1",
   is_legacy: false,
-  programme_fields: programmeFieldsFixture()
+  programme_fields: programmeFieldsFixture(),
 })

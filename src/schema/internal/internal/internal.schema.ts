@@ -3,7 +3,7 @@ import z from "zod"
 export const baseIngestStates = z.enum([
   "ingest_started",
   "ingest_complete",
-  "ready_to_ingest"
+  "ready_to_ingest",
 ])
 
 export const assetIngestStates = z.enum(["no_asset"])
@@ -17,5 +17,5 @@ export const videoIngestStates = z.enum([
   "no_audio",
   "rev_complete",
   "sent_to_rev",
-  "rev_skipped"
+  "rev_skipped",
 ])

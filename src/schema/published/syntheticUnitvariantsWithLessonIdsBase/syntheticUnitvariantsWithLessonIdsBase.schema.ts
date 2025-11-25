@@ -17,11 +17,11 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
-    static_lesson_list: staticLessonListSchema.nullish()
+    static_lesson_list: staticLessonListSchema.nullish(),
   }),
   expired: z.boolean(),
   actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
-  features: z.object({}).optional().nullable() // the optional should be removed once old mvs are retired
+  features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
 })
 
 export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<

@@ -4,7 +4,7 @@ import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture"
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture"
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<SyntheticUnitvariantLessonsByKs>
 } = {}): SyntheticUnitvariantLessonsByKs => ({
@@ -20,7 +20,7 @@ export const syntheticUnitvariantLessonsByKsFixture = ({
   programme_fields: programmeFieldsFixture(),
   order_in_unit: 1,
   static_lesson_list: [
-    { slug: "lesson-slug", title: "lesson-title", order: 1 }
+    { slug: "lesson-slug", title: "lesson-title", order: 1 },
   ],
-  ...overrides
+  ...overrides,
 })

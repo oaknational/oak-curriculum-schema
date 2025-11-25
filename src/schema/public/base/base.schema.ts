@@ -5,14 +5,14 @@ export const _cohortSchema = z.enum([
   "2020-2023",
   "2023-2024",
   "2024-2025",
-  "0"
+  "0",
 ])
 
 export const phaseSlugs = z.enum(["foundation", "primary", "secondary"])
 export const phaseDescriptions = z.enum([
   "Early Years Foundation Stage",
   "Primary",
-  "Secondary"
+  "Secondary",
 ])
 export const phases = z.enum(["foundation", "primary", "secondary"])
 
@@ -22,7 +22,7 @@ export const keystages = z.enum([
   "KS3",
   "KS4",
   "EYFS",
-  "All key stages"
+  "All key stages",
 ])
 export const keystageSlugs = z.enum([
   "ks1",
@@ -30,7 +30,7 @@ export const keystageSlugs = z.enum([
   "ks3",
   "ks4",
   "early-years-foundation-stage",
-  "all-ks"
+  "all-ks",
 ])
 export const keystageDescriptions = z.enum([
   "Key Stage 1",
@@ -38,7 +38,7 @@ export const keystageDescriptions = z.enum([
   "Key Stage 3",
   "Key Stage 4",
   "Early Years Foundation Stage",
-  "All Key Stages"
+  "All Key Stages",
 ])
 
 export const years = z.enum([
@@ -56,7 +56,7 @@ export const years = z.enum([
   "12",
   "13",
   "R",
-  "All"
+  "All",
 ])
 export const yearSlugs = z.enum([
   "reception",
@@ -73,7 +73,7 @@ export const yearSlugs = z.enum([
   "year-11",
   "year-12",
   "year-13",
-  "all-years"
+  "all-years",
 ])
 export const yearDescriptions = z.enum([
   "Year 1",
@@ -90,7 +90,7 @@ export const yearDescriptions = z.enum([
   "Year 12",
   "Year 13",
   "Reception",
-  "All years"
+  "All years",
 ])
 
 export const tiers = z.enum(["core", "foundation", "higher"])
@@ -107,7 +107,7 @@ export const examboardSlugs = z.enum([
   "eduqas",
   "ocr",
   "wjec",
-  "edexcelb"
+  "edexcelb",
 ])
 export const examboards = z.enum([
   "AQA",
@@ -115,7 +115,7 @@ export const examboards = z.enum([
   "Eduqas",
   "OCR",
   "WJEC",
-  "Edexcel B"
+  "Edexcel B",
 ])
 export const examboardDescriptions = z.enum([
   "Assessment and Qualifications Alliance",
@@ -123,7 +123,7 @@ export const examboardDescriptions = z.enum([
   "Eduqas",
   "Oxford, Cambridge and RSA Examinations",
   "Welsh Joint Education Committee",
-  "Edexcel B"
+  "Edexcel B",
 ])
 
 export const subjects = z.enum([
@@ -171,7 +171,7 @@ export const subjects = z.enum([
   "Sensory integration",
   "Speech and language therapy",
   "QA testing only",
-  "Cooking and nutrition"
+  "Cooking and nutrition",
 ])
 export const subjectSlugs = z.enum([
   "computing-non-gcse",
@@ -217,5 +217,5 @@ export const subjectSlugs = z.enum([
   "sensory-integration",
   "speech-and-language-therapy",
   "testing-not-for-publication",
-  "cooking-nutrition"
+  "cooking-nutrition",
 ])

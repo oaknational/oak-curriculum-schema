@@ -9,9 +9,9 @@ export const mediaClipObjectSchema = z.object({
   resource_type: z.string(),
   metadata: z
     .object({
-      attribution: z.string().nullish()
+      attribution: z.string().nullish(),
     })
-    .nullish()
+    .nullish(),
 })
 
 export const videoClipObjectSchema = z
@@ -21,10 +21,10 @@ export const videoClipObjectSchema = z
     playback_ids: z.array(
       z.object({
         id: z.string(),
-        policy: z.string()
-      })
+        policy: z.string(),
+      }),
     ),
-    mux_playback_id: z.string()
+    mux_playback_id: z.string(),
   })
   .nullable()
 
@@ -37,16 +37,16 @@ export const mediaClipCycleSchema = z.object({
   custom_title: z.string().nullish(),
   media_object: mediaClipObjectSchema,
   video_object: videoClipObjectSchema,
-  transcriptSentences: z.array(z.string()).nullish()
+  transcriptSentences: z.array(z.string()).nullish(),
 })
 
 export const mediaClipsRecordSchema = z.record(
   z.string(),
-  z.array(mediaClipCycleSchema)
+  z.array(mediaClipCycleSchema),
 )
 
 export const lessonMediaClipsSchema = z.object({
-  media_clips: mediaClipsRecordSchema
+  media_clips: mediaClipsRecordSchema,
 })
 
 export type MediaClipObject = z.infer<typeof mediaClipObjectSchema>

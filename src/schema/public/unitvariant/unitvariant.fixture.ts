@@ -1,7 +1,7 @@
 import { type Unitvariant } from "@/schema/public/unitvariant/unitvariant.schema"
 
 export const unitvariantFixture = ({
-  overrides = {}
+  overrides = {},
 }: {
   overrides?: Partial<Unitvariant>
 } = {}): Unitvariant => ({
@@ -12,5 +12,5 @@ export const unitvariantFixture = ({
   _cohort: "2023-2024",
   unit_overrides: {},
   programme_fields: {},
-  ...overrides
+  ...overrides,
 })

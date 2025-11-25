@@ -13,7 +13,7 @@ export const syntheticProgrammesByYearSchema = z.object({
   features: z
     .object({ nonCurriculum: z.boolean().optional() })
     .optional()
-    .nullable() // the optional should be removed once old mvs are retired
+    .nullable(), // the optional should be removed once old mvs are retired
 })
 
 export type SyntheticProgrammesByYear = z.infer<

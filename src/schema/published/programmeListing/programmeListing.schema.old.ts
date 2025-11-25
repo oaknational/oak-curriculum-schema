@@ -6,9 +6,9 @@ export const programmeListingResponseSchema =
     lesson_data: true,
     programme_fields: true,
     is_legacy: true,
-    programme_slug: true
+    programme_slug: true,
   })
 
 export const programmeListingResponseSchemaArray = z.array(
-  programmeListingResponseSchema
+  programmeListingResponseSchema,
 )

@@ -1,7 +1,7 @@
 import {
   type ImageObject,
   type ImageItem,
-  type TextItem
+  type TextItem,
 } from "@/schema/public/imageTextItems/imageTextItems.schema"
 
 export const imageObjectFixture = (): ImageObject => ({
@@ -12,26 +12,26 @@ export const imageObjectFixture = (): ImageObject => ({
   width: 100,
   metadata: {
     attribution: "author",
-    usageRestriction: "free"
+    usageRestriction: "free",
   },
   public_id: "sample",
-  version: 1234567890
+  version: 1234567890,
 })
 
 export const imageItemFixture = (): ImageItem => ({
   image_object: imageObjectFixture(),
-  type: "image"
+  type: "image",
 })
 
 export const textItemFixture = ({
-  overrides = {}
+  overrides = {},
 }: { overrides?: Partial<TextItem> } = {}): TextItem => ({
   text: "Hello, World!",
   type: "text",
-  ...overrides
+  ...overrides,
 })
 
 export const textAndImageItemFixture = (): Array<TextItem | ImageItem> => [
   imageItemFixture(),
-  textItemFixture({ overrides: { text: "This is a text item." } })
+  textItemFixture({ overrides: { text: "This is a text item." } }),
 ]
