@@ -1,13 +1,13 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-import { _stateSchema, _cohortSchema } from "../base/base.schema";
+import { _stateSchema, _cohortSchema } from '@/schema/public/base/base.schema'
 import {
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
-  lessonOutlineSchema,
-} from "../../published/lessonContent/lessonContent.schema";
-import { mediaClipsRecordSchema } from "../mediaClips/mediaClips.schema";
+  lessonOutlineSchema
+} from '@/schema/published/lessonContent/lessonContent.schema'
+import { mediaClipsRecordSchema } from '@/schema/public/mediaClips/mediaClips.schema'
 
 export const lessonDataSchema = z.object({
   lesson_id: z.number(),
@@ -46,7 +46,7 @@ export const lessonDataSchema = z.object({
   _state: _stateSchema,
   _cohort: _cohortSchema,
   updated_at: z.string(),
-  lesson_release_date: z.string().nullable(),
-});
+  lesson_release_date: z.string().nullable()
+})
 
-export type LessonData = z.infer<typeof lessonDataSchema>;
+export type LessonData = z.infer<typeof lessonDataSchema>

@@ -1,30 +1,30 @@
-import { z } from "zod";
-import { _stateSchema } from "../base/base.schema";
+import { z } from 'zod'
+import { _stateSchema } from '@/schema/public/base/base.schema'
 
 export const assetTypeSchema = z.enum([
-  "lesson_guide",
-  "downloadable_file",
-  "slidedeck",
-  "worksheet",
-  "worksheet_answers",
-  "supplementary_resource",
-]);
+  'lesson_guide',
+  'downloadable_file',
+  'slidedeck',
+  'worksheet',
+  'worksheet_answers',
+  'supplementary_resource'
+])
 
-export type AssetTypeType = z.infer<typeof assetTypeSchema>;
+export type AssetTypeType = z.infer<typeof assetTypeSchema>
 
 export const googleSchema = z.object({
   id: z.string().nullable(),
-  url: z.string().url().nullable(),
-});
+  url: z.string().url().nullable()
+})
 
-export type GoogleType = z.infer<typeof googleSchema>;
+export type GoogleType = z.infer<typeof googleSchema>
 
 export const bucketSchema = z.object({
   bucket_name: z.string().nullable(),
-  bucket_path: z.string().nullable(),
-});
+  bucket_path: z.string().nullable()
+})
 
-export type BucketType = z.infer<typeof bucketSchema>;
+export type BucketType = z.infer<typeof bucketSchema>
 
 export const assetObjectSchema = z
   .object({
@@ -32,11 +32,11 @@ export const assetObjectSchema = z
     powerpoint: bucketSchema,
     opendocument_presentation: bucketSchema,
     google_drive: googleSchema,
-    google_slide: googleSchema.pick({ url: true }),
+    google_slide: googleSchema.pick({ url: true })
   })
-  .partial();
+  .partial()
 
-export type AssetObjectType = z.infer<typeof assetObjectSchema>;
+export type AssetObjectType = z.infer<typeof assetObjectSchema>
 
 export const assetsSchema = z.object({
   asset_id: z.number(),
@@ -48,7 +48,7 @@ export const assetsSchema = z.object({
   url: z.string().url(),
   asset_object: assetObjectSchema,
   tpc_media_ids: z.array(z.number()).nullable(),
-  tpc_works_ids: z.array(z.number()).nullable(),
-});
+  tpc_works_ids: z.array(z.number()).nullable()
+})
 
-export type AssetType = z.infer<typeof assetsSchema>;
+export type AssetType = z.infer<typeof assetsSchema>

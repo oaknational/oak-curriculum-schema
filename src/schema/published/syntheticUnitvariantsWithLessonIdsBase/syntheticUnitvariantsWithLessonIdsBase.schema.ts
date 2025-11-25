@@ -1,8 +1,8 @@
-import { z } from "zod";
-import { unitDataSchema } from "../../public/unitData/unitData.schema";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
-import { actionsSchema } from "../actions/actions.schema";
-import { staticLessonListSchema } from "../../public/staticLessonList/staticLessonList.schema";
+import { z } from 'zod'
+import { unitDataSchema } from '@/schema/public/unitData/unitData.schema'
+import { programmeFieldsSchema } from '@/schema/public/programmeFields/programmeFields.schema'
+import { actionsSchema } from '@/schema/published/actions/actions.schema'
+import { staticLessonListSchema } from '@/schema/public/staticLessonList/staticLessonList.schema'
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   base_slug: z.string(),
@@ -17,13 +17,13 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
-    static_lesson_list: staticLessonListSchema.nullish(),
+    static_lesson_list: staticLessonListSchema.nullish()
   }),
   expired: z.boolean(),
   actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
-  features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
-});
+  features: z.object({}).optional().nullable() // the optional should be removed once old mvs are retired
+})
 
 export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsBaseSchema
->;
+>

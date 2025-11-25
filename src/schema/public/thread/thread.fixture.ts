@@ -1,12 +1,12 @@
-import { Thread } from "@/schema/public/thread/thread.schema";
+import { type Thread } from '@/schema/public/thread/thread.schema'
 
 export const threadFixture = ({
-  overrides = {},
+  overrides = {}
 }: {
-  overrides?: Partial<Thread>;
+  overrides?: Partial<Thread>
 } = {}): Thread => ({
   thread_id: 1,
-  thread_title: "A thread",
-  thread_slug: "a-thread",
-  ...overrides,
-});
+  thread_title: 'A thread',
+  thread_slug: 'a-thread',
+  ...overrides
+})

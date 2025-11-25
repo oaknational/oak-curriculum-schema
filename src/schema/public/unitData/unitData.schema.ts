@@ -1,6 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-import { _stateSchema, _cohortSchema } from "../base/base.schema";
+import { _stateSchema, _cohortSchema } from '@/schema/public/base/base.schema'
 
 export const unitDataSchema = z.object({
   unit_id: z.number(),
@@ -14,7 +14,7 @@ export const unitDataSchema = z.object({
   prior_knowledge_requirements: z.array(z.string()).nullish(),
   _state: _stateSchema,
   _cohort: _cohortSchema,
-  expiration_date: z.string().nullable(),
-});
+  expiration_date: z.string().nullable()
+})
 
-export type UnitData = z.infer<typeof unitDataSchema>;
+export type UnitData = z.infer<typeof unitDataSchema>

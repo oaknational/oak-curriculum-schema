@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod'
 import {
   keystages,
   keystageSlugs,
@@ -19,8 +19,8 @@ import {
   subjectSlugs,
   pathways,
   pathwaySlugs,
-  pathwayDescriptions,
-} from "../base/base.schema";
+  pathwayDescriptions
+} from '@/schema/public/base/base.schema'
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),
@@ -68,7 +68,7 @@ export const programmeFieldsSchema = z.object({
 
   optionality: z.string().optional(),
   legacy: z.string().optional(),
-  dataset: z.string().optional(),
-});
+  dataset: z.string().optional()
+})
 
-export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>;
+export type ProgrammeFields = z.infer<typeof programmeFieldsSchema>

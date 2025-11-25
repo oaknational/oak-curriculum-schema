@@ -1,15 +1,15 @@
-import { z } from "zod";
+import { z } from 'zod'
 
 import {
   imageItemSchema,
-  textItemSchema,
-} from "../imageTextItems/imageTextItems.schema";
+  textItemSchema
+} from '@/schema/public/imageTextItems/imageTextItems.schema'
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
-  shortAnswerSchema,
-} from "../quizAnswers/quizAnswers.schema";
+  shortAnswerSchema
+} from '@/schema/public/quizAnswers/quizAnswers.schema'
 
 export const quizQuestionSchema = z.object({
   question_id: z.number(),
@@ -21,17 +21,17 @@ export const quizQuestionSchema = z.object({
     .nullable(),
   answers: z
     .object({
-      "multiple-choice": z.array(multipleChoiceSchema).optional(),
-      "short-answer": z.array(shortAnswerSchema).optional(),
+      'multiple-choice': z.array(multipleChoiceSchema).optional(),
+      'short-answer': z.array(shortAnswerSchema).optional(),
       order: z.array(orderSchema).optional(),
-      match: z.array(matchSchema).optional(),
+      match: z.array(matchSchema).optional()
     })
     .optional()
     .nullable(),
   feedback: z.string().optional().nullable(),
   hint: z.string().optional().nullable(),
   active: z.boolean().optional(),
-  order: z.number(),
-});
+  order: z.number()
+})
 
-export type QuizQuestion = z.infer<typeof quizQuestionSchema>;
+export type QuizQuestion = z.infer<typeof quizQuestionSchema>

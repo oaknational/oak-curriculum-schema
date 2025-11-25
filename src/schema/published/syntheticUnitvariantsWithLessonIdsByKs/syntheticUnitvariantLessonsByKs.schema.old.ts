@@ -1,7 +1,7 @@
-import { z } from "zod";
-import { syntheticUnitvariantLessonsSchema } from "../syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
-import { unitvariantSchema } from "../../public/unitvariant/unitvariant.schema";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
+import { z } from 'zod'
+import { syntheticUnitvariantLessonsSchema } from '@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema'
+import { unitvariantSchema } from '@/schema/public/unitvariant/unitvariant.schema'
+import { programmeFieldsSchema } from '@/schema/public/programmeFields/programmeFields.schema'
 
 export const syntheticUnitvariantLessonsByKsSchemaOld = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ null_unitvariant_id: true })
@@ -13,10 +13,10 @@ export const syntheticUnitvariantLessonsByKsSchemaOld = z.object({
     pathway_description: true,
     pathway_display_order: true,
     pathway_id: true,
-    pathway_slug: true,
-  }),
-});
+    pathway_slug: true
+  })
+})
 
 export type SyntheticUnitvariantLessonsByKsOld = z.infer<
   typeof syntheticUnitvariantLessonsByKsSchemaOld
->;
+>

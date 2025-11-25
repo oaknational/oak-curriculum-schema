@@ -1,10 +1,10 @@
-import { z } from "zod";
-import { lessonDataSchema } from "../../public/lessonData/lessonData.schema";
-import { unitDataSchema } from "../../public/unitData/unitData.schema";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
-import { actionsSchema } from "../actions/actions.schema";
-import { featuresSchema } from "../../public/features/features.schema";
-import { staticLessonListSchema } from "../../public/staticLessonList/staticLessonList.schema";
+import { z } from 'zod'
+import { lessonDataSchema } from '@/schema/public/lessonData/lessonData.schema'
+import { unitDataSchema } from '@/schema/public/unitData/unitData.schema'
+import { programmeFieldsSchema } from '@/schema/public/programmeFields/programmeFields.schema'
+import { actionsSchema } from '@/schema/published/actions/actions.schema'
+import { featuresSchema } from '@/schema/public/features/features.schema'
+import { staticLessonListSchema } from '@/schema/public/staticLessonList/staticLessonList.schema'
 
 export const syntheticUnitvariantLessonsSchema = z.object({
   lesson_slug: z.string(),
@@ -18,13 +18,13 @@ export const syntheticUnitvariantLessonsSchema = z.object({
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({
     unit_order: z.number(),
-    order_in_unit: z.number(),
+    order_in_unit: z.number()
   }),
   actions: actionsSchema.nullable().optional(),
   features: featuresSchema.nullable().optional(),
-  static_lesson_list: staticLessonListSchema.nullish(),
-});
+  static_lesson_list: staticLessonListSchema.nullish()
+})
 
 export type SyntheticUnitvariantLessons = z.infer<
   typeof syntheticUnitvariantLessonsSchema
->;
+>

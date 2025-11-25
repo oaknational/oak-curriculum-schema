@@ -1,54 +1,54 @@
 import {
-  Match,
-  MultipleChoice,
-  Order,
-  ShortAnswer,
-} from "@/schema/public/quizAnswers/quizAnswers.schema";
+  type Match,
+  type MultipleChoice,
+  type Order,
+  type ShortAnswer
+} from '@/schema/public/quizAnswers/quizAnswers.schema'
 import {
   imageItemFixture,
-  textItemFixture,
-} from "../imageTextItems/imageTextItems.fixture";
+  textItemFixture
+} from '@/schema/public/imageTextItems/imageTextItems.fixture'
 
 export const multipleChoiceFixture = ({
-  overrides = {},
+  overrides = {}
 }: {
-  overrides?: Partial<MultipleChoice>;
+  overrides?: Partial<MultipleChoice>
 } = {}): MultipleChoice => ({
   answer: [textItemFixture(), imageItemFixture()],
   answer_is_active: true,
   answer_is_correct: true,
-  ...overrides,
-});
+  ...overrides
+})
 
 export const shortAnswerFixture = ({
-  overrides = {},
+  overrides = {}
 }: {
-  overrides?: Partial<ShortAnswer>;
+  overrides?: Partial<ShortAnswer>
 } = {}): ShortAnswer => ({
   answer: [textItemFixture()],
   answer_is_active: true,
   answer_is_default: true,
-  ...overrides,
-});
+  ...overrides
+})
 
 export const orderFixture = ({
-  overrides = {},
+  overrides = {}
 }: {
-  overrides?: Partial<Order>;
+  overrides?: Partial<Order>
 } = {}): Order => ({
   answer: [textItemFixture()],
   correct_order: 1,
   answer_is_active: true,
-  ...overrides,
-});
+  ...overrides
+})
 
 export const matchFixture = ({
-  overrides = {},
+  overrides = {}
 }: {
-  overrides?: Partial<Match>;
+  overrides?: Partial<Match>
 } = {}): Match => ({
   answer_is_active: true,
-  correct_choice: [textItemFixture({ overrides: { text: "Paris" } })],
-  match_option: [textItemFixture({ overrides: { text: "Capital of France" } })],
-  ...overrides,
-});
+  correct_choice: [textItemFixture({ overrides: { text: 'Paris' } })],
+  match_option: [textItemFixture({ overrides: { text: 'Capital of France' } })],
+  ...overrides
+})

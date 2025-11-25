@@ -1,7 +1,7 @@
-import { z } from "zod";
-import { programmeFieldsSchema } from "../../public/programmeFields/programmeFields.schema";
-import { yearSlugs } from "../../public/base/base.schema";
-import { actionsSchema } from "../actions/actions.schema";
+import { z } from 'zod'
+import { programmeFieldsSchema } from '@/schema/public/programmeFields/programmeFields.schema'
+import { yearSlugs } from '@/schema/public/base/base.schema'
+import { actionsSchema } from '@/schema/published/actions/actions.schema'
 
 export const syntheticProgrammesByYearSchema = z.object({
   year_slug: yearSlugs,
@@ -13,9 +13,9 @@ export const syntheticProgrammesByYearSchema = z.object({
   features: z
     .object({ nonCurriculum: z.boolean().optional() })
     .optional()
-    .nullable(), // the optional should be removed once old mvs are retired
-});
+    .nullable() // the optional should be removed once old mvs are retired
+})
 
 export type SyntheticProgrammesByYear = z.infer<
   typeof syntheticProgrammesByYearSchema
->;
+>
