@@ -1,2 +1,2 @@
-export * from './unitData.fixture'
-export * from './unitData.schema'
+export * from "./unitData.fixture";
+export * from "./unitData.schema";

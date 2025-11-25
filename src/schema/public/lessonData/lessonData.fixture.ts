@@ -1,4 +1,4 @@
-import { type LessonData } from '@/schema/public/lessonData/lessonData.schema'
+import { type LessonData } from "@/schema/public/lessonData/lessonData.schema"
 
 export const lessonDataFixture = ({
   overrides = {}
@@ -6,13 +6,13 @@ export const lessonDataFixture = ({
   overrides?: Partial<LessonData>
 } = {}): LessonData => ({
   lesson_id: 1,
-  lesson_uid: 'lesson-uid',
-  title: 'lesson-title',
-  description: 'lesson-description',
-  slug: 'lesson-slug',
-  pupil_lesson_outcome: 'pupil-lesson-outcome',
+  lesson_uid: "lesson-uid",
+  title: "lesson-title",
+  description: "lesson-description",
+  slug: "lesson-slug",
+  pupil_lesson_outcome: "pupil-lesson-outcome",
   phonics_outcome: null,
-  key_learning_points: [{ key_learning_point: 'point 1' }],
+  key_learning_points: [{ key_learning_point: "point 1" }],
   equipment_and_resources: null,
   content_guidance_details: null,
   content_guidance: null,
@@ -30,10 +30,10 @@ export const lessonDataFixture = ({
   asset_id_supplementary_asset: null,
   asset_id_lesson_guide: null,
   copyright_content: null,
-  _state: 'published',
-  _cohort: '2023-2024',
+  _state: "published",
+  _cohort: "2023-2024",
   deprecated_fields: null,
-  updated_at: '2024-02-28T08:09:20.247619+00:00',
+  updated_at: "2024-02-28T08:09:20.247619+00:00",
   expiration_date: null,
   lesson_outline: null,
   media_clips: null,

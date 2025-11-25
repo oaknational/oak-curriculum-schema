@@ -36,6 +36,8 @@ export default [
           rootDir: "src",
         },
       ],
+      quotes: ["error", "double"],
+      "@typescript-eslint/quotes": ["error", "double"],
     },
   },
 ];

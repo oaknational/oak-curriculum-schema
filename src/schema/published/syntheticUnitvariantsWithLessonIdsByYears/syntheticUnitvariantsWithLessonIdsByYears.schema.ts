@@ -1,5 +1,5 @@
-import { z } from 'zod'
-import { syntheticUnitvariantsWithLessonIdsBaseSchema } from '@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema'
+import { z } from "zod"
+import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema"
 
 export const syntheticUnitvariantsWithLessonIdsByYearsSchema = z.object({
   ...syntheticUnitvariantsWithLessonIdsBaseSchema.shape,

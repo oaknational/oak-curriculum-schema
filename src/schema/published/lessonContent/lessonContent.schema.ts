@@ -1,9 +1,9 @@
-import { z } from 'zod'
+import { z } from "zod"
 
-import { quizQuestionSchema } from '@/schema/public/quizQuestion/quizQuestion.schema'
-import { _stateSchema } from '@/schema/public/base/base.schema'
-import { mediaClipsRecordSchema } from '@/schema/public/mediaClips/mediaClips.schema'
-import { additionalFileObjectSchema } from '@/schema/public/additionalFiles/additionalFiles.schema'
+import { quizQuestionSchema } from "@/schema/public/quizQuestion/quizQuestion.schema"
+import { _stateSchema } from "@/schema/public/base/base.schema"
+import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema"
+import { additionalFileObjectSchema } from "@/schema/public/additionalFiles/additionalFiles.schema"
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string()

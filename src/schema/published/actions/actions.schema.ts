@@ -1,28 +1,28 @@
-import { z } from 'zod'
-import { programmeFieldsSchema } from '@/schema/public/programmeFields/programmeFields.schema'
-import { subjectSlugs } from '@/schema/public/base/base.schema'
+import { z } from "zod"
+import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema"
+import { subjectSlugs } from "@/schema/public/base/base.schema"
 
 export const queriesSchema = z.enum([
-  'pupilSubjectListingQuery',
-  'pupilProgrammeListingQuery',
-  'pupilUnitListingQuery',
-  'pupilLessonListingQuery',
-  'pupilLessonQuery',
-  'unitListingQuery',
-  'lessonListingQuery',
-  'programmeListingQuery',
-  'subjectListingQuery',
-  'lessonOverviewQuery',
-  'lessonDownloadsQuery',
-  'lessonBetaDownloadsQuery',
-  'lessonShareQuery',
-  'lessonMediaClipsQuery',
-  'teacherPreviewLessonQuery',
-  'teachersPreviewLessonDownloadQuery',
-  'teachersPreviewUnitListingQuery'
+  "pupilSubjectListingQuery",
+  "pupilProgrammeListingQuery",
+  "pupilUnitListingQuery",
+  "pupilLessonListingQuery",
+  "pupilLessonQuery",
+  "unitListingQuery",
+  "lessonListingQuery",
+  "programmeListingQuery",
+  "subjectListingQuery",
+  "lessonOverviewQuery",
+  "lessonDownloadsQuery",
+  "lessonBetaDownloadsQuery",
+  "lessonShareQuery",
+  "lessonMediaClipsQuery",
+  "teacherPreviewLessonQuery",
+  "teachersPreviewLessonDownloadQuery",
+  "teachersPreviewUnitListingQuery"
 ])
 
-export const journeysSchema = z.enum(['pupil', 'teacher', 'curriculum'])
+export const journeysSchema = z.enum(["pupil", "teacher", "curriculum"])
 
 export const journeysAndQueriesSchema = z.union([
   queriesSchema,

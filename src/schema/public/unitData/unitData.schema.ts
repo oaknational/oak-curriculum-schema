@@ -1,6 +1,6 @@
-import { z } from 'zod'
+import { z } from "zod"
 
-import { _stateSchema, _cohortSchema } from '@/schema/public/base/base.schema'
+import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema"
 
 export const unitDataSchema = z.object({
   unit_id: z.number(),

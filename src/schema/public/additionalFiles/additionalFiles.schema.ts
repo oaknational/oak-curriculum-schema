@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 export const additionalFileObjectSchema = z.object({
   asset_id: z.number(),

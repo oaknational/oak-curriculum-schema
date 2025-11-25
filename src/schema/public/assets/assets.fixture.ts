@@ -1,23 +1,23 @@
-import { type AssetType } from '@/schema/public/assets/assets.schema'
+import { type AssetType } from "@/schema/public/assets/assets.schema"
 
 export const assetsFixture = (
   overrides: Partial<AssetType> = {}
 ): AssetType => ({
   asset_id: 1,
-  asset_uid: 'asset-uid-123',
-  _state: 'new',
-  title: 'Sample Asset',
-  description: 'This is a sample asset for testing.',
-  asset_type: 'worksheet',
-  url: 'https://example.com/asset.pdf',
+  asset_uid: "asset-uid-123",
+  _state: "new",
+  title: "Sample Asset",
+  description: "This is a sample asset for testing.",
+  asset_type: "worksheet",
+  url: "https://example.com/asset.pdf",
   asset_object: {
     pdf: {
-      bucket_name: 'sample-bucket',
-      bucket_path: 'path/to/asset.pdf'
+      bucket_name: "sample-bucket",
+      bucket_path: "path/to/asset.pdf"
     },
     google_drive: {
-      id: 'google-drive-id-123',
-      url: 'https://drive.google.com/file/d/google-drive-id-123/view'
+      id: "google-drive-id-123",
+      url: "https://drive.google.com/file/d/google-drive-id-123/view"
     }
   },
   tpc_media_ids: [101, 102],

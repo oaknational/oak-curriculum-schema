@@ -1,8 +1,8 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 export const imageObjectSchema = z
   .object({
-    format: z.enum(['png', 'jpg', 'jpeg', 'webp', 'gif', 'svg']),
+    format: z.enum(["png", "jpg", "jpeg", "webp", "gif", "svg"]),
     secure_url: z.string().url(),
     url: z.string().url(),
     height: z.number(),
@@ -25,14 +25,14 @@ export type ImageObject = z.infer<typeof imageObjectSchema>
 
 export const imageItemSchema = z.object({
   image_object: imageObjectSchema,
-  type: z.literal('image')
+  type: z.literal("image")
 })
 
 export type ImageItem = z.infer<typeof imageItemSchema>
 
 export const textItemSchema = z.object({
   text: z.string(),
-  type: z.literal('text')
+  type: z.literal("text")
 })
 
 export type TextItem = z.infer<typeof textItemSchema>

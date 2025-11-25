@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from "zod"
 import {
   keystages,
   keystageSlugs,
@@ -20,7 +20,7 @@ import {
   pathways,
   pathwaySlugs,
   pathwayDescriptions
-} from '@/schema/public/base/base.schema'
+} from "@/schema/public/base/base.schema"
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),

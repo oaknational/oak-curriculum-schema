@@ -1,5 +1,5 @@
-import { syntheticUnitvariantLessonsByKsSchemaOld } from '@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantLessonsByKs.schema.old'
-import { z } from 'zod'
+import { syntheticUnitvariantLessonsByKsSchemaOld } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantLessonsByKs.schema.old"
+import { z } from "zod"
 
 export const programmeListingResponseSchema =
   syntheticUnitvariantLessonsByKsSchemaOld.pick({

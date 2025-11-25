@@ -1,14 +1,14 @@
-import type { Actions } from '@/schema/published/actions/actions.schema'
+import type { Actions } from "@/schema/published/actions/actions.schema"
 
 export const actionsFixture = (): Actions => ({
-  exclusions: ['lessonDownloadsQuery'],
-  opt_out: ['pupilSubjectListingQuery'],
+  exclusions: ["lessonDownloadsQuery"],
+  opt_out: ["pupilSubjectListingQuery"],
   programme_field_overrides: {},
   display_expiring_banner: true,
   disable_pupil_share: true,
   display_PE_title: true,
   display_vocab_button: true,
-  override_pathway: 'GSCE CS',
+  override_pathway: "GSCE CS",
   is_pe_practical: true,
   related_subject_slugs: []
 })

@@ -1,13 +1,13 @@
-import { z } from 'zod'
-import { _stateSchema } from '@/schema/public/base/base.schema'
+import { z } from "zod"
+import { _stateSchema } from "@/schema/public/base/base.schema"
 
 export const assetTypeSchema = z.enum([
-  'lesson_guide',
-  'downloadable_file',
-  'slidedeck',
-  'worksheet',
-  'worksheet_answers',
-  'supplementary_resource'
+  "lesson_guide",
+  "downloadable_file",
+  "slidedeck",
+  "worksheet",
+  "worksheet_answers",
+  "supplementary_resource"
 ])
 
 export type AssetTypeType = z.infer<typeof assetTypeSchema>

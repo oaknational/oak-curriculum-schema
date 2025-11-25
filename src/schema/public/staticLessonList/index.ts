@@ -1,1 +1,1 @@
-export * from './staticLessonList.schema'
+export * from "./staticLessonList.schema";

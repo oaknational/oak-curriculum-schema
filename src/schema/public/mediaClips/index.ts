@@ -1,2 +1,2 @@
-export * from './mediaClips.fixture'
-export * from './mediaClips.schema'
+export * from "./mediaClips.fixture";
+export * from "./mediaClips.schema";

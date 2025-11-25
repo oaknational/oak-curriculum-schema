@@ -1,15 +1,15 @@
-import { unitDataFixture } from '@/schema/public/unitData/unitData.fixture'
-import { programmeFieldsFixture } from '@/schema/public/programmeFields/programmeFields.fixture'
-import { type SyntheticUnitvariantsWithLessonIdsByYears } from '@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema'
+import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture"
+import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture"
+import { type SyntheticUnitvariantsWithLessonIdsByYears } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema"
 
 export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   overrides = {}
 }: {
   overrides?: Partial<SyntheticUnitvariantsWithLessonIdsByYears>
 } = {}): SyntheticUnitvariantsWithLessonIdsByYears => ({
-  base_slug: 'base-slug',
-  unit_slug: 'unit-slug',
-  programme_slug: 'programme-slug',
+  base_slug: "base-slug",
+  unit_slug: "unit-slug",
+  programme_slug: "programme-slug",
   is_legacy: false,
   lesson_count: 1,
   lesson_sensitive_count: 0,
@@ -20,7 +20,7 @@ export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   supplementary_data: {
     unit_order: 1,
     static_lesson_list: [
-      { slug: 'lesson-slug', title: 'lesson-title', order: 1 }
+      { slug: "lesson-slug", title: "lesson-title", order: 1 }
     ]
   },
   expired: false,

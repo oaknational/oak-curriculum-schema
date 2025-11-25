@@ -1,15 +1,15 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 import {
   imageItemSchema,
   textItemSchema
-} from '@/schema/public/imageTextItems/imageTextItems.schema'
+} from "@/schema/public/imageTextItems/imageTextItems.schema"
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema
-} from '@/schema/public/quizAnswers/quizAnswers.schema'
+} from "@/schema/public/quizAnswers/quizAnswers.schema"
 
 export const quizQuestionSchema = z.object({
   question_id: z.number(),
@@ -21,8 +21,8 @@ export const quizQuestionSchema = z.object({
     .nullable(),
   answers: z
     .object({
-      'multiple-choice': z.array(multipleChoiceSchema).optional(),
-      'short-answer': z.array(shortAnswerSchema).optional(),
+      "multiple-choice": z.array(multipleChoiceSchema).optional(),
+      "short-answer": z.array(shortAnswerSchema).optional(),
       order: z.array(orderSchema).optional(),
       match: z.array(matchSchema).optional()
     })

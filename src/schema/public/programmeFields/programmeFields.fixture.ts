@@ -1,4 +1,4 @@
-import { type ProgrammeFields } from '@/schema/public/programmeFields/programmeFields.schema'
+import { type ProgrammeFields } from "@/schema/public/programmeFields/programmeFields.schema"
 
 export const programmeFieldsFixture = ({
   overrides
@@ -20,26 +20,26 @@ export const programmeFieldsFixture = ({
   examboard_slug: null,
   examboard_description: null,
   examboard_display_order: null,
-  year: '1',
-  year_slug: 'year-1',
+  year: "1",
+  year_slug: "year-1",
   year_id: 1,
-  year_description: 'Year 1',
+  year_description: "Year 1",
   year_display_order: 1,
-  keystage: 'KS1',
+  keystage: "KS1",
   keystage_id: 1,
-  keystage_slug: 'ks1',
-  keystage_description: 'Key Stage 1',
+  keystage_slug: "ks1",
+  keystage_description: "Key Stage 1",
   keystage_display_order: 1,
-  phase: 'primary',
+  phase: "primary",
   phase_id: 0,
-  phase_slug: 'primary',
-  phase_description: 'Primary',
+  phase_slug: "primary",
+  phase_description: "Primary",
   phase_display_order: 1,
-  subject: 'Maths',
+  subject: "Maths",
   subject_id: 1,
-  subject_slug: 'maths',
-  subject_description: 'subject-description',
+  subject_slug: "maths",
+  subject_description: "subject-description",
   subject_display_order: 1,
-  subject_parent: 'Maths',
+  subject_parent: "Maths",
   ...overrides
 })

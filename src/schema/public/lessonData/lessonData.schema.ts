@@ -1,13 +1,13 @@
-import { z } from 'zod'
+import { z } from "zod"
 
-import { _stateSchema, _cohortSchema } from '@/schema/public/base/base.schema'
+import { _stateSchema, _cohortSchema } from "@/schema/public/base/base.schema"
 import {
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema
-} from '@/schema/published/lessonContent/lessonContent.schema'
-import { mediaClipsRecordSchema } from '@/schema/public/mediaClips/mediaClips.schema'
+} from "@/schema/published/lessonContent/lessonContent.schema"
+import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema"
 
 export const lessonDataSchema = z.object({
   lesson_id: z.number(),

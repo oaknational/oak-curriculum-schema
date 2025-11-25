@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 export const threadSchema = z.object({
   thread_id: z.number(),

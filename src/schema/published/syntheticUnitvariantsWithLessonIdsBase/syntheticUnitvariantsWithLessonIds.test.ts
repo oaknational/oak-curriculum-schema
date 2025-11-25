@@ -1,10 +1,10 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from "vitest"
 
-import { syntheticUnitvariantsWithLessonIdsFixture } from '@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIds.fixture'
-import { syntheticUnitvariantsWithLessonIdsBaseSchema } from '@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema'
+import { syntheticUnitvariantsWithLessonIdsFixture } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIds.fixture"
+import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "@/schema/published/syntheticUnitvariantsWithLessonIdsBase/syntheticUnitvariantsWithLessonIdsBase.schema"
 
-describe('syntheticUnitvariantsWithLessonIds', () => {
-  it('conforms to the schema', () => {
+describe("syntheticUnitvariantsWithLessonIds", () => {
+  it("conforms to the schema", () => {
     const l = syntheticUnitvariantsWithLessonIdsFixture()
     expect(() =>
       syntheticUnitvariantsWithLessonIdsBaseSchema.parse(l)

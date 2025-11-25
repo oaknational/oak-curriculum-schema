@@ -1,2 +1,2 @@
-export * from './syntheticProgrammesByYear.fixture'
-export * from './syntheticProgrammesByYear.schema'
+export * from "./syntheticProgrammesByYear.fixture";
+export * from "./syntheticProgrammesByYear.schema";

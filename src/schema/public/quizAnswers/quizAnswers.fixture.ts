@@ -3,11 +3,11 @@ import {
   type MultipleChoice,
   type Order,
   type ShortAnswer
-} from '@/schema/public/quizAnswers/quizAnswers.schema'
+} from "@/schema/public/quizAnswers/quizAnswers.schema"
 import {
   imageItemFixture,
   textItemFixture
-} from '@/schema/public/imageTextItems/imageTextItems.fixture'
+} from "@/schema/public/imageTextItems/imageTextItems.fixture"
 
 export const multipleChoiceFixture = ({
   overrides = {}
@@ -48,7 +48,7 @@ export const matchFixture = ({
   overrides?: Partial<Match>
 } = {}): Match => ({
   answer_is_active: true,
-  correct_choice: [textItemFixture({ overrides: { text: 'Paris' } })],
-  match_option: [textItemFixture({ overrides: { text: 'Capital of France' } })],
+  correct_choice: [textItemFixture({ overrides: { text: "Paris" } })],
+  match_option: [textItemFixture({ overrides: { text: "Capital of France" } })],
   ...overrides
 })

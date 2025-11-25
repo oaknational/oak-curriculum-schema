@@ -1,11 +1,11 @@
-import { type QuizQuestion } from '@/schema/public/quizQuestion/quizQuestion.schema'
+import { type QuizQuestion } from "@/schema/public/quizQuestion/quizQuestion.schema"
 
 import {
   matchFixture,
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture
-} from '@/schema/public/quizAnswers/quizAnswers.fixture'
+} from "@/schema/public/quizAnswers/quizAnswers.fixture"
 
 export const multipleChoiceQuestion = ({
   overrides = {}
@@ -13,24 +13,24 @@ export const multipleChoiceQuestion = ({
   overrides?: Partial<QuizQuestion>
 } = {}): QuizQuestion => ({
   question_id: 1,
-  question_uid: 'question-1',
-  question_type: 'multiple-choice',
+  question_uid: "question-1",
+  question_type: "multiple-choice",
   question_stem: [
     {
-      text: 'What is the capital of France?',
-      type: 'text'
+      text: "What is the capital of France?",
+      type: "text"
     }
   ],
   answers: {
-    'multiple-choice': [
+    "multiple-choice": [
       multipleChoiceFixture({ overrides: { answer_is_correct: true } }),
       multipleChoiceFixture({ overrides: { answer_is_correct: false } }),
       multipleChoiceFixture({ overrides: { answer_is_correct: false } }),
       multipleChoiceFixture({ overrides: { answer_is_correct: false } })
     ]
   },
-  feedback: 'Paris is the capital of France.',
-  hint: 'Think about the Eiffel Tower.',
+  feedback: "Paris is the capital of France.",
+  hint: "Think about the Eiffel Tower.",
   active: true,
   order: 1,
   ...overrides
@@ -42,19 +42,19 @@ export const shortAnswerQuestion = ({
   overrides?: Partial<QuizQuestion>
 } = {}): QuizQuestion => ({
   question_id: 2,
-  question_uid: 'question-2',
-  question_type: 'short-answer',
+  question_uid: "question-2",
+  question_type: "short-answer",
   question_stem: [
     {
-      text: 'What is the capital of France?',
-      type: 'text'
+      text: "What is the capital of France?",
+      type: "text"
     }
   ],
   answers: {
-    'short-answer': [shortAnswerFixture()]
+    "short-answer": [shortAnswerFixture()]
   },
-  feedback: 'Paris is the capital of France.',
-  hint: 'Think about the Eiffel Tower.',
+  feedback: "Paris is the capital of France.",
+  hint: "Think about the Eiffel Tower.",
   active: true,
   order: 2,
   ...overrides
@@ -66,12 +66,12 @@ export const orderQuestion = ({
   overrides?: Partial<QuizQuestion>
 } = {}): QuizQuestion => ({
   question_id: 3,
-  question_uid: 'question-3',
-  question_type: 'order',
+  question_uid: "question-3",
+  question_type: "order",
   question_stem: [
     {
-      text: 'What is the capital of France?',
-      type: 'text'
+      text: "What is the capital of France?",
+      type: "text"
     }
   ],
   answers: {
@@ -82,8 +82,8 @@ export const orderQuestion = ({
       orderFixture({ overrides: { correct_order: 4 } })
     ]
   },
-  feedback: 'Paris is the capital of France.',
-  hint: 'Think about the Eiffel Tower.',
+  feedback: "Paris is the capital of France.",
+  hint: "Think about the Eiffel Tower.",
   active: true,
   order: 3,
   ...overrides
@@ -95,19 +95,19 @@ export const matchQuestion = ({
   overrides?: Partial<QuizQuestion>
 } = {}): QuizQuestion => ({
   question_id: 4,
-  question_uid: 'question-4',
-  question_type: 'match',
+  question_uid: "question-4",
+  question_type: "match",
   question_stem: [
     {
-      text: 'What is the capital of France?',
-      type: 'text'
+      text: "What is the capital of France?",
+      type: "text"
     }
   ],
   answers: {
     match: [matchFixture(), matchFixture(), matchFixture(), matchFixture()]
   },
-  feedback: 'Paris is the capital of France.',
-  hint: 'Think about the Eiffel Tower.',
+  feedback: "Paris is the capital of France.",
+  hint: "Think about the Eiffel Tower.",
   active: true,
   order: 4,
   ...overrides
