@@ -120,6 +120,38 @@ function createParentIndexFile(dir) {
   console.log(`Created: ${indexPath}`);
 }
 
+/**
+ * Create an index.ts file that exports from both subdirectories and schema files
+ * @param {string} dir - Directory path
+ * @param {string} schemaDir - Root schema directory path
+ */
+function createRootIndexFile(dir, schemaDir) {
+  const subdirs = getSubdirectories(dir);
+  const schemaFiles = getSchemaFilesInDir(dir);
+
+  const allExports = [];
+
+  // Add subdirectory exports (sorted)
+  for (const subdir of subdirs) {
+    allExports.push(`export * from "./${subdir}";`);
+  }
+
+  // Add schema file exports (sorted)
+  for (const filename of schemaFiles) {
+    const baseName = filename.replace(".schema.ts", "");
+    allExports.push(`export * from "./${baseName}.schema";`);
+  }
+
+  // Sort all exports alphabetically
+  allExports.sort();
+
+  const content = allExports.join("\n") + (allExports.length > 0 ? "\n" : "");
+
+  const indexPath = path.join(dir, "index.ts");
+  fs.writeFileSync(indexPath, content, "utf8");
+  console.log(`Created: ${indexPath}`);
+}
+
 // Main execution
 const schemaDir = path.join(__dirname, "..", "src", "schema");
 
@@ -149,10 +181,15 @@ for (const dir of dirsWithSubdirs) {
 
 console.log("\nCreating index.ts files...\n");
 
-// Process directories: parent directories export subdirectories, 
+// Handle the root schema directory specially - it exports both subdirectories and schema files
+createRootIndexFile(schemaDir, schemaDir);
+
+// Process other directories: parent directories export subdirectories,
 // leaf directories export schema files
 for (const dir of dirsWithSubdirs) {
-  createParentIndexFile(dir);
+  if (dir !== schemaDir) {
+    createParentIndexFile(dir);
+  }
 }
 
 // Create index files for directories with schema files that aren't already handled
