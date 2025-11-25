@@ -16,5 +16,7 @@ export type StaticLessonList = z.infer<typeof staticLessonListSchema>;
 export const staticLessonCamel = zodToCamelCase(staticLesson);
 export type StaticLessonCamel = z.infer<typeof staticLessonCamel>;
 
-export const staticLessonListSchemaCamel = zodToCamelCase(staticLessonListSchema);
+export const staticLessonListSchemaCamel = zodToCamelCase(
+  staticLessonListSchema,
+);
 export type StaticLessonListCamel = z.infer<typeof staticLessonListSchemaCamel>;

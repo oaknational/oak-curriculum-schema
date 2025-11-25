@@ -15,7 +15,7 @@ export type LessonEquipmentAndResources = z.infer<
 >;
 
 export const lessonEquipmentAndResourcesSchemaCamel = zodToCamelCase(
-  lessonEquipmentAndResourcesSchema
+  lessonEquipmentAndResourcesSchema,
 );
 export type LessonEquipmentAndResourcesCamel = z.infer<
   typeof lessonEquipmentAndResourcesSchemaCamel
@@ -27,8 +27,12 @@ export const keyLearningPointsSchema = z.object({
 
 export type KeyLearningPoints = z.infer<typeof keyLearningPointsSchema>;
 
-export const keyLearningPointsSchemaCamel = zodToCamelCase(keyLearningPointsSchema);
-export type KeyLearningPointsCamel = z.infer<typeof keyLearningPointsSchemaCamel>;
+export const keyLearningPointsSchemaCamel = zodToCamelCase(
+  keyLearningPointsSchema,
+);
+export type KeyLearningPointsCamel = z.infer<
+  typeof keyLearningPointsSchemaCamel
+>;
 
 export const keywordsSchema = z.object({
   keyword: z.string(),
@@ -50,7 +54,7 @@ export type MisconceptionsAndCommonMistakes = z.infer<
 >;
 
 export const misconceptionsAndCommonMistakesSchemaCamel = zodToCamelCase(
-  misconceptionsAndCommonMistakesSchema
+  misconceptionsAndCommonMistakesSchema,
 );
 export type MisconceptionsAndCommonMistakesCamel = z.infer<
   typeof misconceptionsAndCommonMistakesSchemaCamel

@@ -1,7 +1,10 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { imageItemSchema, textItemSchema } from "@/schema/public/imageTextItems/imageTextItems.schema";
+import {
+  imageItemSchema,
+  textItemSchema,
+} from "@/schema/public/imageTextItems/imageTextItems.schema";
 import {
   matchSchema,
   multipleChoiceSchema,

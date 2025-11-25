@@ -14,8 +14,16 @@ export const programmeListingResponseSchemaArray = z.array(
   programmeListingResponseSchema,
 );
 
-export const programmeListingResponseSchemaCamel = zodToCamelCase(programmeListingResponseSchema);
-export type ProgrammeListingResponseCamel = z.infer<typeof programmeListingResponseSchemaCamel>;
+export const programmeListingResponseSchemaCamel = zodToCamelCase(
+  programmeListingResponseSchema,
+);
+export type ProgrammeListingResponseCamel = z.infer<
+  typeof programmeListingResponseSchemaCamel
+>;
 
-export const programmeListingResponseSchemaArrayCamel = zodToCamelCase(programmeListingResponseSchemaArray);
-export type ProgrammeListingResponseArrayCamel = z.infer<typeof programmeListingResponseSchemaArrayCamel>;
+export const programmeListingResponseSchemaArrayCamel = zodToCamelCase(
+  programmeListingResponseSchemaArray,
+);
+export type ProgrammeListingResponseArrayCamel = z.infer<
+  typeof programmeListingResponseSchemaArrayCamel
+>;

@@ -13,7 +13,7 @@ export type SyntheticUnitvariantLessonsByKs = z.infer<
 >;
 
 export const syntheticUnitvariantLessonsByKsSchemaCamel = zodToCamelCase(
-  syntheticUnitvariantLessonsByKsSchema
+  syntheticUnitvariantLessonsByKsSchema,
 );
 export type SyntheticUnitvariantLessonsByKsCamel = z.infer<
   typeof syntheticUnitvariantLessonsByKsSchemaCamel

@@ -29,5 +29,9 @@ export type SyntheticUnitvariantsWithLessonIdsBase = z.infer<
   typeof syntheticUnitvariantsWithLessonIdsBaseSchema
 >;
 
-export const syntheticUnitvariantsWithLessonIdsBaseSchemaCamel = zodToCamelCase(syntheticUnitvariantsWithLessonIdsBaseSchema)
-export type SyntheticUnitvariantsWithLessonIdsBaseCamel = z.infer<typeof syntheticUnitvariantsWithLessonIdsBaseSchemaCamel>;
+export const syntheticUnitvariantsWithLessonIdsBaseSchemaCamel = zodToCamelCase(
+  syntheticUnitvariantsWithLessonIdsBaseSchema,
+);
+export type SyntheticUnitvariantsWithLessonIdsBaseCamel = z.infer<
+  typeof syntheticUnitvariantsWithLessonIdsBaseSchemaCamel
+>;

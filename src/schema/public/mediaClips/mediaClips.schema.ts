@@ -65,8 +65,12 @@ export type VideoClipObjectCamel = z.infer<typeof videoClipObjectSchemaCamel>;
 export const mediaClipCycleSchemaCamel = zodToCamelCase(mediaClipCycleSchema);
 export type MediaClipCycleCamel = z.infer<typeof mediaClipCycleSchemaCamel>;
 
-export const mediaClipsRecordSchemaCamel = zodToCamelCase(mediaClipsRecordSchema);
+export const mediaClipsRecordSchemaCamel = zodToCamelCase(
+  mediaClipsRecordSchema,
+);
 export type MediaClipsRecordCamel = z.infer<typeof mediaClipsRecordSchemaCamel>;
 
-export const lessonMediaClipsSchemaCamel = zodToCamelCase(lessonMediaClipsSchema);
+export const lessonMediaClipsSchemaCamel = zodToCamelCase(
+  lessonMediaClipsSchema,
+);
 export type LessonMediaClipsCamel = z.infer<typeof lessonMediaClipsSchemaCamel>;

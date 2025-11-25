@@ -21,7 +21,7 @@ export type SyntheticProgrammesByYear = z.infer<
 >;
 
 export const syntheticProgrammesByYearSchemaCamel = zodToCamelCase(
-  syntheticProgrammesByYearSchema
+  syntheticProgrammesByYearSchema,
 );
 export type SyntheticProgrammesByYearCamel = z.infer<
   typeof syntheticProgrammesByYearSchemaCamel
