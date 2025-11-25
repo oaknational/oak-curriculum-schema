@@ -35,13 +35,48 @@ function findDirsWithSchemaFiles(dir, results = []) {
 /**
  * Get all .schema.ts files in a directory (non-recursive)
  * @param {string} dir - Directory path
- * @returns {string[]} - Array of .schema.ts filenames
+ * @returns {string[]} - Array of .schema.ts filenames (sorted)
  */
 function getSchemaFilesInDir(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".schema.ts"))
-    .map((entry) => entry.name);
+    .map((entry) => entry.name)
+    .sort();
+}
+
+/**
+ * Get all subdirectories in a directory (non-recursive)
+ * @param {string} dir - Directory path
+ * @returns {string[]} - Array of subdirectory names (sorted)
+ */
+function getSubdirectories(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  return entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+}
+
+/**
+ * Find all directories that have subdirectories
+ * @param {string} dir - Directory to search
+ * @param {Set<string>} results - Accumulator for results
+ */
+function findDirsWithSubdirs(dir, results = new Set()) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const subdirs = entries.filter((entry) => entry.isDirectory());
+
+  if (subdirs.length > 0) {
+    results.add(dir);
+  }
+
+  for (const entry of subdirs) {
+    const fullPath = path.join(dir, entry.name);
+    findDirsWithSubdirs(fullPath, results);
+  }
+
+  return results;
 }
 
 /**
@@ -51,12 +86,31 @@ function getSchemaFilesInDir(dir) {
 function createIndexFile(dir) {
   const schemaFiles = getSchemaFilesInDir(dir);
 
-  // Generate export statements for each .schema.ts file
+  // Generate export statements for each .schema.ts file (sorted)
   const exports = schemaFiles
     .map((filename) => {
       const baseName = filename.replace(".schema.ts", "");
       return `export * from "./${baseName}.schema";`;
     })
+    .join("\n");
+
+  const content = exports + (exports ? "\n" : "");
+
+  const indexPath = path.join(dir, "index.ts");
+  fs.writeFileSync(indexPath, content, "utf8");
+  console.log(`Created: ${indexPath}`);
+}
+
+/**
+ * Create an index.ts file that exports from subdirectories
+ * @param {string} dir - Directory path
+ */
+function createParentIndexFile(dir) {
+  const subdirs = getSubdirectories(dir);
+
+  // Generate export statements for each subdirectory (sorted)
+  const exports = subdirs
+    .map((subdir) => `export * from "./${subdir}";`)
     .join("\n");
 
   const content = exports + (exports ? "\n" : "");
@@ -81,10 +135,32 @@ for (const dir of dirsWithSchemas) {
   console.log(`  - ${path.relative(schemaDir, dir) || "."}`);
 }
 
-console.log("\nCreating index.ts files with exports...\n");
+console.log("\nSearching for directories with subdirectories...\n");
 
-for (const dir of dirsWithSchemas) {
-  createIndexFile(dir);
+const dirsWithSubdirs = Array.from(findDirsWithSubdirs(schemaDir));
+
+console.log(
+  `Found ${dirsWithSubdirs.length} directories with subdirectories:\n`,
+);
+
+for (const dir of dirsWithSubdirs) {
+  console.log(`  - ${path.relative(schemaDir, dir) || "."}`);
 }
 
-console.log(`\nDone! Created ${dirsWithSchemas.length} index.ts files.`);
+console.log("\nCreating index.ts files...\n");
+
+// Process directories: parent directories export subdirectories, 
+// leaf directories export schema files
+for (const dir of dirsWithSubdirs) {
+  createParentIndexFile(dir);
+}
+
+// Create index files for directories with schema files that aren't already handled
+for (const dir of dirsWithSchemas) {
+  if (!dirsWithSubdirs.includes(dir)) {
+    createIndexFile(dir);
+  }
+}
+
+const totalFiles = dirsWithSchemas.length + dirsWithSubdirs.length;
+console.log(`\nDone! Created ${totalFiles} index.ts files.`);
