@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { unitDataSchema } from "./unitData.schema";
-import { programmeFieldsSchema } from "./programmeFields.schema";
-import { actionsSchema } from "./actions.schema";
-import { staticLessonListSchema } from "./staticLessonList.schema";
+import { programmeFieldsSchema } from "./public/programmeFields.schema";
+import { actionsSchema } from "./published/actions.schema";
+import { staticLessonListSchema } from "./public/staticLessonList.schema";
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   base_slug: z.string(),

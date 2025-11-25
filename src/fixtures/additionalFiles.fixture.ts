@@ -1,4 +1,4 @@
-import { AdditionalFiles } from "@/schema/additionalFiles.schema";
+import { AdditionalFiles } from "@/schema/public/additionalFiles.schema";
 
 export const additionalFilesFixture = ({
   overrides,

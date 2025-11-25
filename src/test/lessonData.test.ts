@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonDataFixture } from "@/fixtures/lessonData.fixture";
-import { lessonDataSchema } from "@/schema/lessonData.schema";
+import { lessonDataSchema } from "@/schema/public/lessonData.schema";
 
 describe("lessonData", () => {
   it("conforms to the schema", () => {

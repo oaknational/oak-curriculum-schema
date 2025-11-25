@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { syntheticUnitvariantsWithLessonIdsBaseSchema } from "./syntheticUnitvariantsWithLessonIdsBase.schema";
-import { threadSchema } from "./thread.schema";
+import { threadSchema } from "../public/thread.schema";
 
 export const syntheticUnitvariantsWithLessonIdsByKsSchema = z.object({
   ...syntheticUnitvariantsWithLessonIdsBaseSchema.shape,

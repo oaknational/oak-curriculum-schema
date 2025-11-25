@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { programmeFieldsSchema } from "./programmeFields.schema";
-import { subjectSlugs } from "./base.schema";
+import { programmeFieldsSchema } from "../public/programmeFields.schema";
+import { subjectSlugs } from "../public/base.schema";
 
 export const queriesSchema = z.enum([
   "pupilSubjectListingQuery",

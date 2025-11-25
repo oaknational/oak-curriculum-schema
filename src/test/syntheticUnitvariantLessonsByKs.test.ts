@@ -1,5 +1,5 @@
 import { syntheticUnitvariantLessonsByKsFixture } from "@/fixtures/syntheticUnitvariantLessonsByKs.fixture";
-import { syntheticUnitvariantLessonsByKsSchema } from "@/schema/syntheticUnitvariantLessonsByKs.schema";
+import { syntheticUnitvariantLessonsByKsSchema } from "@/schema/published/syntheticUnitvariantLessonsByKs.schema";
 import { describe, expect, it } from "vitest";
 
 describe("syntheticUnitvariantsByKsLessons", () => {

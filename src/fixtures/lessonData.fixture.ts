@@ -1,4 +1,4 @@
-import { LessonData } from "@/schema/lessonData.schema";
+import { LessonData } from "@/schema/public/lessonData.schema";
 
 export const lessonDataFixture = ({
   overrides = {},

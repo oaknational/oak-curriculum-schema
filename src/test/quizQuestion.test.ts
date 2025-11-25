@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { quizQuestionSchema } from "@/schema/quizQuestion.schema";
+import { quizQuestionSchema } from "@/schema/public/quizQuestion.schema";
 import { multipleChoiceQuestion } from "@/fixtures/quizQuestion.fixture";
 import { textAndImageItemFixture } from "@/fixtures/imageTextItems.fixture";
 

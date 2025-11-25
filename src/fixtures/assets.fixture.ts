@@ -1,4 +1,4 @@
-import { AssetType } from "@/schema/assets.schema";
+import { AssetType } from "@/schema/public/assets.schema";
 
 export const assetsFixture = (
   overrides: Partial<AssetType> = {},

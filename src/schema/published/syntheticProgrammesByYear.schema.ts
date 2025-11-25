@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { programmeFieldsSchema } from "./programmeFields.schema";
-import { yearSlugs } from "./base.schema";
+import { programmeFieldsSchema } from "../public/programmeFields.schema";
+import { yearSlugs } from "../public/base.schema";
 import { actionsSchema } from "./actions.schema";
 
 export const syntheticProgrammesByYearSchema = z.object({

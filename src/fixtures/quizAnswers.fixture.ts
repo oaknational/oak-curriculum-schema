@@ -3,7 +3,7 @@ import {
   MultipleChoice,
   Order,
   ShortAnswer,
-} from "@/schema/quizAnswers.schema";
+} from "@/schema/public/quizAnswers.schema";
 import { imageItemFixture, textItemFixture } from "./imageTextItems.fixture";
 
 export const multipleChoiceFixture = ({

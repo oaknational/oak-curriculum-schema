@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { assetsSchema } from "@/schema/assets.schema";
+import { assetsSchema } from "@/schema/public/assets.schema";
 import { assetsFixture } from "@/fixtures/assets.fixture";
 
 describe("assets schema", () => {

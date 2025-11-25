@@ -1,4 +1,4 @@
-import { SyntheticUnitvariantLessonsByKs } from "@/schema/syntheticUnitvariantLessonsByKs.schema";
+import { SyntheticUnitvariantLessonsByKs } from "@/schema/published/syntheticUnitvariantLessonsByKs.schema";
 import { lessonDataFixture } from "./lessonData.fixture";
 import { unitDataFixture } from "./unitData.fixture";
 import { programmeFieldsFixture } from "./programmeFields.fixture";
