@@ -1,4 +1,8 @@
-import type { LessonData } from "@/schema/public/lessonData/lessonData.schema";
+import type {
+  LessonData,
+  LessonDataCamel,
+} from "@/schema/public/lessonData/lessonData.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const lessonDataFixture = ({
   overrides = {},
@@ -39,5 +43,14 @@ export const lessonDataFixture = ({
   lesson_outline: null,
   media_clips: null,
   lesson_release_date: null,
+  ...overrides,
+});
+
+export const lessonDataFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<LessonDataCamel>;
+} = {}): LessonDataCamel => ({
+  ...camelcaseKeys(lessonDataFixture(), { deep: true }),
   ...overrides,
 });

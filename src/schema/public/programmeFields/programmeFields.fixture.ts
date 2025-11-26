@@ -1,7 +1,11 @@
-import type { ProgrammeFields } from "@/schema/public/programmeFields/programmeFields.schema";
+import type {
+  ProgrammeFields,
+  ProgrammeFieldsCamel,
+} from "@/schema/public/programmeFields/programmeFields.schema";
+import camelcaseKeys from "camelcase-keys";
 
 export const programmeFieldsFixture = ({
-  overrides,
+  overrides = {},
 }: {
   overrides?: Partial<ProgrammeFields>;
 } = {}): ProgrammeFields => ({
@@ -41,5 +45,14 @@ export const programmeFieldsFixture = ({
   subject_description: "subject-description",
   subject_display_order: 1,
   subject_parent: "Maths",
+  ...overrides,
+});
+
+export const programmeFieldsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<ProgrammeFieldsCamel>;
+} = {}): ProgrammeFieldsCamel => ({
+  ...camelcaseKeys(programmeFieldsFixture(), { deep: true }),
   ...overrides,
 });

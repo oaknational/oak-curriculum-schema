@@ -1,8 +1,14 @@
-import type { AssetType } from "@/schema/public/assets/assets.schema";
+import type {
+  AssetType,
+  AssetTypeCamel,
+} from "@/schema/public/assets/assets.schema";
+import camelcaseKeys from "camelcase-keys";
 
-export const assetsFixture = (
-  overrides: Partial<AssetType> = {},
-): AssetType => ({
+export const assetsFixture = ({
+  overrides = {},
+}: {
+  overrides?: Partial<AssetType>;
+} = {}): AssetType => ({
   asset_id: 1,
   asset_uid: "asset-uid-123",
   _state: "new",
@@ -24,5 +30,14 @@ export const assetsFixture = (
   tpc_works_ids: [201, 202],
   updated_at: "2024-02-28T08:09:20.247619+00:00",
   created_at: "2024-02-28T08:09:20.247619+00:00",
+  ...overrides,
+});
+
+export const assetsFixtureCamel = ({
+  overrides = {},
+}: {
+  overrides?: Partial<AssetTypeCamel>;
+} = {}): AssetTypeCamel => ({
+  ...camelcaseKeys(assetsFixture(), { deep: true }),
   ...overrides,
 });

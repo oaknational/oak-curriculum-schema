@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { threadFixture } from "@/fixtures/thread.fixture";
+import { threadFixture } from "@/schema/public/thread/thread.fixture";
 import { threadSchema } from "@/schema/public/thread/thread.schema";
 
 describe("thread", () => {

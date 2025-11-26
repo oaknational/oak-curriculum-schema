@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import actionsFixture from "@/fixtures/actions.fixture";
+import actionsFixture from "@/schema/published/actions/actions.fixture";
 import { actionsSchema } from "@/schema/published/actions/actions.schema";
 
 describe("actions fixture", () => {

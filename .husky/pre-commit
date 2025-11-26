@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
+npm run create-schema-indexes
+npx prettier --write "src/schema/**/index.ts"
+git add src/schema/**/index.ts
+npm run format:precommit
 npm run lint
 npm run check-types
-npm run format:precommit
+
+
