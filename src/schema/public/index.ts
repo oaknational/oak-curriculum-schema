@@ -1,4 +1,4 @@
-export * from "./assets";
+export * from "./asset";
 export * from "./components";
 export * from "./lesson";
 export * from "./question";
