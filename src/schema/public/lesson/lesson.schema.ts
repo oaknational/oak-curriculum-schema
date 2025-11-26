@@ -104,15 +104,9 @@ export const lessonPublishedSchemaCamel = zodToCamelCase(lessonPublishedSchema);
 export type LessonPublishedCamel = z.infer<typeof lessonPublishedSchemaCamel>;
 
 // Backwards compatibility exports
+/**
+ * @deprecated Use lessonSchema instead.
+ */
+export const lessonData = lessonSchema;
 export const lessonDataSchema = lessonSchema;
 export type LessonData = Lesson;
-export const lessonDataNewSchema = lessonNewSchema;
-export type LessonDataNew = LessonNew;
-export const lessonDataPublishedSchema = lessonPublishedSchema;
-export type LessonDataPublished = LessonPublished;
-export const lessonDataSchemaCamel = lessonSchemaCamel;
-export type LessonDataCamel = LessonCamel;
-export const lessonDataNewSchemaCamel = lessonNewSchemaCamel;
-export type LessonDataNewCamel = LessonNewCamel;
-export const lessonDataPublishedSchemaCamel = lessonPublishedSchemaCamel;
-export type LessonDataPublishedCamel = LessonPublishedCamel;

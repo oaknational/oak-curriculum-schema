@@ -102,15 +102,8 @@ export const assetObjectSchemaCamel = zodToCamelCase(assetObjectSchema);
 export type AssetObjectTypeCamel = z.infer<typeof assetObjectSchemaCamel>;
 
 // Backwards compatibility exports
+/**
+ * @deprecated Use assetSchema instead.
+ */
 export const assetsSchema = assetSchema;
 export type AssetType = Asset;
-export const assetsNewSchema = assetNewSchema;
-export type AssetTypeNew = AssetNew;
-export const assetsPublishedSchema = assetPublishedSchema;
-export type AssetTypePublished = AssetPublished;
-export const assetsSchemaCamel = assetSchemaCamel;
-export type AssetTypeCamel = AssetCamel;
-export const assetsNewSchemaCamel = assetNewSchemaCamel;
-export type AssetTypeNewCamel = AssetNewCamel;
-export const assetsPublishedSchemaCamel = assetPublishedSchemaCamel;
-export type AssetTypePublishedCamel = AssetPublishedCamel;

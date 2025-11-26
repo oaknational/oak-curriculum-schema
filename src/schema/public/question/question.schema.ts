@@ -79,15 +79,8 @@ export type QuestionPublishedCamel = z.infer<
 >;
 
 // Backwards compatibility exports
+/**
+ * @deprecated Use questionSchema instead.
+ */
 export const quizQuestionSchema = questionSchema;
 export type QuizQuestion = Question;
-export const quizQuestionNewSchema = questionNewSchema;
-export type QuizQuestionNew = QuestionNew;
-export const quizQuestionPublishedSchema = questionPublishedSchema;
-export type QuizQuestionPublished = QuestionPublished;
-export const quizQuestionSchemaCamel = questionSchemaCamel;
-export type QuizQuestionCamel = QuestionCamel;
-export const quizQuestionNewSchemaCamel = questionNewSchemaCamel;
-export type QuizQuestionNewCamel = QuestionNewCamel;
-export const quizQuestionPublishedSchemaCamel = questionPublishedSchemaCamel;
-export type QuizQuestionPublishedCamel = QuestionPublishedCamel;

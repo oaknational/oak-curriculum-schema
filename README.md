@@ -6,6 +6,8 @@ Schemas and fixtures to ensure data integrity between Oak apps and their data.
 
 This package exports schemas, types, and fixtures in both snake_case and camelCase formats to support different coding conventions across Oak applications.
 
+Exports are automatically generated on commit
+
 ### Schemas
 
 All schemas are exported with consistent naming:
@@ -14,6 +16,14 @@ All schemas are exported with consistent naming:
 - **Camel case schema**: `[entityName]SchemaCamel` (e.g., `lessonDataSchemaCamel`)
 
 The camelCase schema variant uses `zod-to-camel-case` to transform the base schema, ensuring data validation for camelCased objects.
+
+Schemas are organised in a hierarchy which mirrors the database organisation:
+
+- **`public/`**
+- **`published/`**
+- **`internal/`**
+
+The top level inside these folders is reserved for schemas which correspond to tables, views and materialized views. The components subfolder in each is used for schemas which form parts of the schemas in the schemas in the parent folder. The placement of these follows where the data originates and not where they are imported. (Eg. programmeFields belongs in public because the raw data originates in the public schema)
 
 ### Types
 
@@ -44,9 +54,9 @@ Some exports have been renamed for consistency. Legacy names are maintained with
 
 ```typescript
 /**
- * @deprecated Use lessonDataSchema instead.
+ * @deprecated Use lessonSchema instead.
  */
-export const lessonData = lessonDataSchema;
+export const lessonData = lessonSchema;
 ```
 
 Applications should migrate to the new naming conventions, but deprecated exports will remain available to prevent breaking changes.

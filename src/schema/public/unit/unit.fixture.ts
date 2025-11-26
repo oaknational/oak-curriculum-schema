@@ -31,5 +31,8 @@ export const unitFixtureCamel = ({
 });
 
 // Backwards compatibility exports
+/**
+ * @deprecated Use unitFixture instead.
+ */
 export const unitDataFixture = unitFixture;
 export const unitDataFixtureCamel = unitFixtureCamel;

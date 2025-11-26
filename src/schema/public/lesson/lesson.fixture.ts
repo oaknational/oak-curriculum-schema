@@ -54,5 +54,8 @@ export const lessonFixtureCamel = ({
 });
 
 // Backwards compatibility exports
+/**
+ * @deprecated Use lessonFixture instead.
+ */
 export const lessonDataFixture = lessonFixture;
 export const lessonDataFixtureCamel = lessonFixtureCamel;
