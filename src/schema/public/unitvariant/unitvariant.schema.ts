@@ -7,7 +7,7 @@ import {
   newState,
   publishedState,
 } from "@/schema/public/components/base/base.schema";
-import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
+import { unitSchema } from "@/schema/public/unit/unit.schema";
 import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
 
 export const unitvariantSchema = z.object({
@@ -16,7 +16,7 @@ export const unitvariantSchema = z.object({
   unit_id: z.number(),
   unitvariant_id: z.number(),
   _deleted: z.boolean(),
-  unit_overrides: unitDataSchema.partial(),
+  unit_overrides: unitSchema.partial(),
   programme_fields: programmeFieldsSchema.partial(),
 });
 export type Unitvariant = z.infer<typeof unitvariantSchema>;

@@ -1,6 +1,6 @@
 import camelcaseKeys from "camelcase-keys";
 
-import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { unitFixture } from "@/schema/public/unit/unit.fixture";
 import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 import type {
   SyntheticUnitvariantsWithLessonIdsByYears,
@@ -19,7 +19,7 @@ export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   lesson_count: 1,
   lesson_sensitive_count: 0,
   lesson_expired_count: 0,
-  unit_data: unitDataFixture(),
+  unit_data: unitFixture(),
   null_unitvariant_id: 0,
   programme_fields: programmeFieldsFixture(),
   supplementary_data: {

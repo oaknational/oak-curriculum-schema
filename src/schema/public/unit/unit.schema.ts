@@ -8,7 +8,7 @@ import {
   publishedState,
 } from "@/schema/public/components/base/base.schema";
 
-export const unitDataSchema = z.object({
+export const unitSchema = z.object({
   unit_id: z.number(),
   unit_uid: z.string(),
   description: z.string().nullable(),
@@ -22,9 +22,9 @@ export const unitDataSchema = z.object({
   _cohort: _cohortSchema,
   expiration_date: z.string().nullable(),
 });
-export type UnitData = z.infer<typeof unitDataSchema>;
+export type Unit = z.infer<typeof unitSchema>;
 
-export const unitDataNewSchema = unitDataSchema
+export const unitNewSchema = unitSchema
   .pick({
     unit_id: true,
     unit_uid: true,
@@ -40,22 +40,18 @@ export const unitDataNewSchema = unitDataSchema
     _state: newState,
   });
 
-export const unitDataPublishedSchema = unitDataSchema.extend({
+export const unitPublishedSchema = unitSchema.extend({
   _state: publishedState,
 });
 
-export type UnitDataNew = z.infer<typeof unitDataNewSchema>;
-export type UnitDataPublished = z.infer<typeof unitDataPublishedSchema>;
+export type UnitNew = z.infer<typeof unitNewSchema>;
+export type UnitPublished = z.infer<typeof unitPublishedSchema>;
 
-export const unitDataSchemaCamel = zodToCamelCase(unitDataSchema);
-export type UnitDataCamel = z.infer<typeof unitDataSchemaCamel>;
+export const unitSchemaCamel = zodToCamelCase(unitSchema);
+export type UnitCamel = z.infer<typeof unitSchemaCamel>;
 
-export const unitDataNewSchemaCamel = zodToCamelCase(unitDataNewSchema);
-export type UnitDataNewCamel = z.infer<typeof unitDataNewSchemaCamel>;
+export const unitNewSchemaCamel = zodToCamelCase(unitNewSchema);
+export type UnitNewCamel = z.infer<typeof unitNewSchemaCamel>;
 
-export const unitDataPublishedSchemaCamel = zodToCamelCase(
-  unitDataPublishedSchema,
-);
-export type UnitDataPublishedCamel = z.infer<
-  typeof unitDataPublishedSchemaCamel
->;
+export const unitPublishedSchemaCamel = zodToCamelCase(unitPublishedSchema);
+export type UnitPublishedCamel = z.infer<typeof unitPublishedSchemaCamel>;

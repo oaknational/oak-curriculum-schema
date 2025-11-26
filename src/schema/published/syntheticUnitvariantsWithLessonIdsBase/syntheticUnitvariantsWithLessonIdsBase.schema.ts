@@ -1,7 +1,7 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
+import { unitSchema } from "@/schema/public/unit/unit.schema";
 import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
 import { actionsSchema } from "@/schema/published/components/actions/actions.schema";
 import { staticLessonListSchema } from "@/schema/public/components/staticLessonList/staticLessonList.schema";
@@ -14,7 +14,7 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
   lesson_count: z.number(),
   lesson_sensitive_count: z.number(),
   lesson_expired_count: z.number(),
-  unit_data: unitDataSchema,
+  unit_data: unitSchema,
   null_unitvariant_id: z.number(),
   programme_fields: programmeFieldsSchema,
   supplementary_data: z.object({

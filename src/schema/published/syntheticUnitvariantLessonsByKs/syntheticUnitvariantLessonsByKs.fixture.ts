@@ -5,7 +5,7 @@ import type {
   SyntheticUnitvariantLessonsByKsCamel,
 } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
 import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
-import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
+import { unitFixture } from "@/schema/public/unit/unit.fixture";
 import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
@@ -19,7 +19,7 @@ export const syntheticUnitvariantLessonsByKsFixture = ({
   programme_slug_by_year: ["programme-slug-year"],
   is_legacy: false,
   lesson_data: lessonDataFixture(),
-  unit_data: unitDataFixture(),
+  unit_data: unitFixture(),
   null_unitvariant_id: 1,
   unitvariant_id: 1,
   programme_fields: programmeFieldsFixture(),
