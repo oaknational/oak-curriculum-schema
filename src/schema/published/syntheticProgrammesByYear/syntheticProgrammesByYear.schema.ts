@@ -1,8 +1,9 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
+
 import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
 import { yearSlugs } from "@/schema/public/base/base.schema";
 import { actionsSchema } from "@/schema/published/actions/actions.schema";
-import zodToCamelCase from "zod-to-camel-case";
 
 export const syntheticProgrammesByYearSchema = z.object({
   year_slug: yearSlugs,

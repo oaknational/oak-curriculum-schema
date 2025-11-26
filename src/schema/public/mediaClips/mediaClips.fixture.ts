@@ -1,3 +1,5 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   LessonMediaClips,
   LessonMediaClipsCamel,
@@ -8,7 +10,6 @@ import type {
   MediaClipCycle,
   MediaClipCycleCamel,
 } from "@/schema/public/mediaClips/mediaClips.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const mediaObjectFixture = ({
   overrides = {},

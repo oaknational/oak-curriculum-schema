@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   AdditionalFiles,
   AdditionalFilesCamel,
 } from "@/schema/public/additionalFiles/additionalFiles.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const additionalFilesFixture = ({
   overrides = {},

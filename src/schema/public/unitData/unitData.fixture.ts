@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   UnitData,
   UnitDataCamel,
 } from "@/schema/public/unitData/unitData.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const unitDataFixture = ({
   overrides = {},

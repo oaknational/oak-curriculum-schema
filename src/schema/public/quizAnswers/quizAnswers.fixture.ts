@@ -1,3 +1,5 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   Match,
   MatchCamel,
@@ -12,7 +14,6 @@ import {
   imageItemFixture,
   textItemFixture,
 } from "@/schema/public/imageTextItems/imageTextItems.fixture";
-import camelcaseKeys from "camelcase-keys";
 
 export const multipleChoiceFixture = ({
   overrides = {},

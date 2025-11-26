@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   ProgrammeFields,
   ProgrammeFieldsCamel,
 } from "@/schema/public/programmeFields/programmeFields.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const programmeFieldsFixture = ({
   overrides = {},

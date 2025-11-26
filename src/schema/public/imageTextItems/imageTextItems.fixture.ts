@@ -1,3 +1,5 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   ImageObject,
   ImageObjectCamel,
@@ -6,7 +8,6 @@ import type {
   TextItem,
   TextItemCamel,
 } from "@/schema/public/imageTextItems/imageTextItems.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const imageObjectFixture = ({
   overrides = {},

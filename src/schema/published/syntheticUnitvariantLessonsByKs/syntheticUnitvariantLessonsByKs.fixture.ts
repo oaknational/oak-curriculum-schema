@@ -1,3 +1,5 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   SyntheticUnitvariantLessonsByKs,
   SyntheticUnitvariantLessonsByKsCamel,
@@ -5,7 +7,6 @@ import type {
 import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
-import camelcaseKeys from "camelcase-keys";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
   overrides = {},

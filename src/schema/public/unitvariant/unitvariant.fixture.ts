@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   Unitvariant,
   UnitvariantCamel,
 } from "@/schema/public/unitvariant/unitvariant.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const unitvariantFixture = ({
   overrides = {},

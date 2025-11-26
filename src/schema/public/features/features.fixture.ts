@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   Features,
   FeaturesCamel,
 } from "@/schema/public/features/features.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const featuresFixture = ({
   overrides = {},

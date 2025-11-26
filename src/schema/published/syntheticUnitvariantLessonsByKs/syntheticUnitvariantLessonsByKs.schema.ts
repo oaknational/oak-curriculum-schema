@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { syntheticUnitvariantLessonsSchema } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 import zodToCamelCase from "zod-to-camel-case";
+
+import { syntheticUnitvariantLessonsSchema } from "@/schema/published/syntheticUnitvariantLessons/syntheticUnitvariantLessons.schema";
 
 export const syntheticUnitvariantLessonsByKsSchema = z.object({
   ...syntheticUnitvariantLessonsSchema.omit({ supplementary_data: true }).shape,

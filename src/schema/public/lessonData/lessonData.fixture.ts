@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   LessonData,
   LessonDataCamel,
 } from "@/schema/public/lessonData/lessonData.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const lessonDataFixture = ({
   overrides = {},

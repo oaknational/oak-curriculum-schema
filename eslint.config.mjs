@@ -1,45 +1,82 @@
-import globals from "globals";
-
-import path from "path";
-import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-import pluginJs from "@eslint/js";
-import noRelativeImportPaths from "eslint-plugin-no-relative-import-paths";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
 
-// mimic CommonJS variables -- not needed if using CommonJS
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: pluginJs.configs.recommended,
+  baseDirectory: import.meta.dirname,
 });
 
-export default [
+const eslintConfig = [
   {
-    ignores: ["**/*.js", "**/*.mjs", "**/*.cjs", "dist/**", "node_modules/**"],
-  },
-  ...compat.extends("standard-with-typescript").map((config) => ({
-    ...config,
-    files: ["**/*.ts"],
-  })),
-  {
-    files: ["**/*.ts"],
-    plugins: {
-      "no-relative-import-paths": noRelativeImportPaths,
+    linterOptions: {
+      reportUnusedDisableDirectives: "off",
     },
+  },
+  ...compat.config({
+    extends: ["prettier"],
+    plugins: ["no-relative-import-paths", "import", "@typescript-eslint"],
     rules: {
-      "no-relative-import-paths/no-relative-import-paths": [
+      quotes: ["error", "double"],
+      "import/first": "error",
+      "import/no-unresolved": "error",
+      "import/no-named-as-default": "error",
+      "import/order": [
         "error",
         {
-          allowSameFolder: true,
-          prefix: "@",
-          rootDir: "src",
+          "newlines-between": "always",
+          warnOnUnassignedImports: true,
         },
       ],
-      quotes: ["error", "double"],
-      "@typescript-eslint/quotes": ["error", "double"],
-      "@typescript-eslint/strict-boolean-expressions": "off",
+      "no-relative-import-paths/no-relative-import-paths": [
+        "warn",
+        { allowSameFolder: true, prefix: "@", rootDir: "src" },
+      ],
     },
+    overrides: [
+      // TypeScript specific config
+      {
+        files: ["**/*.ts", "**/*.tsx"],
+        parser: "@typescript-eslint/parser",
+        parserOptions: {
+          project: "./tsconfig.json",
+        },
+        rules: {
+          "@typescript-eslint/no-unused-vars": [
+            "error",
+            { ignoreRestSiblings: true },
+          ],
+        },
+      },
+      // make testing easier by allowing 'any'
+      {
+        files: ["**/*/*.test.ts"],
+        rules: {
+          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/no-unused-vars": "off",
+        },
+      },
+    ],
+    settings: {
+      "import/resolver": {
+        typescript: {
+          // alwaysTryTypes: true // optional, for type packages
+        },
+      },
+    },
+  }),
+  // Ignores need to go in a separate config block. See https://github.com/eslint/eslint/discussions/18304
+  {
+    ignores: [
+      "*.config.*",
+      "node_modules",
+      "package-lock.json",
+      "dist/**",
+      ".husky",
+      "coverage/**",
+      // // Negated pattern for .github (do NOT ignore)
+      "!**/.github/**",
+    ],
   },
-  ...compat.extends("prettier"),
 ];
+
+export default eslintConfig;

@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   AssetType,
   AssetTypeCamel,
 } from "@/schema/public/assets/assets.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const assetsFixture = ({
   overrides = {},

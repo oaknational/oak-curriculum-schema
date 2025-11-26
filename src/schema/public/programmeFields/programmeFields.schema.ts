@@ -1,4 +1,6 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
+
 import {
   keystages,
   keystageSlugs,
@@ -21,7 +23,6 @@ import {
   pathwaySlugs,
   pathwayDescriptions,
 } from "@/schema/public/base/base.schema";
-import zodToCamelCase from "zod-to-camel-case";
 
 export const programmeFieldsSchema = z.object({
   pathway: pathways.nullable(),

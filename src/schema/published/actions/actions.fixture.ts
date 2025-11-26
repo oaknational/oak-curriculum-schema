@@ -1,8 +1,9 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   Actions,
   ActionsCamel,
 } from "@/schema/published/actions/actions.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const actionsFixture = ({
   overrides = {},

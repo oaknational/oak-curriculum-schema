@@ -1,10 +1,11 @@
+import camelcaseKeys from "camelcase-keys";
+
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
 import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
 import type {
   SyntheticUnitvariantsWithLessonIdsByYears,
   SyntheticUnitvariantsWithLessonIdsByYearsCamel,
 } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByYears/syntheticUnitvariantsWithLessonIdsByYears.schema";
-import camelcaseKeys from "camelcase-keys";
 
 export const syntheticUnitvariantsWithLessonIdsByYearsFixture = ({
   overrides = {},

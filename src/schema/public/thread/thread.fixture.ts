@@ -1,5 +1,6 @@
-import type { Thread, ThreadCamel } from "@/schema/public/thread/thread.schema";
 import camelcaseKeys from "camelcase-keys";
+
+import type { Thread, ThreadCamel } from "@/schema/public/thread/thread.schema";
 
 export const threadFixture = ({
   overrides = {},

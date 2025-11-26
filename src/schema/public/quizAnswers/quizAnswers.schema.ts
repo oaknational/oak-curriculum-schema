@@ -1,9 +1,10 @@
 import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
+
 import {
   imageItemSchema,
   textItemSchema,
 } from "@/schema/public/imageTextItems/imageTextItems.schema";
-import zodToCamelCase from "zod-to-camel-case";
 
 export const multipleChoiceSchema = z.object({
   answer: z.array(z.union([textItemSchema, imageItemSchema]).optional()),

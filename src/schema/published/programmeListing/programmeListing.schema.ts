@@ -1,6 +1,7 @@
-import { syntheticUnitvariantLessonsByKsSchemaOld } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantLessonsByKs.schema.old";
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
+
+import { syntheticUnitvariantLessonsByKsSchemaOld } from "@/schema/published/syntheticUnitvariantsWithLessonIdsByKs/syntheticUnitvariantLessonsByKs.schema.old";
 
 export const programmeListingSchema =
   syntheticUnitvariantLessonsByKsSchemaOld.pick({

@@ -1,3 +1,5 @@
+import camelcaseKeys from "camelcase-keys";
+
 import type {
   Keywords,
   LessonContent,
@@ -15,7 +17,6 @@ import {
 } from "@/schema/public/quizQuestion/quizQuestion.fixture";
 import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
 import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
-import camelcaseKeys from "camelcase-keys";
 
 export const lessonEquipmentAndResourcesFixture = ({
   overrides = {},
