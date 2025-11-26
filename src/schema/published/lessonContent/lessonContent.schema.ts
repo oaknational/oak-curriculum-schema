@@ -1,7 +1,7 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { quizQuestionSchema } from "@/schema/public/quizQuestion/quizQuestion.schema";
+import { quizQuestionSchema } from "@/schema/public/question/question.schema";
 import { _stateSchema } from "@/schema/public/components/base/base.schema";
 import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
 import { additionalFileObjectSchema } from "@/schema/public/components/additionalFiles/additionalFiles.schema";

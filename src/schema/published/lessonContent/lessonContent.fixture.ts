@@ -14,7 +14,7 @@ import {
   multipleChoiceQuestion,
   orderQuestion,
   shortAnswerQuestion,
-} from "@/schema/public/quizQuestion/quizQuestion.fixture";
+} from "@/schema/public/question/question.fixture";
 import additionalFilesFixture from "@/schema/public/components/additionalFiles/additionalFiles.fixture";
 import mediaClipsFixture from "@/schema/public/components/mediaClips/mediaClips.fixture";
 

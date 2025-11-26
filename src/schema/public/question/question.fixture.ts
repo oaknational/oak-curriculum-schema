@@ -1,9 +1,9 @@
 import camelcaseKeys from "camelcase-keys";
 
 import type {
-  QuizQuestion,
-  QuizQuestionCamel,
-} from "@/schema/public/quizQuestion/quizQuestion.schema";
+  Question,
+  QuestionCamel,
+} from "@/schema/public/question/question.schema";
 import {
   matchFixture,
   multipleChoiceFixture,
@@ -14,8 +14,8 @@ import {
 export const multipleChoiceQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>;
-} = {}): QuizQuestion => ({
+  overrides?: Partial<Question>;
+} = {}): Question => ({
   question_id: 1,
   question_uid: "question-1",
   _state: "published",
@@ -44,8 +44,8 @@ export const multipleChoiceQuestion = ({
 export const shortAnswerQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>;
-} = {}): QuizQuestion => ({
+  overrides?: Partial<Question>;
+} = {}): Question => ({
   question_id: 2,
   question_uid: "question-2",
   _state: "published",
@@ -69,8 +69,8 @@ export const shortAnswerQuestion = ({
 export const orderQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>;
-} = {}): QuizQuestion => ({
+  overrides?: Partial<Question>;
+} = {}): Question => ({
   question_id: 3,
   question_uid: "question-3",
   _state: "published",
@@ -99,8 +99,8 @@ export const orderQuestion = ({
 export const matchQuestion = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestion>;
-} = {}): QuizQuestion => ({
+  overrides?: Partial<Question>;
+} = {}): Question => ({
   question_id: 4,
   question_uid: "question-4",
   _state: "published",
@@ -124,8 +124,8 @@ export const matchQuestion = ({
 export const multipleChoiceQuestionCamel = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestionCamel>;
-} = {}): QuizQuestionCamel => ({
+  overrides?: Partial<QuestionCamel>;
+} = {}): QuestionCamel => ({
   ...camelcaseKeys(multipleChoiceQuestion(), { deep: true }),
   ...overrides,
 });
@@ -133,8 +133,8 @@ export const multipleChoiceQuestionCamel = ({
 export const shortAnswerQuestionCamel = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestionCamel>;
-} = {}): QuizQuestionCamel => ({
+  overrides?: Partial<QuestionCamel>;
+} = {}): QuestionCamel => ({
   ...camelcaseKeys(shortAnswerQuestion(), { deep: true }),
   ...overrides,
 });
@@ -142,8 +142,8 @@ export const shortAnswerQuestionCamel = ({
 export const orderQuestionCamel = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestionCamel>;
-} = {}): QuizQuestionCamel => ({
+  overrides?: Partial<QuestionCamel>;
+} = {}): QuestionCamel => ({
   ...camelcaseKeys(orderQuestion(), { deep: true }),
   ...overrides,
 });
@@ -151,8 +151,8 @@ export const orderQuestionCamel = ({
 export const matchQuestionCamel = ({
   overrides = {},
 }: {
-  overrides?: Partial<QuizQuestionCamel>;
-} = {}): QuizQuestionCamel => ({
+  overrides?: Partial<QuestionCamel>;
+} = {}): QuestionCamel => ({
   ...camelcaseKeys(matchQuestion(), { deep: true }),
   ...overrides,
 });
