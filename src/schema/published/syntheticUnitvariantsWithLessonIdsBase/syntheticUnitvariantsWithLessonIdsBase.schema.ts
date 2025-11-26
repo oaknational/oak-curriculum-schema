@@ -22,7 +22,7 @@ export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
     static_lesson_list: staticLessonListSchema.nullish(),
   }),
   expired: z.boolean(),
-  actions: actionsSchema.nullable().optional(), // the optional should be removed once old mvs are retired
+  actions: actionsSchema.nullish(), // the optional should be removed once old mvs are retired
   features: z.object({}).optional().nullable(), // the optional should be removed once old mvs are retired
 });
 

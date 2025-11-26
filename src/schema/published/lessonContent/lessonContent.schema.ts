@@ -54,9 +54,9 @@ export const lessonContentSchema = lessonSchema
     supplementary_asset_object_url: z.string().nullable(),
     worksheet_asset_object_url: z.string().nullable(),
     slide_deck_asset_object_url: z.string().nullable(),
-    lesson_guide_asset_id: z.number().nullable().optional(),
-    has_lesson_guide_object: z.boolean().nullable().optional(),
-    lesson_guide_asset_object_url: z.string().nullable().optional(),
+    lesson_guide_asset_id: z.number().nullish(),
+    has_lesson_guide_object: z.boolean().nullish(),
+    lesson_guide_asset_object_url: z.string().nullish(),
     has_lesson_guide_google_drive_downloadable_version: z
       .boolean()
       .nullable()

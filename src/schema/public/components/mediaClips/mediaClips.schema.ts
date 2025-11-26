@@ -17,7 +17,7 @@ export const mediaClipObjectSchema = z.object({
 
 export const videoClipObjectSchema = z
   .object({
-    duration: z.number().nullable().optional(),
+    duration: z.number().nullish(),
     mux_asset_id: z.string(),
     playback_ids: z.array(
       z.object({

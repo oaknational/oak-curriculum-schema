@@ -14,7 +14,7 @@ export const unitSchema = z.object({
   description: z.string().nullable(),
   slug: z.string(),
   tags: z.array(z.number()).nullable(),
-  deprecated_fields: z.record(z.string(), z.unknown()).nullable().optional(),
+  deprecated_fields: z.record(z.string(), z.unknown()).nullish(),
   title: z.string(),
   subjectcategories: z.array(z.union([z.number(), z.string()])).nullable(),
   prior_knowledge_requirements: z.array(z.string()).nullish(),
