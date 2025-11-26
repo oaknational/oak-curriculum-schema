@@ -1,7 +1,6 @@
 export * from "./assets";
 export * from "./components";
 export * from "./lessonData";
-export * from "./quizAnswers";
 export * from "./quizQuestion";
 export * from "./thread";
 export * from "./unitData";

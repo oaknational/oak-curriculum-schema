@@ -19,8 +19,6 @@ export * from "./public/components/quizAnswers/quizAnswers.schema";
 export * from "./public/components/staticLessonList/staticLessonList.schema";
 export * from "./public/lessonData/lessonData.fixture";
 export * from "./public/lessonData/lessonData.schema";
-export * from "./public/quizAnswers/quizAnswers.fixture";
-export * from "./public/quizAnswers/quizAnswers.schema";
 export * from "./public/quizQuestion/quizQuestion.fixture";
 export * from "./public/quizQuestion/quizQuestion.schema";
 export * from "./public/thread/thread.fixture";
