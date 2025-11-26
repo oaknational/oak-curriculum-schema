@@ -1,8 +1,8 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
-import { subjectSlugs } from "@/schema/public/base/base.schema";
+import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
+import { subjectSlugs } from "@/schema/public/components/base/base.schema";
 
 export const queriesSchema = z.enum([
   "pupilSubjectListingQuery",

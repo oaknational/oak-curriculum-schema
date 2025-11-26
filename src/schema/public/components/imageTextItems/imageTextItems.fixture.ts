@@ -7,7 +7,7 @@ import type {
   ImageItemCamel,
   TextItem,
   TextItemCamel,
-} from "@/schema/public/imageTextItems/imageTextItems.schema";
+} from "@/schema/public/components/imageTextItems/imageTextItems.schema";
 
 export const imageObjectFixture = ({
   overrides = {},

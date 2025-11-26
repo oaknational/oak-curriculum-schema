@@ -3,7 +3,7 @@ import camelcaseKeys from "camelcase-keys";
 import type {
   ProgrammeFields,
   ProgrammeFieldsCamel,
-} from "@/schema/public/programmeFields/programmeFields.schema";
+} from "@/schema/public/components/programmeFields/programmeFields.schema";
 
 export const programmeFieldsFixture = ({
   overrides = {},

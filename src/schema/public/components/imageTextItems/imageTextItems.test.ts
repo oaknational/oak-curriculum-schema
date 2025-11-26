@@ -4,12 +4,12 @@ import {
   imageItemFixture,
   imageObjectFixture,
   textItemFixture,
-} from "@/schema/public/imageTextItems/imageTextItems.fixture";
+} from "@/schema/public/components/imageTextItems/imageTextItems.fixture";
 import {
   imageItemSchema,
   imageObjectSchema,
   textItemSchema,
-} from "@/schema/public/imageTextItems/imageTextItems.schema";
+} from "@/schema/public/components/imageTextItems/imageTextItems.schema";
 
 describe("imageObject fixture", () => {
   it("conforms to the schema", () => {

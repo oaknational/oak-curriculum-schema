@@ -9,7 +9,7 @@ import type {
   VideoClipObjectCamel,
   MediaClipCycle,
   MediaClipCycleCamel,
-} from "@/schema/public/mediaClips/mediaClips.schema";
+} from "@/schema/public/components/mediaClips/mediaClips.schema";
 
 export const mediaObjectFixture = ({
   overrides = {},

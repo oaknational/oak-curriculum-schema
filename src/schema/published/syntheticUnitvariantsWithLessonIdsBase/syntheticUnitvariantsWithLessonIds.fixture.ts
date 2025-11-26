@@ -1,7 +1,7 @@
 import camelcaseKeys from "camelcase-keys";
 
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
-import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
+import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 import type {
   SyntheticUnitvariantsWithLessonIdsBase,
   SyntheticUnitvariantsWithLessonIdsBaseCamel,

@@ -4,14 +4,18 @@ import zodToCamelCase from "zod-to-camel-case";
 import {
   imageItemSchema,
   textItemSchema,
-} from "@/schema/public/imageTextItems/imageTextItems.schema";
+} from "@/schema/public/components/imageTextItems/imageTextItems.schema";
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "@/schema/public/quizAnswers/quizAnswers.schema";
-import { _stateSchema, newState, publishedState } from "@/schema/public/base";
+} from "@/schema/public/components/quizAnswers/quizAnswers.schema";
+import {
+  _stateSchema,
+  newState,
+  publishedState,
+} from "@/schema/public/components/base";
 
 const answersObjectSchema = z.object({
   "multiple-choice": z.array(multipleChoiceSchema).optional(),

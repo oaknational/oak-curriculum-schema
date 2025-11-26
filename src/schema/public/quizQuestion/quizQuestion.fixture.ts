@@ -9,7 +9,7 @@ import {
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture,
-} from "@/schema/public/quizAnswers/quizAnswers.fixture";
+} from "@/schema/public/components/quizAnswers/quizAnswers.fixture";
 
 export const multipleChoiceQuestion = ({
   overrides = {},

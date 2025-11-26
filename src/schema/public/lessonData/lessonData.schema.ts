@@ -7,14 +7,14 @@ import {
   timestampsSchema,
   newState,
   publishedState,
-} from "@/schema/public/base/base.schema";
+} from "@/schema/public/components/base/base.schema";
 import {
   keyLearningPointsSchema,
   keywordsSchema,
   lessonEquipmentAndResourcesSchema,
   lessonOutlineSchema,
 } from "@/schema/published/lessonContent";
-import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema";
+import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
 
 export const lessonDataSchema = timestampsSchema.extend({
   lesson_id: z.number(),

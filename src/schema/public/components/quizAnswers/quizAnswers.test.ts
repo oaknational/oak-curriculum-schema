@@ -5,13 +5,13 @@ import {
   multipleChoiceFixture,
   orderFixture,
   shortAnswerFixture,
-} from "@/schema/public/quizAnswers/quizAnswers.fixture";
+} from "@/schema/public/components/quizAnswers/quizAnswers.fixture";
 import {
   matchSchema,
   multipleChoiceSchema,
   orderSchema,
   shortAnswerSchema,
-} from "@/schema/public/quizAnswers/quizAnswers.schema";
+} from "@/schema/public/components/quizAnswers/quizAnswers.schema";
 
 describe("multipleChoice answer", () => {
   it("conforms to the schema", () => {

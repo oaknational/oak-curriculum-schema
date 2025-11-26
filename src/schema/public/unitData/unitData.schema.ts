@@ -6,7 +6,7 @@ import {
   _cohortSchema,
   newState,
   publishedState,
-} from "@/schema/public/base/base.schema";
+} from "@/schema/public/components/base/base.schema";
 
 export const unitDataSchema = z.object({
   unit_id: z.number(),

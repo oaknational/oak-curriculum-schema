@@ -3,7 +3,7 @@ import camelcaseKeys from "camelcase-keys";
 import type {
   Features,
   FeaturesCamel,
-} from "@/schema/public/features/features.schema";
+} from "@/schema/public/components/features/features.schema";
 
 export const featuresFixture = ({
   overrides = {},

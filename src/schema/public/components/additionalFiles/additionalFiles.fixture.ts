@@ -3,7 +3,7 @@ import camelcaseKeys from "camelcase-keys";
 import type {
   AdditionalFiles,
   AdditionalFilesCamel,
-} from "@/schema/public/additionalFiles/additionalFiles.schema";
+} from "@/schema/public/components/additionalFiles/additionalFiles.schema";
 
 export const additionalFilesFixture = ({
   overrides = {},

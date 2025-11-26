@@ -15,8 +15,8 @@ import {
   orderQuestion,
   shortAnswerQuestion,
 } from "@/schema/public/quizQuestion/quizQuestion.fixture";
-import additionalFilesFixture from "@/schema/public/additionalFiles/additionalFiles.fixture";
-import mediaClipsFixture from "@/schema/public/mediaClips/mediaClips.fixture";
+import additionalFilesFixture from "@/schema/public/components/additionalFiles/additionalFiles.fixture";
+import mediaClipsFixture from "@/schema/public/components/mediaClips/mediaClips.fixture";
 
 export const lessonEquipmentAndResourcesFixture = ({
   overrides = {},

@@ -4,7 +4,7 @@ import type {
   SyntheticProgrammesByYear,
   SyntheticProgrammesByYearCamel,
 } from "@/schema/published/syntheticProgrammesByYear/syntheticProgrammesByYear.schema";
-import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
+import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 
 export const syntheticProgrammesByYearFixture = ({
   overrides = {},

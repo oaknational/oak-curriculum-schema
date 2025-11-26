@@ -6,7 +6,7 @@ import type {
 } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
 import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
 import { unitDataFixture } from "@/schema/public/unitData/unitData.fixture";
-import { programmeFieldsFixture } from "@/schema/public/programmeFields/programmeFields.fixture";
+import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 
 export const syntheticUnitvariantLessonsByKsFixture = ({
   overrides = {},

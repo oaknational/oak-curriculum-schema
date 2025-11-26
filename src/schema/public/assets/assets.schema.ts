@@ -6,7 +6,7 @@ import {
   newState,
   publishedState,
   timestampsSchema,
-} from "@/schema/public/base/base.schema";
+} from "@/schema/public/components/base/base.schema";
 
 export const assetTypeSchema = z.enum([
   "lesson_guide",

@@ -2,9 +2,9 @@ import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
 import { quizQuestionSchema } from "@/schema/public/quizQuestion/quizQuestion.schema";
-import { _stateSchema } from "@/schema/public/base/base.schema";
-import { mediaClipsRecordSchema } from "@/schema/public/mediaClips/mediaClips.schema";
-import { additionalFileObjectSchema } from "@/schema/public/additionalFiles/additionalFiles.schema";
+import { _stateSchema } from "@/schema/public/components/base/base.schema";
+import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
+import { additionalFileObjectSchema } from "@/schema/public/components/additionalFiles/additionalFiles.schema";
 
 export const lessonEquipmentAndResourcesSchema = z.object({
   equipment: z.string(),

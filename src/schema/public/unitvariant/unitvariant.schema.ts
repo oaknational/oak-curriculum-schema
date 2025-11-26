@@ -6,9 +6,9 @@ import {
   _cohortSchema,
   newState,
   publishedState,
-} from "@/schema/public/base/base.schema";
+} from "@/schema/public/components/base/base.schema";
 import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
-import { programmeFieldsSchema } from "@/schema/public/programmeFields/programmeFields.schema";
+import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
 
 export const unitvariantSchema = z.object({
   _state: _stateSchema,
