@@ -16,7 +16,7 @@ import {
 } from "@/schema/published/lessonContent";
 import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
 
-export const lessonDataSchema = timestampsSchema.extend({
+export const lessonSchema = timestampsSchema.extend({
   lesson_id: z.number(),
   lesson_uid: z.string(),
   slug: z.string(),
@@ -54,9 +54,9 @@ export const lessonDataSchema = timestampsSchema.extend({
   _cohort: _cohortSchema,
   lesson_release_date: z.string().nullable(),
 });
-export type LessonData = z.infer<typeof lessonDataSchema>;
+export type Lesson = z.infer<typeof lessonSchema>;
 
-export const lessonDataNewSchema = lessonDataSchema
+export const lessonNewSchema = lessonSchema
   .pick({
     lesson_id: true,
     lesson_uid: true,
@@ -91,22 +91,32 @@ export const lessonDataNewSchema = lessonDataSchema
     pupil_lesson_outcome: z.string().nullable(),
   });
 
-export const lessonDataPublishedSchema = lessonDataSchema.extend({
+export const lessonPublishedSchema = lessonSchema.extend({
   _state: publishedState,
 });
 
-export type LessonDataNew = z.infer<typeof lessonDataNewSchema>;
-export type LessonDataPublished = z.infer<typeof lessonDataPublishedSchema>;
+export type LessonNew = z.infer<typeof lessonNewSchema>;
+export type LessonPublished = z.infer<typeof lessonPublishedSchema>;
 
-export const lessonDataSchemaCamel = zodToCamelCase(lessonDataSchema);
-export type LessonDataCamel = z.infer<typeof lessonDataSchemaCamel>;
+export const lessonSchemaCamel = zodToCamelCase(lessonSchema);
+export type LessonCamel = z.infer<typeof lessonSchemaCamel>;
 
-export const lessonDataNewSchemaCamel = zodToCamelCase(lessonDataNewSchema);
-export type LessonDataNewCamel = z.infer<typeof lessonDataNewSchemaCamel>;
+export const lessonNewSchemaCamel = zodToCamelCase(lessonNewSchema);
+export type LessonNewCamel = z.infer<typeof lessonNewSchemaCamel>;
 
-export const lessonDataPublishedSchemaCamel = zodToCamelCase(
-  lessonDataPublishedSchema,
-);
-export type LessonDataPublishedCamel = z.infer<
-  typeof lessonDataPublishedSchemaCamel
->;
+export const lessonPublishedSchemaCamel = zodToCamelCase(lessonPublishedSchema);
+export type LessonPublishedCamel = z.infer<typeof lessonPublishedSchemaCamel>;
+
+// Backwards compatibility exports
+export const lessonDataSchema = lessonSchema;
+export type LessonData = Lesson;
+export const lessonDataNewSchema = lessonNewSchema;
+export type LessonDataNew = LessonNew;
+export const lessonDataPublishedSchema = lessonPublishedSchema;
+export type LessonDataPublished = LessonPublished;
+export const lessonDataSchemaCamel = lessonSchemaCamel;
+export type LessonDataCamel = LessonCamel;
+export const lessonDataNewSchemaCamel = lessonNewSchemaCamel;
+export type LessonDataNewCamel = LessonNewCamel;
+export const lessonDataPublishedSchemaCamel = lessonPublishedSchemaCamel;
+export type LessonDataPublishedCamel = LessonPublishedCamel;

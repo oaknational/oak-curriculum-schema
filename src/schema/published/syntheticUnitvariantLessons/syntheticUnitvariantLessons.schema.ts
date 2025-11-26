@@ -1,7 +1,7 @@
 import { z } from "zod";
 import zodToCamelCase from "zod-to-camel-case";
 
-import { lessonDataSchema } from "@/schema/public/lessonData/lessonData.schema";
+import { lessonDataSchema } from "@/schema/public/lesson/lesson.schema";
 import { unitSchema } from "@/schema/public/unit/unit.schema";
 import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
 import { actionsSchema } from "@/schema/published/components/actions/actions.schema";

@@ -4,7 +4,7 @@ import type {
   SyntheticUnitvariantLessonsByKs,
   SyntheticUnitvariantLessonsByKsCamel,
 } from "@/schema/published/syntheticUnitvariantLessonsByKs/syntheticUnitvariantLessonsByKs.schema";
-import { lessonDataFixture } from "@/schema/public/lessonData/lessonData.fixture";
+import { lessonDataFixture } from "@/schema/public/lesson/lesson.fixture";
 import { unitFixture } from "@/schema/public/unit/unit.fixture";
 import { programmeFieldsFixture } from "@/schema/public/components/programmeFields/programmeFields.fixture";
 

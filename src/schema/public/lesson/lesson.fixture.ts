@@ -1,15 +1,12 @@
 import camelcaseKeys from "camelcase-keys";
 
-import type {
-  LessonData,
-  LessonDataCamel,
-} from "@/schema/public/lessonData/lessonData.schema";
+import type { Lesson, LessonCamel } from "@/schema/public/lesson/lesson.schema";
 
-export const lessonDataFixture = ({
+export const lessonFixture = ({
   overrides = {},
 }: {
-  overrides?: Partial<LessonData>;
-} = {}): LessonData => ({
+  overrides?: Partial<Lesson>;
+} = {}): Lesson => ({
   lesson_id: 1,
   lesson_uid: "lesson-uid",
   title: "lesson-title",
@@ -47,11 +44,15 @@ export const lessonDataFixture = ({
   ...overrides,
 });
 
-export const lessonDataFixtureCamel = ({
+export const lessonFixtureCamel = ({
   overrides = {},
 }: {
-  overrides?: Partial<LessonDataCamel>;
-} = {}): LessonDataCamel => ({
-  ...camelcaseKeys(lessonDataFixture(), { deep: true }),
+  overrides?: Partial<LessonCamel>;
+} = {}): LessonCamel => ({
+  ...camelcaseKeys(lessonFixture(), { deep: true }),
   ...overrides,
 });
+
+// Backwards compatibility exports
+export const lessonDataFixture = lessonFixture;
+export const lessonDataFixtureCamel = lessonFixtureCamel;
