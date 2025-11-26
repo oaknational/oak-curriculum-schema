@@ -1,4 +1,4 @@
-export * from "./actions";
+export * from "./components";
 export * from "./lessonContent";
 export * from "./programmeListing";
 export * from "./syntheticProgrammesByYear";

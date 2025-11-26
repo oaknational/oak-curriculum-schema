@@ -1,5 +1,5 @@
 export * from "./internal";
-export * from "./internal/internal/internal.schema";
+export * from "./internal/components/internal/internal.schema";
 export * from "./public";
 export * from "./public/assets/assets.fixture";
 export * from "./public/assets/assets.schema";
@@ -28,8 +28,8 @@ export * from "./public/unitData/unitData.schema";
 export * from "./public/unitvariant/unitvariant.fixture";
 export * from "./public/unitvariant/unitvariant.schema";
 export * from "./published";
-export * from "./published/actions/actions.fixture";
-export * from "./published/actions/actions.schema";
+export * from "./published/components/actions/actions.fixture";
+export * from "./published/components/actions/actions.schema";
 export * from "./published/lessonContent/lessonContent.fixture";
 export * from "./published/lessonContent/lessonContent.schema";
 export * from "./published/programmeListing/programmeListing.schema";

@@ -4,7 +4,7 @@ import zodToCamelCase from "zod-to-camel-case";
 import { lessonDataSchema } from "@/schema/public/lessonData/lessonData.schema";
 import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
 import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
-import { actionsSchema } from "@/schema/published/actions/actions.schema";
+import { actionsSchema } from "@/schema/published/components/actions/actions.schema";
 import { featuresSchema } from "@/schema/public/components/features/features.schema";
 import { staticLessonListSchema } from "@/schema/public/components/staticLessonList/staticLessonList.schema";
 

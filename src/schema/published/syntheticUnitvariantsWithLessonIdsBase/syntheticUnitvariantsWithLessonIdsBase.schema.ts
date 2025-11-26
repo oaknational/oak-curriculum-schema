@@ -3,7 +3,7 @@ import zodToCamelCase from "zod-to-camel-case";
 
 import { unitDataSchema } from "@/schema/public/unitData/unitData.schema";
 import { programmeFieldsSchema } from "@/schema/public/components/programmeFields/programmeFields.schema";
-import { actionsSchema } from "@/schema/published/actions/actions.schema";
+import { actionsSchema } from "@/schema/published/components/actions/actions.schema";
 import { staticLessonListSchema } from "@/schema/public/components/staticLessonList/staticLessonList.schema";
 
 export const syntheticUnitvariantsWithLessonIdsBaseSchema = z.object({
