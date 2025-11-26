@@ -33,13 +33,13 @@ export const questionSchema = z.object({
     .optional()
     .nullable(),
   answers: answersObjectSchema.optional().nullable(),
-  answers_clean: answersObjectSchema.optional().nullable(),
+  answers_clean: answersObjectSchema.optional().nullable(), // this is a computed field
   feedback: z.string().optional().nullable(),
   hint: z.string().optional().nullable(),
   active: z.boolean().optional(),
   order: z.number(),
   _state: _stateSchema,
-  _release_id: z.number().optional(),
+  _release_id: z.number().nullish(),
 });
 export type Question = z.infer<typeof questionSchema>;
 
