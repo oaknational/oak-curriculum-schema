@@ -1,0 +1,112 @@
+import { z } from "zod";
+import zodToCamelCase from "zod-to-camel-case";
+
+import {
+  _stateSchema,
+  _cohortSchema,
+  timestampsSchema,
+  newState,
+  publishedState,
+} from "@/schema/public/components/base/base.schema";
+import { keyLearningPointsSchema } from "@/schema/public/components/keyLearningPoints/keyLearningPoints.schema";
+import { keywordsSchema } from "@/schema/public/components/keywords/keywords.schema";
+import { equipmentAndResourcesSchema } from "@/schema/public/components/equipmentAndResources/equipmentAndResources.schema";
+import { lessonOutlineSchema } from "@/schema/public/components/lessonOutline/lessonOutline.schema";
+import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
+
+export const lessonSchema = timestampsSchema.extend({
+  lesson_id: z.number(),
+  lesson_uid: z.string(),
+  slug: z.string(),
+  title: z.string(),
+  description: z.string(),
+  pupil_lesson_outcome: z.string(),
+  phonics_outcome: z.string().nullable(),
+  key_learning_points: z.array(keyLearningPointsSchema).nullable(),
+  equipment_and_resources: z.array(equipmentAndResourcesSchema).nullable(),
+  content_guidance_details: z
+    .array(z.object({ details: z.string() }))
+    .nullable(),
+  content_guidance: z.array(z.number()).nullable(),
+  copyright_content: z.array(z.object({})).nullable(),
+  supervision_level: z.string().nullable(),
+  thirdpartycontent_list: z.array(z.number()).nullable(),
+  misconceptions_and_common_mistakes: z.array(z.object({})).nullable(),
+  keywords: z.array(keywordsSchema).nullable(),
+  video_id: z.number().nullable(),
+  sign_language_video_id: z.number().nullable(),
+  quiz_id_starter: z.number().nullable(),
+  quiz_id_exit: z.number().nullable(),
+  asset_id_slidedeck: z.number().nullable(),
+  asset_id_worksheet: z.number().nullable(),
+  asset_id_worksheet_answers: z.number().nullable(),
+  asset_id_supplementary_asset: z.number().nullable(),
+  asset_id_lesson_guide: z.number().nullable(),
+  expiration_date: z.string().nullable(),
+  lesson_outline: z.array(lessonOutlineSchema).nullish(),
+  media_clips: mediaClipsRecordSchema.nullish(),
+  deprecated_fields: z.record(z.string(), z.unknown()).nullable(),
+  _state: _stateSchema,
+  _cohort: _cohortSchema,
+  lesson_release_date: z.string().nullable(),
+});
+export type Lesson = z.infer<typeof lessonSchema>;
+
+export const lessonNewSchema = lessonSchema
+  .pick({
+    lesson_id: true,
+    lesson_uid: true,
+    phonics_outcome: true,
+    key_learning_points: true,
+    equipment_and_resources: true,
+    content_guidance_details: true,
+    content_guidance: true,
+    copyright_content: true,
+    supervision_level: true,
+    thirdpartycontent_list: true,
+    misconceptions_and_common_mistakes: true,
+    keywords: true,
+    video_id: true,
+    sign_language_video_id: true,
+    quiz_id_starter: true,
+    quiz_id_exit: true,
+    asset_id_slidedeck: true,
+    asset_id_worksheet: true,
+    asset_id_worksheet_answers: true,
+    asset_id_supplementary_asset: true,
+    asset_id_lesson_guide: true,
+    expiration_date: true,
+    lesson_outline: true,
+    media_clips: true,
+    deprecated_fields: true,
+    _cohort: true,
+    lesson_release_date: true,
+  })
+  .extend({
+    _state: newState,
+    pupil_lesson_outcome: z.string().nullable(),
+  });
+
+export const lessonPublishedSchema = lessonSchema.extend({
+  _state: publishedState,
+});
+
+export type LessonNew = z.infer<typeof lessonNewSchema>;
+export type LessonPublished = z.infer<typeof lessonPublishedSchema>;
+
+export const lessonSchemaCamel = zodToCamelCase(lessonSchema);
+export type LessonCamel = z.infer<typeof lessonSchemaCamel>;
+
+export const lessonNewSchemaCamel = zodToCamelCase(lessonNewSchema);
+export type LessonNewCamel = z.infer<typeof lessonNewSchemaCamel>;
+
+export const lessonPublishedSchemaCamel = zodToCamelCase(lessonPublishedSchema);
+export type LessonPublishedCamel = z.infer<typeof lessonPublishedSchemaCamel>;
+
+// Backwards compatibility exports
+/**
+ * @deprecated Use lessonSchema instead.
+ */
+export const lessonData = lessonSchema;
+export const lessonDataSchema = lessonSchema;
+export type LessonData = Lesson;
