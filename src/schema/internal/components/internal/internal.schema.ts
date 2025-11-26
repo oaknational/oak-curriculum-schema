@@ -1,5 +1,4 @@
 import z from "zod";
-import zodToCamelCase from "zod-to-camel-case";
 
 export const baseIngestStatesSchema = z.enum([
   "ingest_started",
@@ -8,20 +7,8 @@ export const baseIngestStatesSchema = z.enum([
 ]);
 export type BaseIngestStates = z.infer<typeof baseIngestStatesSchema>;
 
-export const baseIngestStatesSchemaCamel = zodToCamelCase(
-  baseIngestStatesSchema,
-);
-export type BaseIngestStatesCamel = z.infer<typeof baseIngestStatesSchemaCamel>;
-
 export const assetIngestStatesSchema = z.enum(["no_asset"]);
 export type AssetIngestStates = z.infer<typeof assetIngestStatesSchema>;
-
-export const assetIngestStatesSchemaCamel = zodToCamelCase(
-  assetIngestStatesSchema,
-);
-export type AssetIngestStatesCamel = z.infer<
-  typeof assetIngestStatesSchemaCamel
->;
 
 export const videoIngestStatesSchema = z.enum([
   "adding_captions",
@@ -35,13 +22,6 @@ export const videoIngestStatesSchema = z.enum([
   "rev_skipped",
 ]);
 export type VideoIngestStates = z.infer<typeof videoIngestStatesSchema>;
-
-export const videoIngestStatesSchemaCamel = zodToCamelCase(
-  videoIngestStatesSchema,
-);
-export type VideoIngestStatesCamel = z.infer<
-  typeof videoIngestStatesSchemaCamel
->;
 
 export {
   /**
