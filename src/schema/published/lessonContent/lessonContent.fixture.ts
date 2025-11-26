@@ -1,13 +1,8 @@
 import camelcaseKeys from "camelcase-keys";
 
 import type {
-  Keywords,
   LessonContent,
   LessonContentCamel,
-  TeacherTips,
-  LessonEquipmentAndResources,
-  MisconceptionsAndCommonMistakes,
-  ContentGuidance,
 } from "@/schema/published/lessonContent/lessonContent.schema";
 import {
   matchQuestion,
@@ -17,55 +12,11 @@ import {
 } from "@/schema/public/question/question.fixture";
 import additionalFilesFixture from "@/schema/public/components/additionalFiles/additionalFiles.fixture";
 import mediaClipsFixture from "@/schema/public/components/mediaClips/mediaClips.fixture";
-
-export const lessonEquipmentAndResourcesFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<LessonEquipmentAndResources>;
-} = {}): LessonEquipmentAndResources => ({
-  equipment: "equipment",
-  ...overrides,
-});
-
-export const teacherTipsFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<TeacherTips>;
-} = {}): TeacherTips => ({
-  teacher_tip: "teacher-tip",
-  ...overrides,
-});
-
-export const keywordsFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<Keywords>;
-} = {}): Keywords => ({
-  keyword: "keyword",
-  description: "description",
-  ...overrides,
-});
-
-export const misconceptionsAndCommonMistakesFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<MisconceptionsAndCommonMistakes>;
-} = {}): MisconceptionsAndCommonMistakes => ({
-  misconception: "misconception",
-  response: "response",
-  ...overrides,
-});
-
-export const contentGuidanceFixture = ({
-  overrides = {},
-}: {
-  overrides?: Partial<ContentGuidance>;
-} = {}): ContentGuidance => ({
-  contentguidance_label: "contentguidance-label",
-  contentguidance_description: "contentguidance-description",
-  contentguidance_area: "contentguidance-area",
-  ...overrides,
-});
+import { equipmentAndResourcesFixture } from "@/schema/public/components/equipmentAndResources/equipmentAndResources.fixture";
+import { teacherTipsFixture } from "@/schema/public/components/teacherTips/teacherTips.fixture";
+import { keywordsFixture } from "@/schema/public/components/keywords/keywords.fixture";
+import { misconceptionsAndCommonMistakesFixture } from "@/schema/public/components/misconceptionsAndCommonMistakes/misconceptionsAndCommonMistakes.fixture";
+import { contentGuidanceFixture } from "@/schema/public/components/contentGuidance/contentGuidance.fixture";
 
 export const lessonContentFixture = ({
   overrides = {},
@@ -80,7 +31,7 @@ export const lessonContentFixture = ({
   misconceptions_and_common_mistakes: [
     misconceptionsAndCommonMistakesFixture(),
   ],
-  equipment_and_resources: [lessonEquipmentAndResourcesFixture()],
+  equipment_and_resources: [equipmentAndResourcesFixture()],
   teacher_tips: [teacherTipsFixture()],
   key_learning_points: null,
   pupil_lesson_outcome: "pupil-lesson-outcome",

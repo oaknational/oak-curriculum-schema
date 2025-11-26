@@ -8,12 +8,10 @@ import {
   newState,
   publishedState,
 } from "@/schema/public/components/base/base.schema";
-import {
-  keyLearningPointsSchema,
-  keywordsSchema,
-  lessonEquipmentAndResourcesSchema,
-  lessonOutlineSchema,
-} from "@/schema/published/lessonContent";
+import { keyLearningPointsSchema } from "@/schema/public/components/keyLearningPoints/keyLearningPoints.schema";
+import { keywordsSchema } from "@/schema/public/components/keywords/keywords.schema";
+import { equipmentAndResourcesSchema } from "@/schema/public/components/equipmentAndResources/equipmentAndResources.schema";
+import { lessonOutlineSchema } from "@/schema/public/components/lessonOutline/lessonOutline.schema";
 import { mediaClipsRecordSchema } from "@/schema/public/components/mediaClips/mediaClips.schema";
 
 export const lessonSchema = timestampsSchema.extend({
@@ -25,9 +23,7 @@ export const lessonSchema = timestampsSchema.extend({
   pupil_lesson_outcome: z.string(),
   phonics_outcome: z.string().nullable(),
   key_learning_points: z.array(keyLearningPointsSchema).nullable(),
-  equipment_and_resources: z
-    .array(lessonEquipmentAndResourcesSchema)
-    .nullable(),
+  equipment_and_resources: z.array(equipmentAndResourcesSchema).nullable(),
   content_guidance_details: z
     .array(z.object({ details: z.string() }))
     .nullable(),
