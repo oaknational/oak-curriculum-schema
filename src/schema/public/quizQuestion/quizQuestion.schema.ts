@@ -11,7 +11,7 @@ import {
   orderSchema,
   shortAnswerSchema,
 } from "@/schema/public/quizAnswers/quizAnswers.schema";
-import { _stateSchema, newState, publishedState } from "../base";
+import { _stateSchema, newState, publishedState } from "@/schema/public/base";
 
 const answersObjectSchema = z.object({
   "multiple-choice": z.array(multipleChoiceSchema).optional(),
