@@ -12,36 +12,40 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "test": "vitest",
     "test:ci": "vitest run",
-    "lint": "eslint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "check-types": "tsc",
     "format": "prettier '**/*.{j,t}{s,sx}' --write",
-    "format:precommit": "prettier '**/*.{j,t}{s,sx}' --write",
-    "format:check": "prettier '**/*.{j,t}{s,sx}' --check",
+    "format:precommit": "prettier '**/*.{j,t}{s,sx}' --check",
     "prepare": "husky",
     "prepublishOnly": "npm run build",
-    "publish:local": "npm run build && yalc publish --no-scripts"
+    "publish:local": "npm run build && yalc publish --no-scripts",
+    "create-schema-indexes": "node ./scripts/create-schema-indexes.js"
   },
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "camelcase-keys": "^10.0.1",
+    "zod-to-camel-case": "^0.4.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.0.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^13.1.1",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "eslint": "^8.57.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1",
-    "globals": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-no-relative-import-paths": "^1.6.1",
     "husky": "^9.0.11",
+    "lint-staged": "^16.2.7",
     "prettier": "3.2.5",
     "rollup": "^4.14.3",
     "rollup-plugin-copy": "^3.5.0",
@@ -55,7 +59,16 @@
     "yalc": "^1.0.0-pre.53"
   },
   "peerDependencies": {
-    "zod": "^3.22.4"
+    "zod": "^4.1.13"
+  },
+  "lint-staged": {
+    "*": [
+      "npm run create-schema-indexes"
+    ],
+    "*.{js,mjs,ts,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",

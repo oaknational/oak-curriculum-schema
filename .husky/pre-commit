@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
-npm run lint
+npx lint-staged
 npm run check-types
-npm run format:precommit
+
+
+
