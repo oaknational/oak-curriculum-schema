@@ -1,4 +1,9 @@
-# oak-curriculum-schema
+# oak-curriculum-schema DEPRECATED
+
+This package is now part of https://github.com/oaknational/Database-Tools
+
+--------------------------------------------------------------------------
+
 
 Schemas and fixtures to ensure data integrity between Oak apps and their data.
 
